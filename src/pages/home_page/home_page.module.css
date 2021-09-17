@@ -45,7 +45,7 @@
 
 @media (-webkit-min-device-pixel-ratio: 2) {
   .container {
-    background-image: url("~static/collaborating.jpg");
+    background-image: url("~static/collaborating_purple_layer.jpg");
   }
 }
 
