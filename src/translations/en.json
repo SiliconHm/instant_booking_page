@@ -10,7 +10,7 @@
     "delete": "Delete",
     "clear": "Clear",
     "search_page_doc_title": "Search",
-    "main_page_doc_title": "IBE",
+    "main_page_doc_title": "Memberbutton",
     "is": "is",
     "and": "and",
     "in": "in",
@@ -28,8 +28,8 @@
   },
   "main_page": {
     "search_btn": "Search",
-    "title": "The Best Family Booking Site",
-    "sub_title": " We have curated and pre selected the top family friendly hotels in central\nLondon.\nAll hotels have a lift, breakfast and family rooms."
+    "title": "A booking engine powered by influencers",
+    "sub_title": " We have curated and pre selected influencer friendly hotels globally.\nAll hotels offer commission for referrals."
   },
   "hotel_page": {
     "checkin_label": "Check-in",
