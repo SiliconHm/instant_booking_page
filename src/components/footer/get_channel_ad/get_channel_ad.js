@@ -11,7 +11,7 @@ export default function GetChannelAd() {
   return (
     <div className={styles.container}>
       <span className={styles.text}>{t("footer:get_free_channel")}</span>
-      <Link to="https://channex.io" target="_blank">
+      <Link to="https://search.memberbutton.com" target="_blank">
         {t("footer:channex_io")}
       </Link>
     </div>
