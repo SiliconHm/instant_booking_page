@@ -10,7 +10,7 @@
     "delete": "Delete",
     "clear": "Clear",
     "search_page_doc_title": "Search",
-    "main_page_doc_title": "IBE",
+    "main_page_doc_title": "Memberbutton",
     "is": "is",
     "and": "and",
     "in": "in",
@@ -28,7 +28,7 @@
   },
   "main_page": {
     "search_btn": "Search",
-    "title": "The Best Family Booking Site",
+    "title": "Booking Engine Powered By Influencers",
     "sub_title": " We have curated and pre selected the top family friendly hotels in central\nLondon.\nAll hotels have a lift, breakfast and family rooms."
   },
   "hotel_page": {
