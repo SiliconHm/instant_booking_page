@@ -12,7 +12,7 @@ const Middle = () => {
                 </div>
 
                 <div className="row mt-3">         
-                        <Card title='Let&#039;s Hyde Resort &amp; Villas in Pattaya, Thailand' pic='No pic' mem='2 Member' bed='1 Bedrooms' bath='1.00 Bathrooms' loc='Muang Pattaya' rat1='0' rat2='0' rate='10 / night*'/>
+                        <Card title='Let&#039;s Hyde Resort &amp; Villas in Pattaya, Thailand' mem='2 Member' bed='1 Bedrooms' bath='1.00 Bathrooms' loc='Muang Pattaya' rat1='0' rat2='0' rate='10 / night*'/>
                 </div>
 
                 <hr/>

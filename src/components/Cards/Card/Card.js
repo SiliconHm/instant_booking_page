@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = (props) => {
  
-    const {title, pic, mem, bed, bath, loc, rat1, rat2, rate} = props
+    const {title, mem, bed, bath, loc, rat1, rat2, rate} = props
     return (
         <div className="col-md-6 col-lg-4 col-xl-3 pl-3 pr-3 pb-3 mt-4">
             <div className="card h-100 card-shadow card-1">
