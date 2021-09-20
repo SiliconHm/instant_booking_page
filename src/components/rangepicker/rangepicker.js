@@ -243,7 +243,7 @@ export default function RangePicker(props) {
         onFocusChange={handleFocusChange}
         onDatesChange={onDatesChange}
         onClose={closeCallback}
-      />
+        />
     </div>
   );
 }

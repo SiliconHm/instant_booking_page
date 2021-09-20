@@ -1,12 +1,12 @@
 .container {
-  min-height: 100vh;
+  min-height: 70vh;
   background-size: cover;
   background-position: 50%;
   background-image: url("~static/main-bg.jpg");
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 700px;
+  min-width: 70%;
 }
 
 .emptyWrapper {
@@ -35,7 +35,7 @@
 }
 
 .headerContainer {
-  position: absolute;
+  position: relative;
   width: 100%;
 }
 
@@ -52,5 +52,35 @@
 @media (-webkit-min-device-pixel-ratio: 3) {
   .container {
     background-image: url("~static/main-bg@3x.jpg");
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .container {
+    min-height: 70vh;
+    background-size: cover;
+    background-position: 50%;
+    background-image: url("~static/main-bg.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 50%;
+  }
+
+  .title {
+    font-family: Helvetica;
+    font-size: 5vw;
+    color: #ffffff;
+    margin-bottom: 5vh;
+    text-align: center;
+  }
+  
+  .subTitle {
+    font-family: Helvetica;
+    font-size: 2.5vw;
+    color: #ffffff;
+    line-height: 25px;
+    margin-bottom: 5vh;
+    text-align: center;
   }
 }

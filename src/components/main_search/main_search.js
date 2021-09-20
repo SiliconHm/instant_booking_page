@@ -76,6 +76,7 @@ export default function MainSearch() {
 
   return (
     <div className={styles.wrapper}>
+        
       <RangePicker
         checkinDatePlaceholder={t("hotel_page:checkin_placeholder")}
         checkoutDatePlaceholder={t("hotel_page:checkout_placeholder")}
@@ -86,25 +87,26 @@ export default function MainSearch() {
         onDatesChange={handleDatesChange}
         isVisible={rangePickerVisible}
         closeCallback={() => setRangePickerVisible(false)}
-      />
-
+        />
+      
       <Dropdown
         show={isOpen}
         onToggle={handleToggleDropdown}
         title={dropdownTitle}
         className={styles.occupancyDropDown}
         layout="vertical"
-      >
+        >
         <OccupancySettingsForm
           bookingParams={occupancyParams}
           onClose={handleToggleDropdown}
           onChange={handleChangeOccupancy}
-        />
+          />
       </Dropdown>
 
       <Button onClick={onSearch} className={styles.searchBtn}>
         {t("main_page:search_btn")}
       </Button>
+
     </div>
   );
 }

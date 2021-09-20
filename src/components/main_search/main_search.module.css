@@ -90,3 +90,27 @@
 .searchBtn:global.btn-primary:not(:disabled):not(.disabled):active {
   background: rgb(0 190 10 / 90%);
 }
+
+@media (max-width: 960px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .wrapper :global .DateRangePickerInput {
+    border-radius: 28px;
+
+  }
+
+  .searchBtn {
+    border-radius: 28px;
+  }
+  
+  .occupancyDropDown  {
+    align-self: center;
+    width: auto;
+  }
+
+  .occupancyDropDown :global .dropdown-toggle {
+    border-radius: 28px;
+  }
+}

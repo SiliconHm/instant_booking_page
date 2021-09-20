@@ -59,7 +59,9 @@ export default function PaymentPage() {
 
     return <Redirect to={redirectPath} />;
   }
-
+  // console.log('Property: ',propertyData)
+  // console.log('rommsData: ', roomsData)
+  // console.log('params: ', params)
   return (
     <div>
       <Header property={propertyData} />

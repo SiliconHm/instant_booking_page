@@ -64,7 +64,7 @@ export default function DayCell(props) {
         show={isTooltipShown}
         minStayLength={minStayLength}
         containerRef={containerRef}
-      />
+        />
     </td>
   );
 }

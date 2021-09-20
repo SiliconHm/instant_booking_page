@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
 
 import Header from "components/header";
+import Footer from 'components/home_footer'
+import Middle from "components/Cards";
 import MainSearch from "components/main_search";
 
 import { AppDataContext } from "containers/data_context";
@@ -24,7 +26,7 @@ export default function HomePage() {
     <>
       <div className={styles.headerContainer}>
         <Header />
-      </div>
+      </div> 
       <div className={styles.container}>
         <div>
           <p className={styles.title}>{t("main_page:title")}</p>
@@ -32,6 +34,8 @@ export default function HomePage() {
           <MainSearch />
         </div>
       </div>
+      <Middle/>
+      <Footer/>
     </>
   );
 }

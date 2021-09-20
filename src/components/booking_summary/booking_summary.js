@@ -32,7 +32,7 @@ export default function BookingSummary({ property, rooms, params, onBook }) {
   );
 
   return (
-    <>
+    <> 
       <SummaryComponent
         property={property}
         params={params}
