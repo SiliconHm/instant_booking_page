@@ -2,6 +2,7 @@
   flex: 1;
   background: #f9fbfd;
   height: calc(100vh - 56px);
+  /* height: 100%; */
 }
 
 .list {
@@ -29,7 +30,6 @@
   align-self: center;
   flex: 1;
   min-height: 458px;
-
 }
 
 .item:hover .overlay,

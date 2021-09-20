@@ -9,6 +9,11 @@
   z-index: 999;
 }
 
+.toShow {
+  display: flex;
+  flex-direction: row;
+}
+
 .inner {
   display: flex;
   align-items: center;
@@ -106,4 +111,10 @@
 
 .searchBtn:global.btn-primary:not(:disabled):not(.disabled):active {
   background: rgb(0 190 10 / 90%);
+}
+
+@media screen and (max-width: 960px){
+  .toShow {
+    display: none;
+  }
 }

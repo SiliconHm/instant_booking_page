@@ -160,8 +160,8 @@ export default function SearchPage() {
         handleCurrencyChange={handleCurrencyChange}
         handleChangeOccupancy={handleChangeOccupancy}
       />
-      <div className={styles.wrapper}>
-        <div className={styles.left}>
+      <div className={`${styles.wrapper}`}>
+        <div className={`${styles.left}`}>
           <PropertiesList
             loading={isLoading}
             currency={searchParams.currency}
@@ -172,15 +172,15 @@ export default function SearchPage() {
             onPropertyMouseOut={handlePropertyShadow}
           />
         </div>
-        <div className={styles.right}>
+        <div className={`${styles.right}`}>
           {selectProperty && (
             <PropertyPreview
-              currency={searchParams.currency}
-              property={selectProperty}
-              onClearSelectProperty={onClearSelectProperty}
+            currency={searchParams.currency}
+            property={selectProperty}
+            onClearSelectProperty={onClearSelectProperty}
             />
-          )}
-
+            )}
+          
           <PropertiesSearchMap
             defaultBounds={searchParams.mapCoordinates}
             properties={propertiesData}

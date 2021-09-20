@@ -59,8 +59,8 @@ export default function PropertiesList(props) {
   };
 
   return (
-    <div className={styles.wrapper}>
-      <div className={listClassName}>{renderContent()}</div>
+    <div className={`${styles.wrapper}`}> 
+      <div className={`${listClassName}`}>{renderContent()}</div>
     </div>
   );
 }

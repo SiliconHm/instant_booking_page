@@ -17,7 +17,7 @@ export default function HeaderSearch({
   handleCurrencyChange,
 }) {
   const { t } = useTranslation();
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); 
   const [rangePickerVisible, setRangePickerVisible] = useState(false);
 
   const handleToggleDropdown = useCallback(() => {
@@ -44,32 +44,35 @@ export default function HeaderSearch({
     <div className={styles.wrapper}>
       <p className={styles.title}>{t("properties:header")}</p>
       <div className={styles.inner}>
-        <p className={styles.title}>{t("global:search")}</p>
-        <RangePicker
-          checkinDatePlaceholder={t("hotel_page:checkin_placeholder")}
-          checkoutDatePlaceholder={t("hotel_page:checkout_placeholder")}
-          checkinDate={searchParams.checkinDate}
-          checkoutDate={searchParams.checkoutDate}
-          name="search_dates"
-          className={rangePickerClassName}
-          onDatesChange={handleDatesChange}
-          isVisible={rangePickerVisible}
-          closeCallback={onCloseCallback}
-        />
 
-        <Dropdown
-          show={isOpen}
-          onToggle={handleToggleDropdown}
-          title={dropdownTitle}
-          className={styles.occupancyDropDown}
-          layout="vertical"
-        >
-          <OccupancySettingsForm
-            bookingParams={searchParams}
-            onClose={handleToggleDropdown}
-            onChange={handleChangeOccupancy}
-          />
-        </Dropdown>
+        <div className={styles.toShow}>
+          <p className={`${styles.title} mt-3`}>{t("global:search")}</p>
+          <RangePicker
+            checkinDatePlaceholder={t("hotel_page:checkin_placeholder")}
+            checkoutDatePlaceholder={t("hotel_page:checkout_placeholder")}
+            checkinDate={searchParams.checkinDate}
+            checkoutDate={searchParams.checkoutDate}
+            name="search_dates"
+            className={rangePickerClassName}
+            onDatesChange={handleDatesChange}
+            isVisible={rangePickerVisible}
+            closeCallback={onCloseCallback}
+            />
+
+          <Dropdown
+            show={isOpen}
+            onToggle={handleToggleDropdown}
+            title={dropdownTitle}
+            className={styles.occupancyDropDown}
+            layout="vertical"
+            >
+              <OccupancySettingsForm
+              bookingParams={searchParams}
+              onClose={handleToggleDropdown}
+              onChange={handleChangeOccupancy}
+              />
+          </Dropdown>
+        </div>
         <CurrencySelectControlled value={searchParams.currency} onChange={handleCurrencyChange} />
         <LocaleSelect />
       </div>
