@@ -9,7 +9,7 @@ import Loading from "components/loading";
 import Navigation from "components/navigation";
 import calculateSummaryParams from "utils/calculate_summary_params";
 import Booking from "components/booking_detail";
-import Dates from "components/booking_summary/dates/dates";
+// import Dates from "components/booking_summary/dates/dates";
 
 import {
   AppActionsContext,
@@ -23,7 +23,7 @@ import ThankPanel from "./thank_panel";
 
 export default function ConfirmationPage() {
   const [total, setTotal] = useState(0);
-  const [selectedRatesByRoom, setSelectedRatesByRoom] = useState({});
+  // const [selectedRatesByRoom, setSelectedRatesByRoom] = useState({});
 
 
   const { value } = useContext(PaymentFormDataContext);
@@ -57,7 +57,7 @@ export default function ConfirmationPage() {
       }
 
       setTotal(summaryParams.total);
-      setSelectedRatesByRoom(summaryParams.selectedRatesByRoom);
+      // setSelectedRatesByRoom(summaryParams.selectedRatesByRoom);
     },
     [roomsData, ratesOccupancyPerRoom],
   );
@@ -65,6 +65,8 @@ export default function ConfirmationPage() {
   if (!isPropertyPresent) {
     return <Loading />;
   }
+
+
   const { checkinDate, checkoutDate} = params;
   let checkIn,checkOut
   if(checkinDate) {
@@ -75,6 +77,8 @@ export default function ConfirmationPage() {
     checkIn = new Date(checkinDate).toLocaleDateString("en-US", options)
     checkOut = new Date(checkoutDate).toLocaleDateString("en-US", options)
   }
+
+
   return (
     <div>
       <Header property={propertyData} />

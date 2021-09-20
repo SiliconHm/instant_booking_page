@@ -15,8 +15,8 @@ const Navbar = () => {
     return (
         <nav className='NavbarItems'>
             {/* <h1 className='navbar-logo'>memberbutton <i className='fab fa-react'></i> </h1> */}
-            <a href='#' className='navbar-logo1'> <img src={mName} alt='Name'/> </a>
-            <a href='#' className='navbar-logo2'> <img src={mLogo} alt='Logo'/> </a>
+            <a href='/' className='navbar-logo1'> <img src={mName} alt='Name'/> </a>
+            <a href='/' className='navbar-logo2'> <img src={mLogo} alt='Logo'/> </a>
             <div className='menu-icon' onClick={handleClick}>
                 <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
             </div>

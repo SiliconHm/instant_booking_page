@@ -1,10 +1,10 @@
 import React from "react";
-import { Link, useRouteMatch } from "react-router-dom";
+// import { Link, useRouteMatch } from "react-router-dom";
 
-import CurrencySelect from "components/inputs/currency_select";
-import LocaleSelect from "components/inputs/locale_select";
+// import CurrencySelect from "components/inputs/currency_select";
+// import LocaleSelect from "components/inputs/locale_select";
 
-import routes from "routing/routes";
+// import routes from "routing/routes";
 import Navbar from "components/Nabar";
 
 // import mLogo from 'static/member_favicon150x150.png'
@@ -14,22 +14,22 @@ import Navbar from "components/Nabar";
 // import HotelTitle from "./hotel_title";
 // import Form from "./Form/Form";
 
-import styles from "./header.module.css";
+// import styles from "./header.module.css";
 // import { style } from "@mui/system";
 
 export default function Header({ property = {} }) {
-  const matchHotelPage = useRouteMatch({
-    path: routes.hotelPage,
-    strict: true,
-  });
+  // const matchHotelPage = useRouteMatch({
+  //   path: routes.hotelPage,
+  //   strict: true,
+  // });
 
-  const matchNotFoundPage = useRouteMatch({
-    path: routes.default,
-    strict: true,
-  });
+  // const matchNotFoundPage = useRouteMatch({
+  //   path: routes.default,
+  //   strict: true,
+  // });
 
-  const isCurrencySelectShown = matchHotelPage?.isExact && !matchNotFoundPage;
-  const { title, logo, hideLogo, hideTitle } = property;
+  // const isCurrencySelectShown = matchHotelPage?.isExact && !matchNotFoundPage;
+  // const { title, logo, hideLogo, hideTitle } = property;
   
   return (
       <div>
