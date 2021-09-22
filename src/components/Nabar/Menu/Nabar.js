@@ -4,28 +4,28 @@ import { Button } from '../Button';
 import './Navbar.css'
 import mName from 'static/member_logo260x80.png'
 import mLogo from 'static/member_favicon150x150.png'
-import {getLocation} from "components/google-location/GoogleLocation";
+// import {getLocation} from "components/google-location/GoogleLocation";
 
 const Navbar = () => {
     const [clicked, setClick] = useState(false)
-    const [place, setPlace] = useState('')
+    // const [place, setPlace] = useState('')
 
     const handleClick = () => {
         setClick(!clicked)
     }
 
-    const handleChange =(e) => {
-        setPlace(e.target.value);
-        // setPlace(p)
-    }
+    // const handleChange =(e) => {
+    //     setPlace(e.target.value);
+    //     // setPlace(p)
+    // }
     
-    getLocation(place).then(data => {
-        if(data.results[0]) {
-        const { geometry } = data.results[0]
-            console.log(geometry.location)
+    // getLocation(place).then(data => {
+    //     if(data.results[0]) {
+    //     const { geometry } = data.results[0]
+    //         console.log(geometry.location)
 
-        }
-    })
+    //     }
+    // })
 
     return (
         <nav className='NavbarItems'>

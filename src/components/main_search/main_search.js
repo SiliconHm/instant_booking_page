@@ -22,7 +22,7 @@ export default function MainSearch() {
   const history = useHistory();
 
   const [isOpen, setIsOpen] = useState(false);
-  const [loc, setLoc] = useState(null)
+  // const [loc, setLoc] = useState(null)
   const [checkinDate, setCheckinDate] = useState(null);
   const [checkoutDate, setCheckoutDate] = useState(null);
   const [rangePickerVisible, setRangePickerVisible] = useState(false);
