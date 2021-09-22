@@ -19,6 +19,7 @@
     "react-datepicker": "^3.8.0",
     "react-dates": "^21.8.0",
     "react-dom": "^16.14.0",
+    "react-google-location": "^1.2.2",
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.15.3",
     "react-i18next": "^11.12.0",

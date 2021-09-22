@@ -113,8 +113,23 @@
   background: rgb(0 190 10 / 90%);
 }
 
-@media screen and (max-width: 960px){
+.buttonStyle {
+  display: none;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  background-color: #4caf50;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+@media (max-width: 960px){
   .toShow {
     display: none;
+  }
+
+  .buttonStyle {
+    display: block;
   }
 }

@@ -22,7 +22,7 @@ export default function MainSearch() {
   const history = useHistory();
 
   const [isOpen, setIsOpen] = useState(false);
-
+  const [loc, setLoc] = useState(null)
   const [checkinDate, setCheckinDate] = useState(null);
   const [checkoutDate, setCheckoutDate] = useState(null);
   const [rangePickerVisible, setRangePickerVisible] = useState(false);
@@ -61,9 +61,15 @@ export default function MainSearch() {
         checkoutDate: dateFormatter.toApi(checkoutDate),
       };
 
-      const params = { ...formattedDates, ...occupancyParams };
+      const params = { ...formattedDates, ...occupancyParams};
+
+      // console.log('params: ', params)
+
       setUrlParams(params, history);
       const searchPagePath = buildPath(history.location.search, routes.searchPage);
+      
+      // console.log('main search: ', searchPagePath)
+      
       return history.push(searchPagePath);
     }
 
@@ -76,7 +82,9 @@ export default function MainSearch() {
 
   return (
     <div className={styles.wrapper}>
-        
+        <div className='search-control'>
+            <input placeholder='Enter location' className='form-outline text-10 input-control'/>
+        </div>
       <RangePicker
         checkinDatePlaceholder={t("hotel_page:checkin_placeholder")}
         checkoutDatePlaceholder={t("hotel_page:checkout_placeholder")}

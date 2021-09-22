@@ -23,6 +23,8 @@ const DataContextProvider = ({ children }) => {
   const { appData, appActions } = useApp();
   const { searchData, searchActions } = useSearch();
 
+  // console.log('searchData', searchData)
+  
   return (
     <AppActionsContext.Provider value={appActions}>
       <AppDataContext.Provider value={appData}>

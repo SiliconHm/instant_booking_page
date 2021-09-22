@@ -19,5 +19,7 @@ export default () => {
     [loadPropertiesList],
   );
 
+  // console.log('searchDatas: ', searchData)
+
   return useMemo(() => ({ searchData, searchActions }), [searchData, searchActions]);
 };

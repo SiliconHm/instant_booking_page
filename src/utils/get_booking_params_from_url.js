@@ -10,7 +10,7 @@ const DEFAULT_PARAMS = {
   children: 0,
   adults: 1,
 };
-
+ 
 export default function getBookingParamsFromUrl() {
   const {
     currency,
@@ -21,6 +21,8 @@ export default function getBookingParamsFromUrl() {
     childrenAge,
     mapCoordinates,
   } = getUrlParams();
+
+  // console.log('Coordinates : ', mapCoordinates)
 
   const optionalParams = { ...DEFAULT_PARAMS };
 

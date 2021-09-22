@@ -31,10 +31,14 @@ export default function SearchPage() {
   const { properties } = useContext(SearchDataContext);
   const { data: propertiesData, isLoading } = properties;
 
+  // console.log('properties: ', properties)
+  
   const onSearch = useCallback(
     _.debounce((requestParams) => {
       const { mapCoordinates, ...restParams } = requestParams;
-
+      
+      // console.log('request: ', requestParams) 
+      
       const filter = { ...mapCoordinates };
 
       const formattedDates = {
@@ -52,11 +56,12 @@ export default function SearchPage() {
       if (searchParams) {
         return;
       }
-
+      
       const parsedParams = getBookingParamsFromUrl();
       const activeCurrency = parsedParams.currency || DEFAULT_CURRENCY;
-
+      
       const newSearchParams = { ...parsedParams, currency: activeCurrency };
+      
       setSearchParams(newSearchParams);
       onSearch(newSearchParams);
     },
@@ -64,6 +69,9 @@ export default function SearchPage() {
   );
 
   const handleCoordinatesChange = (marginBounds) => {
+
+    // console.log('margin: ', marginBounds)
+    
     const isSameLocation = _.isEqual(marginBounds, searchParams.mapCoordinates);
     const newSearchParams = { ...searchParams, mapCoordinates: marginBounds };
     const mapCoordinates = encodeMapParams(marginBounds);

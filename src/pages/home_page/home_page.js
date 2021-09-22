@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
 
-import Header from "components/header";
 import Footer from 'components/home_footer'
 import Middle from "components/Cards";
 import MainSearch from "components/main_search";
@@ -10,10 +9,12 @@ import { AppDataContext } from "containers/data_context";
 
 import EmptyIcon from "static/empty-property.svg";
 import styles from "./home_page.module.css";
+import Nabar from "components/Nabar";
 
 export default function HomePage() {
   const { t } = useTranslation();
   const { featureFlags } = useContext(AppDataContext);
+  
   if (!featureFlags.searchPageIsActive) {
     return (
       <div className={styles.emptyWrapper}>
@@ -25,7 +26,7 @@ export default function HomePage() {
   return (
     <>
       <div className={styles.headerContainer}>
-        <Header />
+        <Nabar />
       </div> 
       <div className={styles.container}>
         <div>

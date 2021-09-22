@@ -98,11 +98,14 @@
 
   .wrapper :global .DateRangePickerInput {
     border-radius: 28px;
-
+    width: 70%;
+    margin-left: 15%;
   }
 
   .searchBtn {
     border-radius: 28px;
+    width: 70%;
+    margin-left: 15%;
   }
   
   .occupancyDropDown  {

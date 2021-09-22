@@ -7,6 +7,8 @@ const BOOTSTRAP_URL_KEYS = { key: process.env.REACT_APP_GOOGLE_MAP_KEY };
 const DEFAULT_ZOOM = 1;
 const DEFAULT_CENTER = { lat: 51.496644, lng: -0.147614 };
 
+// console.log(DEFAULT_CENTER)
+
 const MAP_SIZE = {
   width: "100%",
   height: "100%",
@@ -72,12 +74,15 @@ export default function PropertiesSearchMap({
 
   const onGoogleApiLoaded = useCallback(
     (newMapInstance) => {
+
+      // console.log('Default: ', defaultBounds)
+      
       if (defaultBounds) {
         const bounds = getDefaultBounds(newMapInstance.maps, defaultBounds);
 
         newMapInstance.map.fitBounds(bounds, BOUND_PADDING);
       }
-
+      // console.log('new map: ')
       setMapInstance(newMapInstance);
     },
     [defaultBounds],
@@ -87,6 +92,11 @@ export default function PropertiesSearchMap({
     if (!mapInstance || !properties || defaultBounds) {
       return;
     }
+    
+    // console.log(mapInstance)
+    // console.log(properties)
+    // console.log(defaultBounds)
+
 
     const bounds = getPropertiesBounds(mapInstance.maps, properties);
 
@@ -108,7 +118,7 @@ export default function PropertiesSearchMap({
             onMouseOver={onMarkerMouseOver}
             onMouseOut={onMarkerMouseOut}
             onSelect={onSelectProperty}
-          />
+          /> 
         );
       }),
     [properties, onSelectProperty, onMarkerMouseOver, onMarkerMouseOut, highlightedProperties],
@@ -118,6 +128,9 @@ export default function PropertiesSearchMap({
     if (!mapInstance) {
       return;
     }
+    
+
+
 
     const formattedCoordinates = {
       latitude: {

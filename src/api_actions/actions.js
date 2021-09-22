@@ -15,7 +15,7 @@ export default {
 
   getRoomsInfo: (propertyChannelId, queryParams) => {
     const { checkinDate, checkoutDate, ...restParams } = queryParams;
-
+    console.log('queryParams', queryParams)
     let formattedQueryParams = {
       ...restParams,
     };

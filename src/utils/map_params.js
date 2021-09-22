@@ -32,7 +32,7 @@ export const encodeMapParams = (mapParams) => {
   if (!mapParams?.latitude || !mapParams?.longitude) {
     return null;
   }
-
+  // console.log(mapParams)
   return [
     mapParams.latitude.lte,
     mapParams.latitude.gte,
