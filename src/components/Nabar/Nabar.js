@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from './navbar.module.css'
 import mName from 'static/member_logo260x80.png'
 import mLogo from 'static/member_favicon150x150.png'
+import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -15,7 +16,7 @@ const Navbar = () => {
 
     const onModelClick = () => {
         setShowModel(!showModel)
-        console.log('event click', showModel) 
+        // console.log('event click', showModel) 
     }
     
     const goBack = () => {
@@ -39,28 +40,28 @@ const Navbar = () => {
                 <div className="main_menu">
                     <nav className={`navbar navbar-expand-lg ${navCol ? 'bg-light fixed-top animated fadeIn' : 'navbar-light '}`}  style={{height: '10%'}} >
                         <div className="container-fluid container-fluid-90">
-                            <a className={`navbar-brand logo_h  dark_logo ${navCol ? 'd-sm-block' : 'd-none'} ${styles.name_show} `} aria-label="logo" href="#">
+                            <a className={`navbar-brand logo_h  dark_logo ${navCol ? 'd-sm-block' : 'd-none'} ${styles.name_show} `} aria-label="logo" href="https://search.memberbutton.com/">
                                 <img src={mName} alt="logo" className="img-130x32 logo-ht"/>
                             </a>
 
-                            <a className={`navbar-brand logo_h light_logo ${styles.name_show} ${navCol ? 'd-none' : ''}`} aria-label="logo" href="#">
+                            <a className={`navbar-brand logo_h light_logo ${styles.name_show} ${navCol ? 'd-none' : ''}`} aria-label="logo" href="https://search.memberbutton.com/">
                                 <img src={mName} alt="logo" className="img-130x32 logo-ht"/>
                             </a> 
                             {/*  */}
-                            <a className={`navbar-brand logo_h ${styles.logo_show}`} aria-label="logo" href="#">
+                            <a className={`navbar-brand logo_h ${styles.logo_show}`} aria-label="logo" href="https://search.memberbutton.com/">
                                 <img src={mLogo} alt="logo" className="mob-logo"/>
                             </a> 
                             
-                            <a href="#" onClick={goBack} className="mob-back-btn d-block d-sm-none">
+                            <Link to='#' onClick={goBack} className="mob-back-btn d-block d-sm-none">
                                 <i className="fas fa-chevron-left"></i>
-                            </a>
+                            </Link>
 
                             {/* <!-- Trigger Button --> */}
-                            <a href="#" aria-label="navbar" className="navbar-toggler" data-toggle="modal" data-target="#left_modal"  onClick={onModelClick}>
+                            <Link to='#' aria-label="navbar" className="navbar-toggler" data-toggle="modal" data-target="#left_modal"  onClick={onModelClick}>
                                 <span className="icon-bar"></span>
                                 <span className="icon-bar"></span>
                                 <span className="icon-bar"></span>
-                            </a>
+                            </Link>
                             
                             {/* <!--<h4 className="sv_header_text mt-3">Make Your Reservation</h4>-->
                                 
@@ -105,26 +106,26 @@ const Navbar = () => {
                                     </div>--> */}
                                     
                                     <div className="nav-item">
-                                        <a className="nav-link globe" href="#" aria-label="modalLanguge" data-toggle="modal" data-target="#languageModalCenter"> 
+                                        <Link className="nav-link globe" to='#' aria-label="modalLanguge" data-toggle="modal" data-target="#languageModalCenter"> 
                                             <i className="fas fa-globe text-18" style={navCol ? {color: '#3c1361'} : {}}></i> 
-                                        </a>
+                                        </Link>
                                     </div>
                                 
                                     <div className="nav-item">
                                         <div className={`dropdown sv_user_login ${click ? 'show':''}`} onClick={onClick}>
                                             <button className="dropdown-toggle" type="button" data-toggle="dropdown">
-                                                <i className="fa fa-bars" aria-hidden={`${click}`}></i>
+                                                <i className="fa fa-bars" aria-hidden={click}></i>
                                                 <img src="http://memberbutton.com/public/images/profile.jpg" className="head_avatar" alt=""/>
                                             </button>
                                             
                                             <ul className={`dropdown-menu ${click ? 'show':''}`}>
                                                 <li>
-                                                    <a  aria-label="" data-toggle="modal" data-target="#registermodel"  href="#">
+                                                    <a  aria-label="" data-toggle="modal" data-target="#registermodel"  href="https://search.memberbutton.com/">
                                                         Sign Up
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a aria-label="" data-toggle="modal" data-target="#loginmodel"  href="#">
+                                                    <a aria-label="" data-toggle="modal" data-target="#loginmodel"  href="https://search.memberbutton.com/">
                                                         Log In
                                                     </a>
                                                 </li>                                        
@@ -158,8 +159,8 @@ const Navbar = () => {
                                 <li><a href="http://memberbutton.com/signup">Sign Up</a></li>
                                 <li><a href="http://memberbutton.com/login">Log In</a></li>
                                 <li>
-                                    <a href="#" aria-label="modalLanguge" data-toggle="modal" data-target="#languageModalCenter"> <i className="fa fa-globe"></i> <u>English </u></a>
-                                    <a href="#" aria-label="modalCurrency" data-toggle="modal" data-target="#currencyModalCenter"> <span className="ml-4">&#36; - <u>USD</u> </span></a>
+                                    <a href="https://search.memberbutton.com/" aria-label="modalLanguge" data-toggle="modal" data-target="#languageModalCenter"> <i className="fa fa-globe"></i> <u>English </u></a>
+                                    <a href="https://search.memberbutton.com/" aria-label="modalCurrency" data-toggle="modal" data-target="#currencyModalCenter"> <span className="ml-4">&#36; - <u>USD</u> </span></a>
                                 </li>
                                 <a className="mt-3" href="http://memberbutton.com/property/create">
                                     <button className="btn vbtn-outline-success text-14 font-weight-700 pl-5 pr-5 pt-3 pb-3">
