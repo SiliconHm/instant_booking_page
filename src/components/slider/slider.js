@@ -36,7 +36,7 @@ const Slider = () => {
     <Carousel.Caption>
     <div className={`sv_home_subsec text-center`}>
                              <h2 className="banner-title">Popular vacation rentals promoted</h2>
-                             <span className="banner-title text-center">by the people for the people</span>
+                             <span className="banner-title">by the people for the people</span>
                          </div>
     </Carousel.Caption>
   </Carousel.Item>

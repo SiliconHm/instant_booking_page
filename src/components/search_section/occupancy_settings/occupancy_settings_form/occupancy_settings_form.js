@@ -18,11 +18,11 @@ export default function OccupancySettingsForm({ bookingParams, onClose, onChange
   const { t } = useTranslation();
 
   return (
-    <div>
+    <div >
       <Cell noPadding>
         <IntegerInput
           label={t("hotel_page:adults_label")}
-          minValue={MIN_ADULTS_AMOUNT}
+          minValue={MIN_ADULTS_AMOUNT} 
           maxValue={MAX_ADULTS_AMOUNT}
           name="adults"
           value={bookingParams.adults}

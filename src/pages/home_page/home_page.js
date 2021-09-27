@@ -25,7 +25,9 @@ export default function HomePage() {
   }
   return (
     <>
+
       <Nabar />
+    <div className='hero-banner magic-ball home'>
       <div className='main-banner'>
         <div>
           <Slider/>
@@ -33,6 +35,7 @@ export default function HomePage() {
           
         </div>
       </div>
+    </div>
 
       <Footer/>
     </>

@@ -29,7 +29,7 @@ export default function Dropdown({ className, layout, children, title, show, onT
         <BootstrapDropdown.Toggle className={styles.dropdownToggle}>
           {title}
         </BootstrapDropdown.Toggle>
-        <BootstrapDropdown.Menu className={styles.dropdownMenu}>{children} </BootstrapDropdown.Menu>
+        <BootstrapDropdown.Menu className={styles.dropdownMenu}>{children} </BootstrapDropdown.Menu> 
       </BootstrapDropdown>
     </div>
   );

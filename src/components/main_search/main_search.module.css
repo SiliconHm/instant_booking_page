@@ -78,21 +78,10 @@
 .occupancyDropDown :global .dropdown-menu.show {
   width: 305px;
   max-height: 305px;
-  overflow: auto;
+  overflow: visible;
   position: relative;
   background-color: #fff;
 }
-
-/* .searchBtn {
-  background: #3c1361;
-  border-radius: 50px;
-  font-family: Helvetica;
-  font-size: 18px;
-  color: #ffffff;
-  padding: 25px;
-  width: auto;
-  transition: all 200ms ease;
-} */
 
 .fa-search {
   color: #fff;
@@ -109,9 +98,22 @@
   background: rgb(0 190 10 / 90%);
 }
 
+.margin_scroll {
+  margin-bottom: 0;
+}
+
 @media screen and (max-width: 400px) {
   .margin_top {
-    margin-top: 1%;
+    margin-top: -10%;
+  }
+
+  .margin_scroll {
+    margin-bottom: 30%;
+  }
+
+  .occupancyDropDown  {
+    align-self: center;
+    width: auto;
   }
 }
 

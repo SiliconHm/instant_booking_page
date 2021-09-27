@@ -63,7 +63,7 @@ a:hover {
 .main-banner {
     min-height: 40rem;
     width: 100%;
-    background-color:#000000;
+    background-color:#fff;
     position:relative;
     
 
@@ -76,7 +76,7 @@ a:hover {
 }
 
 .main-banner .carousel-caption{
-    top:12%;
+    top:-5%;
 }
 /* global style start
 ============================================================================================ */
@@ -4794,7 +4794,7 @@ a.send-btn {
 }
 .banner-title{
     font-size:3rem;
-    font-weight:500;
+    font-weight:400;
     color:#fff;
     text-shadow: 3px 0px 0px #403e3e;
 }

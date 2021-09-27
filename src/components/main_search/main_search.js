@@ -76,7 +76,7 @@ export default function MainSearch() {
       setUrlParams(params, history);
       const searchPagePath = buildPath(history.location.search, routes.searchPage);
       
-      console.log('main search: ', searchPagePath)
+      // console.log('main search: ', searchPagePath)
 
       return history.push(searchPagePath);
     }
@@ -93,13 +93,13 @@ export default function MainSearch() {
       <div className="align-items-center text-center text-md-left svmobsearch desk-search-form container">
                       
       <div className="row mt-3">
-      <div className={`col-lg-xl offset-xl-1 col-lg-10 offset-lg-1 ${styles.margin_top}`}>
+      <div className={`col-lg-xl offset-xl-1 col-lg-10 offset-lg-1 ${styles.margin_top} ${isOpen ? `${styles.margin_scroll}` : ''}`}>
 
       <div className="main_formbg item animated zoomIn mob-form-bg">
 
-      <form id="front-search-form" method="post" action="http://memberbutton.com/search" autoComplete='ON'>
+      <form id="front-search-form" method="post" action="http://memberbutton.com/search" autoComplete='on'>
                 <input type="hidden" name="_token" value="XzBGMDRPhmnF8K7s0qShkxCskXtgW4tVoY50Lr9n"/>
-      <div className="row overflow-scroll">  
+      <div className="row">  
             <PlacesAutocomplete/>
         
       <RangePicker
