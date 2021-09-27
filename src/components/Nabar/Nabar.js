@@ -107,7 +107,7 @@ const Navbar = () => {
                                     
                                     <div className="nav-item">
                                         <Link className="nav-link globe" to='#' aria-label="modalLanguge" data-toggle="modal" data-target="#languageModalCenter"> 
-                                            <i className="fas fa-globe text-18" style={navCol ? {color: '#3c1361'} : {}}></i> 
+                                            <i className="fas fa-globe text-18" style={navCol ? {color: '#4F02A4'} : {}}></i> 
                                         </Link>
                                     </div>
                                 

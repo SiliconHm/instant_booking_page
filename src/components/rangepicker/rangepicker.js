@@ -216,36 +216,38 @@ export default function RangePicker(props) {
 
   return (
     <div className='col-md-4'>
-    <div className={`row ${wrapperClassName}`} ref={inputRef}>
-      <div className={`col-md-6 col-6 mt-4 mt-md-0 mob-pd-0 ${styles.labelContainer}`}>
-        <Label>{checkinDateLabel}</Label> 
-        <Label>{checkoutDateLabel}</Label>
+      <div className={`row ${wrapperClassName}`} ref={inputRef}>
+
+        <div className={`col-md-6 col-6 mt-4 mt-md-0 mob-pd-0 ${styles.labelContainer}`}>
+          <Label>{checkinDateLabel}</Label> 
+          <Label>{checkoutDateLabel}</Label>
+        </div>
+        
+        <DateRangePicker
+          displayFormat={DATE_UI_FORMAT}
+          startDate={checkinDate}
+          endDate={checkoutDate}
+          anchorDirection="right"
+          startDatePlaceholderText={checkinDatePlaceholder}
+          endDatePlaceholderText={checkoutDatePlaceholder}
+          startDateId={`${name}_start_date`}
+          endDateId={`${name}_end_date`}
+          openDirection={openDirection}
+          numberOfMonths={numberOfMonths}
+          withFullScreenPortal={isMobile}
+          focusedInput={focusedInput}
+          minimumNights={minStayLength}
+          navPrev={<LeftOutlined className={styles.navPrev} />}
+          navNext={<RightOutlined className={styles.navNext} />}
+          hideKeyboardShortcutsPanel
+          renderCalendarDay={renderCalendarDay}
+          isDayBlocked={getIsDayBlocked}
+          renderCalendarInfo={renderCalendarInfo}
+          onFocusChange={handleFocusChange}
+          onDatesChange={onDatesChange}
+          onClose={closeCallback}
+          />
       </div>
-      <DateRangePicker
-        displayFormat={DATE_UI_FORMAT}
-        startDate={checkinDate}
-        endDate={checkoutDate}
-        anchorDirection="right"
-        startDatePlaceholderText={checkinDatePlaceholder}
-        endDatePlaceholderText={checkoutDatePlaceholder}
-        startDateId={`${name}_start_date`}
-        endDateId={`${name}_end_date`}
-        openDirection={openDirection}
-        numberOfMonths={numberOfMonths}
-        withFullScreenPortal={isMobile}
-        focusedInput={focusedInput}
-        minimumNights={minStayLength}
-        navPrev={<LeftOutlined className={styles.navPrev} />}
-        navNext={<RightOutlined className={styles.navNext} />}
-        hideKeyboardShortcutsPanel
-        renderCalendarDay={renderCalendarDay}
-        isDayBlocked={getIsDayBlocked}
-        renderCalendarInfo={renderCalendarInfo}
-        onFocusChange={handleFocusChange}
-        onDatesChange={onDatesChange}
-        onClose={closeCallback}
-        />
-    </div>
     </div>
   );
 }

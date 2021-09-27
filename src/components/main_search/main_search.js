@@ -18,13 +18,6 @@ import setUrlParams from "utils/set_url_params";
 import styles from "./main_search.module.css"; 
 import PlacesAutocomplete from "components/map_search/search_area";
 
-// import usePlacesAutocomplete, {
-//   getGeocode,
-//   getLatLng
-// } from "use-places-autocomplete";
-// import geocoding from "reverse-geocoding";
-// import { Geocoder } from "@react-google-maps/api";
-
 export default function MainSearch() {
   const { t } = useTranslation();
   const history = useHistory();
@@ -90,64 +83,63 @@ export default function MainSearch() {
 
   return (
     <div className={styles.wrapper}>
-      <div className="align-items-center text-center text-md-left svmobsearch desk-search-form container">
-                      
-      <div className="row mt-3">
-      <div className={`col-lg-xl offset-xl-1 col-lg-10 offset-lg-1 ${styles.margin_top} ${isOpen ? `${styles.margin_scroll}` : ''}`}>
-
-      <div className="main_formbg item animated zoomIn mob-form-bg">
-
-      <div id="front-search-form" method="post" action="http://memberbutton.com/search" autoComplete='on'>
+      <div className="align-items-center text-center text-md-left svmobsearch desk-search-form container">      
+        <div className="row mt-3">
+          <div className={`col-lg-xl offset-xl-1 col-lg-10 offset-lg-1 ${styles.margin_top} ${isOpen ? `${styles.margin_scroll}` : ''}`}>
+            <div className="main_formbg item animated zoomIn mob-form-bg">
+              <div id="front-search-form" method="post" action="http://memberbutton.com/search" autoComplete='on'>
                 <input type="hidden" name="_token" value="XzBGMDRPhmnF8K7s0qShkxCskXtgW4tVoY50Lr9n"/>
-      <div className="row">  
-            <PlacesAutocomplete/>
-        
-      <RangePicker
-        checkinDatePlaceholder={t("hotel_page:checkin_placeholder")}
-        checkoutDatePlaceholder={t("hotel_page:checkout_placeholder")}
-        checkinDate={checkinDate}
-        checkoutDate={checkoutDate}
-        name="search_dates"
-        className={rangePickerClassName}
-        onDatesChange={handleDatesChange}
-        isVisible={rangePickerVisible}
-        closeCallback={() => setRangePickerVisible(false)}
-        />
+                <div className="row">  
+                  
+                  <PlacesAutocomplete/>
+                  
+                  <RangePicker
+                    checkinDatePlaceholder={t("hotel_page:checkin_placeholder")}
+                    checkoutDatePlaceholder={t("hotel_page:checkout_placeholder")}
+                    checkinDate={checkinDate}
+                    checkoutDate={checkoutDate}
+                    name="search_dates"
+                    className={rangePickerClassName}
+                    onDatesChange={handleDatesChange}
+                    isVisible={rangePickerVisible}
+                    closeCallback={() => setRangePickerVisible(false)}
+                    />
 
-      <Dropdown
-        show={isOpen}
-        onToggle={handleToggleDropdown}
-        title={dropdownTitle}
-        className={styles.occupancyDropDown}
-        layout="vertical"
-        >
+                  <Dropdown
+                    show={isOpen}
+                    onToggle={handleToggleDropdown}
+                    title={dropdownTitle}
+                    className={styles.occupancyDropDown}
+                    layout="vertical"
+                    >
 
-        <OccupancySettingsForm
-          bookingParams={occupancyParams}
-          onClose={handleToggleDropdown}
-          onChange={handleChangeOccupancy}
-          />
-      </Dropdown>
+                    <OccupancySettingsForm
+                      bookingParams={occupancyParams}
+                      onClose={handleToggleDropdown}
+                      onChange={handleChangeOccupancy}
+                      />
+                  </Dropdown>
 
 
-      <div className='col-md-2 front-search mt-2 border-right-0 d-none d-sm-block'>
-      <Button onClick={onSearch} className='btn vbtn-default btn-block p-3 text-16'>
-        <i className='fas fa-search'></i>
-      </Button>
+                  <div className='col-md-2 front-search mt-2 border-right-0 d-none d-sm-block'>
+                    <Button onClick={onSearch} className='btn vbtn-default btn-block p-3 text-16'>
+                      <i className='fas fa-search'></i>
+                    </Button>
+                  </div>
+
+                  <div className='col-12 d-block d-sm-none front-search mt-2'>
+                    <Button onClick={onSearch} className='btn vbtn-default btn-block p-3 text-16'>
+                      <i className='fas fa-search'></i>
+                      {t("main_page:search_btn")}
+                    </Button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className='col-12 d-block d-sm-none front-search mt-2'>
-      <Button onClick={onSearch} className='btn vbtn-default btn-block p-3 text-16'>
-        <i className='fas fa-search'></i>
-         {t("main_page:search_btn")}
-      </Button>
-      </div>
-      
-      </div>
-      </div>
-      </div>
-     </div>
-      </div>
-    </div>
     </div>
   );
 }
