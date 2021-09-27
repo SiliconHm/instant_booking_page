@@ -23,7 +23,7 @@ const Slider = () => {
     <Carousel.Caption>
       <div className={`sv_home_subsec text-center`}>
         <h2 className={`banner-title ${styles.banner_margin_bott}`}>Book exclusive room rates at places </h2>
-        <h2 className="banner-title">powered by word of mouth</h2>
+        <span className="banner-title">powered by word of mouth</span>
         </div>
     </Carousel.Caption>
   </Carousel.Item>
