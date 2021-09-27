@@ -1392,6 +1392,17 @@ color:#000;
     .price_inner {
         margin-bottom: -3rem;
     }
+
+    /* .main-banner .carousel-caption{
+        top:12%;
+    } */
+
+    .banner-title{
+        font-size:2rem;
+        font-weight:400;
+        color:#fff;
+        text-shadow: 3px 0px 0px #403e3e;
+    }
 }
 
 @media (max-width: 767px) {
@@ -1532,6 +1543,9 @@ color:#000;
         margin-bottom: 0rem;
         margin-top: 3rem;
     }
+    .main-banner .carousel-caption{
+        top:12%;
+    }
 }
 
 @media (max-width: 575px) {
@@ -1604,6 +1618,10 @@ color:#000;
 
     .pad_btm {
         padding-bottom: 7rem;
+    }
+
+    .main-banner .carousel-caption{
+        top:12%;
     }
 }
 
