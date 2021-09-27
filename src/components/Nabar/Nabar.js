@@ -15,7 +15,7 @@ const Navbar = () => {
 
     const onModelClick = () => {
         setShowModel(!showModel)
-        console.log('event click', showModel)
+        console.log('event click', showModel) 
     }
     
     const goBack = () => {
@@ -39,7 +39,7 @@ const Navbar = () => {
                 <div className="main_menu">
                     <nav className={`navbar navbar-expand-lg ${navCol ? 'bg-light fixed-top animated fadeIn' : 'navbar-light '}`}  style={{height: '10%'}} >
                         <div className="container-fluid container-fluid-90">
-                            <a className={`navbar-brand logo_h  dark_logo ${navCol ? 'd-sm-block' : 'd-none'} ${styles.name_show} `} aria-label="logo" href="http://memberbutton.com">
+                            <a className={`navbar-brand logo_h  dark_logo ${navCol ? 'd-sm-block' : 'd-none'} ${styles.name_show} `} aria-label="logo" href="#">
                                 <img src={mName} alt="logo" className="img-130x32 logo-ht"/>
                             </a>
 
