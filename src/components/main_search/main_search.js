@@ -97,9 +97,9 @@ export default function MainSearch() {
 
       <div className="main_formbg item animated zoomIn mob-form-bg">
 
-      <form id="front-search-form" method="post" action="http://memberbutton.com/search">
+      <form id="front-search-form" method="post" action="http://memberbutton.com/search" autoComplete='ON'>
                 <input type="hidden" name="_token" value="XzBGMDRPhmnF8K7s0qShkxCskXtgW4tVoY50Lr9n"/>
-      <div className="row overflow-auto">  
+      <div className="row overflow-scroll">  
             <PlacesAutocomplete/>
         
       <RangePicker

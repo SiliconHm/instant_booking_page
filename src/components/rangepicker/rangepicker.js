@@ -98,7 +98,7 @@ export default function RangePicker(props) {
 
       return isAfterClosed;
     },
-    [hashedClosedDates, formattedCheckinDate],
+    [hashedClosedDates, formattedCheckinDate], 
   );
 
   const getIsDayBlocked = useCallback(
