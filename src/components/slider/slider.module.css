@@ -1,0 +1,11 @@
+.banner_margin_bott {
+    padding-bottom: 0%;
+}
+
+
+@media screen and (max-width: 750px) {
+    .banner_margin_bott {
+        margin-bottom: 5px;
+    }
+
+}

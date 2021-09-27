@@ -1662,6 +1662,10 @@ color:#000;
     .banner_btn {
         margin-bottom: 2rem;
     }
+
+    .main-banner .carousel-caption{
+        top:5%;
+    }
 }
 
 /* banner section start
@@ -5222,7 +5226,7 @@ a.send-btn {
         padding-right: 0;
     }
     .banner-title{
-        font-size:1.8rem;
+        font-size:1.5rem;
         line-height:1.4;
     }
     
