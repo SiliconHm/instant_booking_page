@@ -40,7 +40,7 @@ const getMinStayLength = (closedDates, checkinDate) => {
   return minStayLength;
 };
 
-export default function RangePicker(props) {
+export default function RangePicker(props) { 
   const { closedDates } = useContext(BookingDataContext);
   const {
     checkinDate,
@@ -215,9 +215,10 @@ export default function RangePicker(props) {
   });
 
   return (
-    <div className={wrapperClassName} ref={inputRef}>
-      <div className={styles.labelContainer}>
-        <Label>{checkinDateLabel}</Label>
+    <div className='col-md-4'>
+    <div className={`row ${wrapperClassName}`} ref={inputRef}>
+      <div className={`col-md-6 col-6 mt-4 mt-md-0 mob-pd-0 ${styles.labelContainer}`}>
+        <Label>{checkinDateLabel}</Label> 
         <Label>{checkoutDateLabel}</Label>
       </div>
       <DateRangePicker
@@ -244,6 +245,7 @@ export default function RangePicker(props) {
         onDatesChange={onDatesChange}
         onClose={closeCallback}
         />
+    </div>
     </div>
   );
 }

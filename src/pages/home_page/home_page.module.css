@@ -1,12 +1,12 @@
 .container {
-  min-height: 70vh;
+  min-height: 80vh;
   background-size: cover;
   background-position: 50%;
   background-image: url("~static/main-bg.jpg");
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-width: 70%;
+  align-items: center; 
+  min-width: 100%;
 }
 
 .emptyWrapper {
@@ -21,8 +21,9 @@
   font-family: Helvetica;
   font-size: 48px;
   color: #ffffff;
-  margin-bottom: 38px;
+  margin-bottom: 40px;
   text-align: center;
+  margin-top: 40%;
 }
 
 .subTitle {
@@ -55,7 +56,13 @@
   }
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width:950px) {
+  .title {
+    line-height: 50px;
+  }
+}
+
+@media screen and (max-width: 750px) {
   .container {
     min-height: 70vh;
     background-size: cover;
@@ -68,19 +75,10 @@
   }
 
   .title {
-    font-family: Helvetica;
-    font-size: 5vw;
-    color: #ffffff;
-    margin-bottom: 5vh;
-    text-align: center;
+    display: none;
   }
-  
+
   .subTitle {
-    font-family: Helvetica;
-    font-size: 2.5vw;
-    color: #ffffff;
-    line-height: 25px;
-    margin-bottom: 5vh;
-    text-align: center;
+    display: none;
   }
 }

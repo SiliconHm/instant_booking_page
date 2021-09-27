@@ -1,0 +1,36 @@
+.model {
+    display: none;
+}
+
+.name_show {
+    display: flex;
+}
+
+.logo_show {
+    display: none;
+}
+
+@media screen and (max-width: 960px) {
+    .model {
+        display: block;
+        padding-right: 16px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 750px) {
+    .name_show {
+        display: none;
+    }
+
+    .logo_show {
+        display: block;
+    }
+
+    .model {
+        display: block;
+        padding-right: 16px;
+        width: 100%;
+    }
+
+}

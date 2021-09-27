@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
 
 import Footer from 'components/home_footer'
-import Middle from "components/Cards";
+// import Middle from "components/Cards";
+import Slider from 'components/slider/slider'
 import MainSearch from "components/main_search";
 
 import { AppDataContext } from "containers/data_context";
@@ -22,20 +23,16 @@ export default function HomePage() {
       </div>
     );
   }
-
   return (
     <>
-      <div className={styles.headerContainer}>
-        <Nabar />
-      </div> 
-      <div className={styles.container}>
+      <Nabar />
+      <div className='main-banner'>
         <div>
-          <p className={styles.title}>{t("main_page:title")}</p>
-          <pre className={styles.subTitle}>{t("main_page:sub_title")}</pre>
+          <Slider/>
           <MainSearch />
+          
         </div>
       </div>
-      <Middle/>
       <Footer/>
     </>
   );

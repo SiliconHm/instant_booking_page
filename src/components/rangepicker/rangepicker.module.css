@@ -65,7 +65,7 @@
 
 .navPrev, 
 .navNext {
-  position: absolute;
+  position: relative;
   font-size: 12px;
   top: 32px;
 }

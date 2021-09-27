@@ -13,10 +13,6 @@ const setPropertiesList = (dispatch, payload) => {
 
 const loadPropertiesList = async (dispatch, params, filter) => {
   setPropertiesListLoading(dispatch);
-
-  // console.log('paramss: ', params)
-  // console.log('filters: ', filter)
-  // console.log('dispatch: ', dispatch)
   
   const data = await ApiActions.getPropertiesList(params, filter);
 

@@ -61,7 +61,7 @@ a:hover {
 }
 
 .main-banner {
-    min-height: 57rem;
+    min-height: 40rem;
     width: 100%;
     background-color:#000000;
     position:relative;
@@ -69,7 +69,7 @@ a:hover {
 
 }
 .main-banner img{
-    height: 57rem;
+    height: 40rem;
     object-fit:cover;
     width:100%;
     object-position:center
@@ -4793,8 +4793,8 @@ a.send-btn {
     width:100%;
 }
 .banner-title{
-    font-size:4rem;
-    font-weight:600;
+    font-size:3rem;
+    font-weight:500;
     color:#fff;
     text-shadow: 3px 0px 0px #403e3e;
 }
@@ -4909,7 +4909,7 @@ a.send-btn {
         min-height:30rem !important;
     }
     .main-banner img{
-        height:37rem !important;
+        height:30rem !important;
     }
     /*after login*/
     .svdashboard img.rounded{
