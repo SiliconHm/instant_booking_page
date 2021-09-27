@@ -1,40 +1,40 @@
 import React from "react";
-// import { Link, useRouteMatch } from "react-router-dom";
+import { useRouteMatch } from "react-router-dom";
 
-// import CurrencySelect from "components/inputs/currency_select";
-// import LocaleSelect from "components/inputs/locale_select";
+import CurrencySelect from "components/inputs/currency_select";
+import LocaleSelect from "components/inputs/locale_select";
 
-// import routes from "routing/routes";
-import Navbar from "components/Nabar";
+import routes from "routing/routes";
 
-// import mLogo from 'static/member_favicon150x150.png'
-// import mName from 'static/member_logo260x80.png'
+import HotelLogo from "./hotel_logo";
+import HotelTitle from "./hotel_title";
 
-// import HotelLogo from "./hotel_logo";
-// import HotelTitle from "./hotel_title";
-// import Form from "./Form/Form";
-
-// import styles from "./header.module.css";
-// import { style } from "@mui/system";
+import styles from "./header.module.css";
 
 export default function Header({ property = {} }) {
-  // const matchHotelPage = useRouteMatch({
-  //   path: routes.hotelPage,
-  //   strict: true,
-  // });
+  const matchHotelPage = useRouteMatch({
+    path: routes.hotelPage,
+    strict: true,
+  });
 
-  // const matchNotFoundPage = useRouteMatch({
-  //   path: routes.default,
-  //   strict: true,
-  // });
+  const matchNotFoundPage = useRouteMatch({
+    path: routes.default,
+    strict: true,
+  });
 
-  // const isCurrencySelectShown = matchHotelPage?.isExact && !matchNotFoundPage;
-  // const { title, logo, hideLogo, hideTitle } = property;
-  
+  const isCurrencySelectShown = matchHotelPage?.isExact && !matchNotFoundPage;
+  const { title, logo, hideLogo, hideTitle } = property;
+
   return (
-      <div>
-        <Navbar/>
+    <div className={styles.header}>
+      <div className={styles.titleSection}>
+        <HotelLogo logo={logo} title={title} hideLogo={hideLogo} />
+        <HotelTitle title={title} hideTitle={hideTitle} />
       </div>
-    )
-  }
-  
+      <div className={styles.selectSection}>
+        {isCurrencySelectShown && <CurrencySelect />}
+        <LocaleSelect />
+      </div>
+    </div>
+  );
+}
