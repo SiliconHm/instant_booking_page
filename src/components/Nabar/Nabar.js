@@ -82,7 +82,7 @@ const Navbar = () => {
                             </form>
 
                             
-                            <div className="collapse navbar-collapse offset mt-2" id="navbarSupportedContent">
+                            <div className="collapse navbar-collapse offset mt-1" id="navbarSupportedContent">
                                 <div className="nav navbar-nav menu_nav justify-content-end">
 
                                     {/* <!--                                <div className="nav-item">
@@ -94,9 +94,9 @@ const Navbar = () => {
                                         </div>
                                     --> */}
                                     <div className="nav-item">
-                                        <a className="nav-link p-2 mt-3" href="http://memberbutton.com/property/create" aria-label="property-create">
-                                            <button className="btn button vbtn-default text-12 p-0 pl-4 pr-4 br-50">
-                                                <p className="p-3 mb-0 text-white">  Add your Member Listing</p>
+                                        <a className="nav-link p-3 mt-3" href="http://memberbutton.com/property/create" aria-label="property-create">
+                                            <button className="btn button vbtn-default text-10 p-0 pl-4 pr-4 br-50">
+                                                <p className="p-2 mb-0 text-white">  Add your Member Listing</p>
                                             </button>
                                         </a>
                                     </div>
