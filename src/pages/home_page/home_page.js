@@ -11,6 +11,7 @@ import { AppDataContext } from "containers/data_context";
 import EmptyIcon from "static/empty-property.svg";
 import styles from "./home_page.module.css";
 import Nabar from "components/Nabar";
+import Banner from "components/banner";
 
 export default function HomePage() {
   const { t } = useTranslation();
@@ -25,17 +26,17 @@ export default function HomePage() {
   }
   return (
     <>
-
       <Nabar />
-    <div className='hero-banner magic-ball home'>
-      <div className='main-banner'>
-        <div>
-          <Slider/>
-          <MainSearch />
-          
+      <div className='hero-banner magic-ball home'>
+        <div className='main-banner'>
+          <div>
+            <Slider/>
+            <MainSearch />
+            
+          </div>
         </div>
       </div>
-    </div>
+      <Banner/>
       <Footer/>
     </>
   );

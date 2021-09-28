@@ -4730,7 +4730,7 @@ a.send-btn {
     background-position:100% 100%;
 }
 .tryhosting {
-    background: url(../img/try-hosting.jpg);
+    background-image: url(./../../src/static/influencer.jpg);
     color: #fff;
     padding: 10rem 5rem;
     border-radius: 15px;
@@ -4740,8 +4740,9 @@ a.send-btn {
     background-position: right;
 }
 .tryhosting h2 {
-    font-size: 4rem;
+    font-size: 3rem;
     letter-spacing: 1px;
+    color: #fff;
 }
 .tryhosting p {
     line-height: 25px;
