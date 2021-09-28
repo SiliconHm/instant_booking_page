@@ -15,11 +15,11 @@ const PlacesAutocomplete = () => {
         }))
     }
 
-    console.log(location)
+    // console.log(location)
 
     return (
         <div className="col-md-3 mt-3">
-            <AutoComplete className='form-control p-3 text-14' onPlaceSelected={onPlaceSelected} types={['(region)']} placeholder='Where you are going?'/>
+            <AutoComplete className='form-control p-3 text-14' onPlaceSelected={onPlaceSelected} types={['(region)']} placeholder='Where you are going?' location={location}/>
         </div>
     )
 }

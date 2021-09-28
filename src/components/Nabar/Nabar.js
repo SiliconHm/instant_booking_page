@@ -32,19 +32,19 @@ const Navbar = () => {
 
     useEffect(() => {
         window.addEventListener('scroll', handleNavbar)
-    }, [navCol])
+    })
 
     return (
         <>
             <header className={`header_area animated fadeIn homenav`}>
                 <div className="main_menu">
-                    <nav className={`navbar navbar-expand-lg ${navCol ? 'bg-light fixed-top animated fadeIn' : 'navbar-light '}`}  style={{height: '10%'}} >
-                        <div className="container-fluid container-fluid-90">
-                            <a className={`navbar-brand logo_h  dark_logo ${navCol ? 'd-sm-block' : 'd-none'} ${styles.name_show} `} aria-label="logo" href="https://search.memberbutton.com/">
+                    <nav className={`navbar navbar-expand-lg ${window.scrollY > 100 ? 'bg-light fixed-top animated fadeIn' : 'navbar-light '}`}  style={{height: '10%'}} >
+                        <div className={`container-fluid container-fluid-90 ${navCol ? `${styles.back}` : ''}`}>
+                            <a className={`navbar-brand logo_ha dark_logo ${window.scrollY > 100 ? 'd-sm-block' : 'd-none'} ${styles.name_show}`} aria-label="logo" href="https://search.memberbutton.com/">
                                 <img src={mName} alt="logo" className="img-130x32 logo-ht"/>
                             </a>
 
-                            <a className={`navbar-brand logo_h light_logo ${styles.name_show} ${navCol ? 'd-none' : ''}`} aria-label="logo" href="https://search.memberbutton.com/">
+                            <a className={`navbar-brand logo_h light_logo ${styles.name_show} ${window.scrollY > 100 ? 'd-none' : ''}`} aria-label="logo" href="https://search.memberbutton.com/">
                                 <img src={mName} alt="logo" className="img-130x32 logo-ht"/>
                             </a> 
                             {/*  */}
@@ -71,10 +71,10 @@ const Navbar = () => {
                             </p>-->
                             */}
                 
-                            <form id="front-search-form1" method="post" action="http://memberbutton.com/search" className="mob-search mt-3 mb-3 p-2">
+                            <form id="front-search-form1" method="post" action="http://memberbutton.com/search" className="mob-search mt-3 mb-3 p-2 ml-4 mr-4">
                                 <input type="hidden" name="_token" value="jRND7iNgM9Rjw7fjKUAUaQseX1JGrZUcFZvdLrG5"/>
                                 <div className="row">
-                                    <input autoComplete="off" className="form-control p-3 text-14 ml-3 m-0" id="front-search-field1" placeholder="Where are you going?" name="location" type="text" required/>
+                                    <input autoComplete="off" className="form-control p-3 text-14 m-0" id="front-search-field1" placeholder="Where are you going?" name="location" type="text" required/>
                                     <button type="submit" className="btn vbtn-default p-2 ml-5 text-14">
                                         <i className="fas fa-search"></i>
                                     </button>
@@ -107,7 +107,7 @@ const Navbar = () => {
                                     
                                     <div className="nav-item">
                                         <Link className="nav-link globe" to='#' aria-label="modalLanguge" data-toggle="modal" data-target="#languageModalCenter"> 
-                                            <i className="fas fa-globe text-18" style={navCol ? {color: '#4F02A4'} : {}}></i> 
+                                            <i className="fas fa-globe text-18" style={window.scrollY > 100 ? {color: '#4F02A4'} : {}}></i> 
                                         </Link>
                                     </div>
                                 

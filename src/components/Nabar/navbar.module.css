@@ -18,7 +18,7 @@
     }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 767px) {
     .name_show {
         display: none;
     }
@@ -27,10 +27,18 @@
         display: block;
     }
 
+    .show {
+        display: none;
+    }
+
     .model {
         display: block;
         padding-right: 16px;
         width: 100%;
     }
 
+    .back {
+        background-color: #fff;
+        height: 100%;
+    }
 }
