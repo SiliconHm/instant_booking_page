@@ -10,6 +10,11 @@
     display: none;
 }
 
+.text_color {
+    color: 	#606060;
+    font-family: 'Roboto', sans-serif; 
+}
+
 @media screen and (max-width: 960px) {
     .model {
         display: block;

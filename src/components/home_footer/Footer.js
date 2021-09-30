@@ -8,20 +8,15 @@ const Footer = () => {
       <footer className="main-panel card border footer-bg p-5" id="footer">
         <div className="container-fluid container-fluid-90 pb-3">
           <div className="row">
-                <Column heading='Popular Cities'>
-                  <Li Link='/' title='Phuket'/>
-                  <Li Link='/' title='Paris'/>
-                  <Li Link='/' title='Hua Hin'/>
-                  <Li Link='/' title='Pattaya'/>
-                  <Li Link='/' title='Thailand'/>
-                  <Li Link='/' title='Singapore'/>
+                <Column heading='Influencers & Hosts'>
+                  <Li Link='https://app.memberbutton.com/' title='Influencers'/>
+                  <Li Link='https://app.memberbutton.com/become-influencer-host' title='Become Influencer Host'/>
                 </Column>
 
-                <Column heading='Hosting'>
-                  <Li Link='/' title='About'/>
-                  <Li Link='/' title='Contact Us'/>
-                  <Li Link='/' title='Terms of Service'/>
-                  <Li Link='/' title='Become Influencer Host'/>
+                <Column heading='Menu'>
+                  <Li Link='https://app.memberbutton.com/about' title='About'/>
+                  <Li Link='https://app.memberbutton.com/contact-us' title='Contact Us'/>
+                  <Li Link='https://extranet.memberbutton.com/' title='Extranet Login'/>
                 </Column>
                     
                 <Column heading='Company'>

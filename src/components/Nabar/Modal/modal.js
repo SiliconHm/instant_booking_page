@@ -25,7 +25,7 @@ const Modal = ({showModel, onModelClick}) => {
                                 
                                 <li>
                                     <a href="https://memberbutton.com/" aria-label="modalLanguge" data-toggle="modal" data-target="#languageModalCenter"> <i className="fa fa-globe"></i> <u>English </u></a>
-                                    <a href="https://memberbutton.com/" aria-label="modalCurrency" data-toggle="modal" data-target="#currencyModalCenter"> <span className="ml-4">&#36; - <u>USD</u> </span></a>
+                                    <a href="https://memberbutton.com/" aria-label="modalCurrency" data-toggle="modal" data-target="#currencyModalCenter"> <span className="ml-0">&#36; - <u>USD</u> </span></a>
                                 </li>
                                 <a className="mt-3" href="http://app.memberbutton.com/property/create">
                                     <button className="btn vbtn-outline-success text-14 font-weight-700 pl-5 pr-5 pt-3 pb-3">

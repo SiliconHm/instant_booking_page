@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Li from "./li";
+import styles from './../footer.module.css'
 
 const Bottom = () => {
     return (
@@ -8,7 +9,7 @@ const Bottom = () => {
           <div className="container-fluid container-fluid-90 justify-content-between p-2 foot-padding">
             <div className="row">
               <div className="col-lg-6 col-sm-6 mb-0 mt-4 text-11">
-                © 2021 Memberbutton Hotel Booking Engine For Influencers. All Rights Reserved
+              © 2021 Powered By <a href='https://memberbutton.com/' className={styles.text_color}>Memberbutton</a> By <a href='https://siliconhm.com/' className={styles.text_color}>Silicon Venture Co, Ltd</a>, A <a href='https://socialhub.center/' className={styles.text_color}> SocialHub.Center</a> Partner. All Rights Reserved - <a href='https://extranet.memberbutton.com/' className={styles.text_color}>Extranet</a> By Channex
               </div>
           
           
@@ -24,16 +25,13 @@ const Bottom = () => {
                     </Link>
 
                   <ul className="list-inline text-center sv_social">
-                   
-
                     <Li link='https://www.facebook.com/socialhub.center' ClassName='fa-facebook' aria='facebook'/>
                     <Li link='#' ClassName='fa-google-plus' aria='google_plus'/>
                     <Li link='#' ClassName='fa-twitter' aria='twitter'/>
                     <Li link='https://www.linkedin.com/showcase/socialhub.center' ClassName='fa-linkedin' aria='linkedin'/>
                     <Li link='#' ClassName='fa-pinterest' aria='pinterest'/>
                     <Li link='#' ClassName='fa-youtube' aria='youtube'/>
-                    <Li link='https://www.instagram.com/socialhub.center/' ClassName='fa-instagram' aria='instagram'/>
-                                            
+                    <Li link='https://www.instagram.com/socialhub.center/' ClassName='fa-instagram' aria='instagram'/>                     
                   </ul>
                 </div>         
               </div>

@@ -78,9 +78,9 @@ const Navbar = () => {
                             <div className="collapse navbar-collapse offset mt-1" id="navbarSupportedContent">
                                 <div className="nav navbar-nav menu_nav justify-content-end">
                                     <div className="nav-item">
-                                        <a className="nav-link p-3 mt-3" href="http://app.memberbutton.com/property/create" aria-label="property-create">
+                                        <a className="nav-link p-3 mt-3" href="https://extranet.memberbutton.com/sign-up" aria-label="property-create">
                                             <button className="btn button vbtn-default text-10 p-0 pl-4 pr-4 br-50">
-                                                <p className="p-2 mb-0 text-white">  Add your Member Listing</p>
+                                                <p className="p-2 mb-0 text-white">  Add your Property</p>
                                             </button>
                                         </a>
                                     </div>
@@ -100,17 +100,17 @@ const Navbar = () => {
                                             
                                             <ul className={`dropdown-menu ${click ? 'show':''}`}>
                                                 <li>
-                                                    <a  aria-label="" data-toggle="modal" data-target="#registermodel"  href="https://memberbutton.com/">
-                                                        Sign Up
+                                                    <a  aria-label="" data-toggle="modal" className={styles.text_color} data-target="#registermodel"  href="https://extranet.memberbutton.com/sign-up">  
+                                                        Add Property
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a aria-label="" data-toggle="modal" data-target="#loginmodel"  href="https://memberbutton.com/">
-                                                        Log In
+                                                    <a aria-label="" data-toggle="modal" className={styles.text_color} data-target="#loginmodel"  href="https://extranet.memberbutton.com/">
+                                                        Extranet Login
                                                     </a>
                                                 </li>                                        
                                                     <hr/>
-                                                <li><a href="http://app.memberbutton.com/help">Help</a></li>
+                                                <li><a className={styles.text_color} href="http://app.memberbutton.com/help">Help</a></li>
                                             </ul>
                                         </div>
                                     </div>
