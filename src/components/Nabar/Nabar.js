@@ -41,15 +41,15 @@ const Navbar = () => {
                 <div className="main_menu">
                     <nav className={`navbar navbar-expand-lg ${window.scrollY > 100 ? 'bg-light fixed-top animated fadeIn' : 'navbar-light '}`}  style={{height: '10%'}} >
                         <div className={`container-fluid container-fluid-90 ${navCol ? `${styles.back}` : ''}`}>
-                            <a className={`navbar-brand logo_ha dark_logo ${window.scrollY > 100 ? 'd-sm-block' : 'd-none'} ${styles.name_show}`} aria-label="logo" href="https://search.memberbutton.com/">
+                            <a className={`navbar-brand logo_ha dark_logo ${window.scrollY > 100 ? 'd-sm-block' : 'd-none'} ${styles.name_show}`} aria-label="logo" href="https://memberbutton.com/">
                                 <img src={mName} alt="logo" className="img-130x32 logo-ht"/>
                             </a>
 
-                            <a className={`navbar-brand logo_h light_logo ${styles.name_show} ${window.scrollY > 100 ? 'd-none' : ''}`} aria-label="logo" href="https://search.memberbutton.com/">
+                            <a className={`navbar-brand logo_h light_logo ${styles.name_show} ${window.scrollY > 100 ? 'd-none' : ''}`} aria-label="logo" href="https://memberbutton.com/">
                                 <img src={mName} alt="logo" className="img-130x32 logo-ht"/>
                             </a> 
                             {/*  */}
-                            <a className={`navbar-brand logo_h ${styles.logo_show}`} aria-label="logo" href="https://search.memberbutton.com/">
+                            <a className={`navbar-brand logo_h ${styles.logo_show}`} aria-label="logo" href="https://memberbutton.com/">
                                 <img src={mLogo} alt="logo" className="mob-logo"/>
                             </a> 
                             
@@ -64,7 +64,7 @@ const Navbar = () => {
                                 <span className="icon-bar"></span>
                             </Link>
                 
-                            <form id="front-search-form1" method="post" action="http://memberbutton.com/search" className="mob-search mt-3 mb-3 p-2 ml-4 mr-4">
+                            <form id="front-search-form1" method="post" action="http://app.memberbutton.com/search" className="mob-search mt-3 mb-3 p-2 ml-4 mr-4">
                                 <input type="hidden" name="_token" value="jRND7iNgM9Rjw7fjKUAUaQseX1JGrZUcFZvdLrG5"/>
                                 <div className="row">
                                     <input autoComplete="off" className="form-control p-3 text-14 m-0" id="front-search-field1" placeholder="Where are you going?" name="location" type="text" required/>
@@ -78,7 +78,7 @@ const Navbar = () => {
                             <div className="collapse navbar-collapse offset mt-1" id="navbarSupportedContent">
                                 <div className="nav navbar-nav menu_nav justify-content-end">
                                     <div className="nav-item">
-                                        <a className="nav-link p-3 mt-3" href="http://memberbutton.com/property/create" aria-label="property-create">
+                                        <a className="nav-link p-3 mt-3" href="http://app.memberbutton.com/property/create" aria-label="property-create">
                                             <button className="btn button vbtn-default text-10 p-0 pl-4 pr-4 br-50">
                                                 <p className="p-2 mb-0 text-white">  Add your Member Listing</p>
                                             </button>
@@ -95,22 +95,22 @@ const Navbar = () => {
                                         <div className={`dropdown sv_user_login ${click ? 'show':''}`} onClick={onClick}>
                                             <button className="dropdown-toggle" type="button" data-toggle="dropdown">
                                                 <i className="fa fa-bars" aria-hidden={click}></i>
-                                                <img src="http://memberbutton.com/public/images/profile.jpg" className="head_avatar" alt=""/>
+                                                <img src="http://app.memberbutton.com/public/images/profile.jpg" className="head_avatar" alt=""/>
                                             </button>
                                             
                                             <ul className={`dropdown-menu ${click ? 'show':''}`}>
                                                 <li>
-                                                    <a  aria-label="" data-toggle="modal" data-target="#registermodel"  href="https://search.memberbutton.com/">
+                                                    <a  aria-label="" data-toggle="modal" data-target="#registermodel"  href="https://memberbutton.com/">
                                                         Sign Up
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a aria-label="" data-toggle="modal" data-target="#loginmodel"  href="https://search.memberbutton.com/">
+                                                    <a aria-label="" data-toggle="modal" data-target="#loginmodel"  href="https://memberbutton.com/">
                                                         Log In
                                                     </a>
                                                 </li>                                        
                                                     <hr/>
-                                                <li><a href="http://memberbutton.com/help">Help</a></li>
+                                                <li><a href="http://app.memberbutton.com/help">Help</a></li>
                                             </ul>
                                         </div>
                                     </div>

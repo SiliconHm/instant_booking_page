@@ -31,7 +31,7 @@ const Footer = () => {
               <div className="col-6 col-sm-3 mt-2">
                   <div className="row">
                       <div className="col-md-12 text-center">
-                          <a href="http://memberbutton.com"><img src="http://memberbutton.com/public/front/images/logos/1632136881_logo.png" className="img-130x32" alt="logo"/></a>
+                          <a href="http://app.memberbutton.com"><img src="http://app.memberbutton.com/public/front/images/logos/1632136881_logo.png" className="img-130x32" alt="logo"/></a>
                       </div>
                   </div>
               </div>
