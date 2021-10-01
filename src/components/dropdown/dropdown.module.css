@@ -19,7 +19,7 @@
   padding-left: 0.4rem;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid var(--input-border-color);
+  border: 0px solid var(--input-border-color);
   border-radius: 2px;
   transition: all 200ms ease;
   background-color: white;
@@ -62,6 +62,11 @@
   flex-direction: column;
 }
 
+.label_name {
+  color: black;
+  font-weight: bold;
+}
+
 .label {
   padding-right: 0.5rem;
   color: var(--info-text-color);
@@ -80,5 +85,12 @@
   .dropdownMenu {
     max-width: 100%;
     width: 100%;
+  }
+
+  .label_name {
+    color: black;
+    font-weight: bold;
+    margin-left: 20%;
+    margin-bottom: -5%;
   }
 }

@@ -1994,7 +1994,7 @@ figure.effect-ming:hover h2 {
     background: #fff;
     border-radius: 50px;
     width: 100%;
-    padding: 1rem;
+    padding: 0.3rem;
     box-shadow: rgb(0 0 0 / 15%) 0px 16px 32px, rgb(0 0 0 / 10%) 0px 3px 8px !important;
 }
 
@@ -2306,6 +2306,7 @@ div.elem-group.inlined input {
 
     .testimonials .item {
         background: #fff;
+        /* padding: 0; */
         padding: 5rem 3rem 5rem 3rem;
         border-radius: .4rem;
         box-shadow: 0rem 0.5rem 2rem rgba(0, 0, 0, 0.11);
@@ -4473,7 +4474,7 @@ a.send-btn {
 #front-search-form .form-control, #front-search-form1 .form-control {
     font-size: 15px;
     border: 0;
-    height: 30px;
+    height: 40px;
     background: transparent;
     margin-top: -5px;
 }
@@ -4482,8 +4483,8 @@ a.send-btn {
 }
  .front-search button {
     border-radius: 50%;
-    height: 45px;
-    width: 45px;
+    height: 40px;
+    width: 40px;
     float: right;
 }
 /* header::before {
@@ -4675,7 +4676,7 @@ a.send-btn {
 .sv_search_page #front-search-form .form-control {
     border: 1px solid #eee;
     margin: 0;
-    padding: 5px !important;
+    padding: 1px !important;
     height: auto;
 }
 .sv_start_your_search, .mob-search {

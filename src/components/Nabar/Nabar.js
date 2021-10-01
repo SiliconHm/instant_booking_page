@@ -77,6 +77,16 @@ const Navbar = () => {
                             
                             <div className="collapse navbar-collapse offset mt-1" id="navbarSupportedContent">
                                 <div className="nav navbar-nav menu_nav justify-content-end">
+                                    <div className='nav-item'>
+                                        <a className='nav-link p-2 mt-3' href='/'>
+                                            <button className={`btn ${styles.btn_link} ${styles.btn_active}`}>Home</button>
+                                        </a>
+                                    </div>
+                                    <div className='nav-item'>
+                                        <a className='nav-link p-2 mt-3' href='/'>
+                                            <button className={`btn ${styles.btn_link}`}>Influencers</button>
+                                        </a>                                    
+                                    </div>
                                     <div className="nav-item">
                                         <a className="nav-link p-3 mt-3" href="https://extranet.memberbutton.com/sign-up" aria-label="property-create">
                                             <button className="btn button vbtn-default text-10 p-0 pl-4 pr-4 br-50">

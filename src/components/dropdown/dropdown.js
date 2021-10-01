@@ -16,15 +16,15 @@ export default function Dropdown({ className, layout, children, title, show, onT
       if (meta.source === "select") {
         return;
       }
-
+ 
       onToggle(newVisibilityState); 
     },
     [onToggle],
   );
   // {[containerClass, className].join(" ")}
   return (
-    <div className='col-md-3 border-right-0 mt-4 mt-md-0'>
-      {label && <Label>{label}</Label>}
+    <div className='col-md-3 border-right-0 mt-4 mt-md-0'> 
+      {label && <Label className={styles.label_name}>{label}</Label>}
       <BootstrapDropdown className={styles.dropdown} show={show} onToggle={handleVisibilityToggle}>
         <BootstrapDropdown.Toggle className={styles.dropdownToggle}>
           {title}

@@ -10,7 +10,7 @@ export default function BookButton({ total, currency, disabled, onClick }) {
   const { t } = useTranslation();
 
   return (
-    <Button variant="primary" disabled={disabled} onClick={onClick}>
+    <Button className={styles.btn_color} disabled={disabled} onClick={onClick}>
       <>
         <span className={styles.buttonCaption}>{t("hotel_page:book_for")}</span>
         <Currency amount={total} currency={currency} />

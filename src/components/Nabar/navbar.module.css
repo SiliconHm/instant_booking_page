@@ -15,6 +15,24 @@
     font-family: 'Roboto', sans-serif; 
 }
 
+.btn_link {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.btn_active {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-width: 0.1rem;
+    border-color: #fff;
+}
+
+.btn_link:hover {
+    background-color: #DCDCDC;
+    /* color: #4F02A4; */
+}
+
 @media screen and (max-width: 960px) {
     .model {
         display: block;

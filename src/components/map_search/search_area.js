@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import AutoComplete from 'react-google-autocomplete'
+import Label from "components/label/label";
+import styles from './search.module.css'
 
-const PlacesAutocomplete = () => {
+const PlacesAutocomplete = ({clicked, label}) => {
     const [location, setLocation] = useState({address: '', latt: '', long: ''})
+
+    const [click, setClick] = useState(false)
 
     const onPlaceSelected = (place) => {
         const { formatted_address, geometry} = place
@@ -15,12 +19,20 @@ const PlacesAutocomplete = () => {
         }))
     }
 
+    const handler = () => {
+        setClick(!click)
+        clicked(click)
+    }
+
     // console.log(location)
 
     return (
-        <div className="col-md-3 mt-3">
-            <AutoComplete className='form-control p-3 text-14' onPlaceSelected={onPlaceSelected} types={['(region)']} placeholder='Where you are going?' location={location}/>
+        <>
+        <div className="col-md-3 mt-2">
+        {label && <Label className={styles.label_name}>{label}</Label>}
+            <AutoComplete className='form-control p-3 text-12' onPlaceSelected={onPlaceSelected} types={['(region)']} placeholder='Where you are going?' location={location} onClick={handler} />
         </div>
+        </>
     )
 }
 

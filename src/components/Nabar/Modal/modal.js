@@ -17,19 +17,19 @@ const Modal = ({showModel, onModelClick}) => {
                         
                         <div className="modal-body p-0">
                             <ul className="mobile-side">
-                                <Item Link='http://app.memberbutton.com' title='Home'/>
-                                <Item Link='http://app.memberbutton.com/become-host' title='Become Host'/>
+                                <Item Link='http://memberbutton.com' title='Home'/>
+                                <Item Link='http://app.memberbutton.com' title='Influencers'/>
+                                <Item Link='https://extranet.memberbutton.com/sign-up' title='Sign Up'/>
+                                <Item Link='https://extranet.memberbutton.com/' title='Log In'/>
                                 <Item Link='http://app.memberbutton.com/help' title='Help'/>
-                                <Item Link='http://app.memberbutton.com/signup' title='Sign Up'/>
-                                <Item Link='http://app.memberbutton.com/login' title='Log In'/>
                                 
                                 <li>
                                     <a href="https://memberbutton.com/" aria-label="modalLanguge" data-toggle="modal" data-target="#languageModalCenter"> <i className="fa fa-globe"></i> <u>English </u></a>
                                     <a href="https://memberbutton.com/" aria-label="modalCurrency" data-toggle="modal" data-target="#currencyModalCenter"> <span className="ml-0">&#36; - <u>USD</u> </span></a>
                                 </li>
-                                <a className="mt-3" href="http://app.memberbutton.com/property/create">
-                                    <button className="btn vbtn-outline-success text-14 font-weight-700 pl-5 pr-5 pt-3 pb-3">
-                                            Add your Member Listing
+                                <a className="mt-3" href="https://extranet.memberbutton.com/sign-up">
+                                    <button className="btn vbtn-outline-success text-12 font-weight-500 pl-5 pr-5 pt-3 pb-3">
+                                            Add Property
                                     </button>
                                 </a>
                             </ul>

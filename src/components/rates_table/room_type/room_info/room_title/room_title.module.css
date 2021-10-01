@@ -1,6 +1,6 @@
 .title {
   cursor: pointer;
-  color: #008ecd;
+  color: #4F02A4;
   text-decoration: none;
   padding: 0;
   border: none;
@@ -14,5 +14,5 @@
 .title:global.btn.btn-link:focus {
   outline: none;
   box-shadow: none;
-  color: #008ecd;
+  color:#4F02A4;
 }

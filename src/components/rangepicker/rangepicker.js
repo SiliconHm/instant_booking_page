@@ -48,7 +48,7 @@ export default function RangePicker(props) {
     name = "",
     isVisible = false,
     checkinDatePlaceholder,
-    checkinDateLabel,
+    checkinDateLabel, 
     checkoutDatePlaceholder,
     checkoutDateLabel,
     onDatesChange,
@@ -198,7 +198,7 @@ export default function RangePicker(props) {
         <DayCell
           {...dayProps}
           isMinStayRestricted={isMinStayRestricted}
-          minStayLength={minStayLength}
+          minStayLength={minStayLength} 
         />
       );
     },
@@ -218,11 +218,10 @@ export default function RangePicker(props) {
     <div className='col-md-4'>
       <div className={`row ${wrapperClassName}`} ref={inputRef}>
 
-        <div className={`col-md-6 col-6 mt-4 mt-md-0 mob-pd-0 ${styles.labelContainer}`}>
-          <Label>{checkinDateLabel}</Label> 
-          <Label>{checkoutDateLabel}</Label>
+        <div className={`${styles.labelContainer}`}>
+          <Label className={styles.label_name}>{checkinDateLabel}</Label> 
+          <Label className={styles.label_name}>{checkoutDateLabel}</Label>
         </div>
-        
         <DateRangePicker
           displayFormat={DATE_UI_FORMAT}
           startDate={checkinDate}
@@ -246,7 +245,7 @@ export default function RangePicker(props) {
           onFocusChange={handleFocusChange}
           onDatesChange={onDatesChange}
           onClose={closeCallback}
-          />
+        />
       </div>
     </div>
   );

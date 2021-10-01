@@ -16,7 +16,7 @@ export default function HotelFacilitiesSection({ property }) {
     return null;
   }
 
-  return (
+  return ( 
     <SectionWrapper theme="light">
       <Col xs="12" lg="8">
         <SectionTitle>{t("hotel_page:hotel_facilities")}</SectionTitle>
