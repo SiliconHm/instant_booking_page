@@ -80,10 +80,6 @@ export default function MainSearch() {
     [`${styles.rangePicker__error}`]: rangePickerVisible,
   });
 
-  const clickHandle = (cl) => {
-    setClick(cl)
-  }
-
   return (
     <div className={styles.wrapper} >
        <div className="align-items-center text-center text-md-left svmobsearch desk-search-form container">      
