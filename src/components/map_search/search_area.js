@@ -3,10 +3,10 @@ import AutoComplete from 'react-google-autocomplete'
 import Label from "components/label/label";
 import styles from './search.module.css'
 
-const PlacesAutocomplete = ({clicked, label}) => {
+const PlacesAutocomplete = ({clicked, label, clicks}) => {
     const [location, setLocation] = useState({address: '', latt: '', long: ''})
 
-    const [click, setClick] = useState(true)
+    // const [click, setClick] = useState(true)
 
     const onPlaceSelected = (place) => {
         const { formatted_address, geometry} = place
@@ -20,8 +20,7 @@ const PlacesAutocomplete = ({clicked, label}) => {
     }
 
     const handler = () => {
-        setClick(!click)
-        clicked(click)
+        clicked(!clicks)
     }
 
     // console.log(location)
