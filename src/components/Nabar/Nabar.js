@@ -83,8 +83,8 @@ const Navbar = () => {
                                         </a>
                                     </div>
                                     <div className='nav-item'>
-                                        <a className='nav-link p-2 mt-3' href='/'>
-                                            <button className={`btn ${styles.btn_link}`}>Influencers</button>
+                                        <a className='nav-link p-2 mt-3' href='https://app.memberbutton.com'>
+                                            <button className={`btn ${styles.btn_link}`}> For Influencers</button>
                                         </a>                                    
                                     </div>
                                     <div className="nav-item">
