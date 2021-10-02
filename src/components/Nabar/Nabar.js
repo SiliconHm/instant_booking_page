@@ -53,9 +53,9 @@ const Navbar = () => {
                                 <img src={mLogo} alt="logo" className="mob-logo"/>
                             </a> 
                             
-                            <Link to='#' onClick={goBack} className="mob-back-btn d-block d-sm-none">
+                            <a href='/' onClick={goBack} className="mob-back-btn d-block d-sm-none">
                                 <i className="fas fa-chevron-left"></i>
-                            </Link>
+                            </a>
 
                             {/* <!-- Trigger Button --> */}
                             <Link to='#' aria-label="navbar" className="navbar-toggler" data-toggle="modal" data-target="#left_modal"  onClick={onModelClick}>
@@ -88,7 +88,7 @@ const Navbar = () => {
                                         </a>                                    
                                     </div>
                                     <div className="nav-item">
-                                        <a className="nav-link p-3 mt-3" href="https://extranet.memberbutton.com/sign-up" aria-label="property-create">
+                                        <a className="nav-link pt-3 mt-2" href="https://extranet.memberbutton.com/sign-up" aria-label="property-create">
                                             <button className="btn button vbtn-default text-10 p-0 pl-4 pr-4 br-50">
                                                 <p className="p-2 mb-0 text-white">  Add your Property</p>
                                             </button>
@@ -96,13 +96,13 @@ const Navbar = () => {
                                     </div>
                                     
                                     <div className="nav-item">
-                                        <Link className="nav-link globe" to='#' aria-label="modalLanguge" data-toggle="modal" data-target="#languageModalCenter"> 
-                                            <i className="fas fa-globe text-18" style={window.scrollY > 100 ? {color: '#4F02A4'} : {}}></i> 
-                                        </Link>
+                                        <a className="nav-link globe pt-4 mt-2" href='/' aria-label="modalLanguge" data-toggle="modal" data-target="#languageModalCenter"> 
+                                            <i className="fas fa-globe text-18" style={navCol ? {color: '#4F02A4'} : {}}></i> 
+                                        </a>
                                     </div>
                                 
                                     <div className="nav-item">
-                                        <div className={`dropdown sv_user_login ${click ? 'show':''}`} onClick={onClick}>
+                                        <div className={`dropdown sv_user_login ${click ? 'show':''} pt-3 mt-2`} onClick={onClick}>
                                             <button className="dropdown-toggle" type="button" data-toggle="dropdown">
                                                 <i className="fa fa-bars" aria-hidden={click}></i>
                                                 <img src="http://app.memberbutton.com/public/images/profile.jpg" className="head_avatar" alt=""/>
