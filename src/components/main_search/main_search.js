@@ -86,7 +86,7 @@ export default function MainSearch() {
 
   return (
     <div className={styles.wrapper} >
-      <div className="align-items-center text-center text-md-left svmobsearch desk-search-form container">      
+       <div className="align-items-center text-center text-md-left svmobsearch desk-search-form container">      
         <div className="row mt-3" >
           <div className={`col-lg-xl offset-xl-1 col-lg-10 offset-lg-1 ${styles.margin_top} ${isOpen ? `${styles.margin_scroll}` : ''}`}>
             <div className="main_formbg item animated zoomIn mob-form-bg" >
@@ -139,7 +139,7 @@ export default function MainSearch() {
                        {t("main_page:search_btn")}
                     </Button>
                   </div>
-                </div>
+                 </div>
               </div>
             </div>
           </div>
@@ -176,7 +176,7 @@ export default function MainSearch() {
                       </div>
                       }
         </div>
-      </div>
+      </div> 
     </div>
   );
 }

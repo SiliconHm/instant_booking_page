@@ -23,7 +23,7 @@
 }
 
 .wrapper :global .DateRangePicker > div {
-  height: 100%;
+  height: 100%; 
 }
 
 .wrapper :global .DateInput_input {

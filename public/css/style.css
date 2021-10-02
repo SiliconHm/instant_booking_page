@@ -2306,7 +2306,6 @@ div.elem-group.inlined input {
 
     .testimonials .item {
         background: #fff;
-        /* padding: 0; */
         padding: 5rem 3rem 5rem 3rem;
         border-radius: .4rem;
         box-shadow: 0rem 0.5rem 2rem rgba(0, 0, 0, 0.11);
@@ -2371,11 +2370,12 @@ div.elem-group.inlined input {
     .item ul {
         margin: 0;
         padding: 0;
+        /* padding-right: 50px; */
     }
 
     .item ul li {
         list-style: none;
-        display: inline;
+        display: inline-flex;
     }
 
     /*=================== custom button rule end ====================*/
