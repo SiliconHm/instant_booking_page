@@ -1289,7 +1289,7 @@ color:#000;
     }
 
     .header_area .navbar .nav .nav-item .nav-link {
-        padding: 1.2rem 0;
+        padding: 1rem 0;
         margin-right: 0px;
         display: block;
         border-bottom: .1rem solid #ededed33;
@@ -3916,6 +3916,8 @@ sidebar .list-wrap .list .count {
 .container-fluid-90{
     width: 90%!important;
 }
+
+
 @media only screen and (max-width: 480px),
 only screen and (max-width: 767px) {
     sidebar {
@@ -4879,7 +4881,8 @@ a.send-btn {
         width:150px;
     }
     .homenav .navbar{
-        background:transparent !important;
+        /* background:transparent !important; */
+        background: #fff;
     }
     .homenav{
         z-index:20 !important;
@@ -4978,7 +4981,7 @@ a.send-btn {
      .header_area #front-search-form1, .header_area #front-search-form {
         position: absolute;
         width: 60%;
-        height: 40px;
+        height: 30px;
         left: 20%;
         background:#f7f7f7;
     }

@@ -128,15 +128,15 @@ export default function MainSearch() {
 
 
                   <div className='col-md-2 front-search mt-2 border-right-0 d-none d-sm-block'>
-                    <Button onClick={onSearch} className='btn vbtn-default btn-sm btn-block p-3 text-16'>
+                    <Button onClick={onSearch} className='btn vbtn-default btn-sm btn-block p-3 text-12'>
                       <i className='fas fa-search'></i>
                     </Button>
                   </div>
 
                   <div className='col-12 d-block d-sm-none front-search mt-2'>
-                    <Button onClick={onSearch} className='btn vbtn-default btn-block p-3 text-16'>
+                    <Button onClick={onSearch} className='btn vbtn-default btn-block p-3 text-12'>
                       <i className='fas fa-search'></i>
-                      {t("main_page:search_btn")}
+                       {t("main_page:search_btn")}
                     </Button>
                   </div>
                 </div>

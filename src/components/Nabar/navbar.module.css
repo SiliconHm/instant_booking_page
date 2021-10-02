@@ -42,14 +42,6 @@
 }
 
 @media (max-width: 767px) {
-    .name_show {
-        display: none;
-    }
-
-    .logo_show {
-        display: block;
-    }
-
     .show {
         display: none;
     }
@@ -64,4 +56,15 @@
         background-color: #fff;
         height: 100%;
     }
+}
+
+@media screen and (max-width: 480) {
+    .name_show {
+        display: none;
+    }
+
+    .logo_show {
+        display: block;
+    }
+
 }
