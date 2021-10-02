@@ -94,7 +94,7 @@ export default function MainSearch() {
                 <input type="hidden" name="_token" value="XzBGMDRPhmnF8K7s0qShkxCskXtgW4tVoY50Lr9n"/>
                 <div className="row">  
                 {/* onClick={clickHandle} */}
-                  <PlacesAutocomplete clicked={clickHandle} label={t("hotel_page:location")}/>
+                  <PlacesAutocomplete clicked={setClick} label={t("hotel_page:location")}/>
                   
                   <RangePicker
                     checkinDatePlaceholder={t("hotel_page:checkin_placeholder")}
