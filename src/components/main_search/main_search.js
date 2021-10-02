@@ -80,10 +80,15 @@ export default function MainSearch() {
     [`${styles.rangePicker__error}`]: rangePickerVisible,
   });
 
+  const handlePopup = () => {
+    if(click)
+      setClick(false)
+  }
+
   return (
-    <div className={styles.wrapper} >
+    <div className={styles.wrapper} onClick={handlePopup}>
        <div className="align-items-center text-center text-md-left svmobsearch desk-search-form container">      
-        <div className="row mt-3" >
+        <div className="row mt-3">
           <div className={`col-lg-xl offset-xl-1 col-lg-10 offset-lg-1 ${styles.margin_top} ${isOpen ? `${styles.margin_scroll}` : ''}`}>
             <div className="main_formbg item animated zoomIn mob-form-bg" >
               <div id="front-search-form" method="post" action="http://memberbutton.com/search" autoComplete='off'>
