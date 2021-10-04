@@ -25,7 +25,7 @@ function Checkbox(props, ref) {
           onChange={handleToggle}
           id={name}
         />
-        {/* {value && <CheckOutlined className={styles.checkIcon} />} */}
+        {value && <CheckOutlined className={styles.checkIcon} />}
       </label>
       <Form.Label className={styles.label}>
         <Label>{label}</Label>
