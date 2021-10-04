@@ -127,8 +127,8 @@
 
 .modal_3 {
   padding: 8px 0px !important;
-    margin: 0px -32px -8px !important;
-    width: 500px !important;
+  margin: 0px -32px -8px !important;
+  width: 500px !important;
 }
 
 .modal_4 {
@@ -224,6 +224,30 @@
   display: -webkit-box !important;
   -webkit-line-clamp: 6 !important;
   -webkit-box-orient: vertical !important;
+}
+
+@media screen and (max-width: 570px) {
+  .modal_1 {
+    position: absolute !important;
+    left: 0% !important;
+    top: 100% !important;
+    z-index: 1 !important;
+    background: #FFFFFF !important;
+    border-radius: 32px !important;
+    box-shadow: 0px 6px 20px rgb(0 0 0 / 20%) !important;
+    margin-top: 12px !important;
+    max-height: -webkit-calc(100vh - 220px) !important;
+    max-height: -moz-calc(100vh - 220px) !important;
+    max-height: calc(100vh - 220px) !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    padding: 16px 32px !important;
+  }
+  .modal_3 {
+    padding: 8px 0px !important;
+    margin: 0px -32px -8px !important;
+    width: 350px !important;
+  }
 }
 
 @media screen and (max-width: 400px) {

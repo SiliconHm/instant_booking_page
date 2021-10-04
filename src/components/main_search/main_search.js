@@ -166,7 +166,7 @@ export default function MainSearch() {
                                         <div className={`${styles.modal_10}`}>
                                           Influencers
                                         </div>
-                                      </div>
+                                      </div> 
                                       </a>
                                     </li>
                                 </div>
