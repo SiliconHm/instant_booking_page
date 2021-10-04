@@ -549,7 +549,7 @@ button.vbtn-default, .btn.vbtn-default {
     color:#fff !important;
 }
 button.vbtn-default:hover {
-    background: #671BBC;
+    background: #000;
     color: #fff;
 }
 

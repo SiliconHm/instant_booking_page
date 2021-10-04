@@ -9,6 +9,6 @@ export default function NavItem({ children, eventKey, disabled }) {
       <Nav.Link className={styles.link} eventKey={eventKey} disabled={disabled}>
         {children}
       </Nav.Link>
-    </Nav.Item>
+    </Nav.Item> 
   );
 }

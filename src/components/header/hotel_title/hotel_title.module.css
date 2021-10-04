@@ -3,5 +3,6 @@
   font-size: 32px;
   line-height: 32px;
   font-weight: bold;
-  color: var(--link-color);
+  /* color: var(--link-color); */
+  color: #000;
 }

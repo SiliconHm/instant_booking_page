@@ -15,7 +15,7 @@ import {
   AppActionsContext,
   BookingActionsContext,
   BookingDataContext,
-} from "containers/data_context";
+} from "containers/data_context"; 
 
 import styles from "./hotel_page.module.css";
 

@@ -13,7 +13,7 @@ export default function HotelRatesSection() {
     <SectionWrapper theme="dark">
       <Col xs="12" lg="8">
         <SectionTitle>{t("rates_table:title")}</SectionTitle>
-        <RatesTable />
+        <RatesTable /> 
       </Col>
     </SectionWrapper>
   );

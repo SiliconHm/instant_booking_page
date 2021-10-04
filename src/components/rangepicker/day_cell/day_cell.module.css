@@ -13,7 +13,8 @@
 
 .dayCellValid:hover {
   color: var(--main-text-color);
-  background: var(--rangepicker-cell-span);
+  /* background: var(--rangepicker-cell-span); */
+  background: #a593c8;
 }
 
 .dayCellMinStayRestricted {
@@ -57,18 +58,22 @@
 .dayCellSelectedEnd,
 .dayCellSelectedEnd:hover,
 .dayCellSelectedEnd:active {
-  color: var(--rangepicker-cell-end-text);
-  background: var(--rangepicker-cell-end);
+  /* color: var(--rangepicker-cell-end-text); */
+  color: #fff;
+  /* background: var(--rangepicker-cell-end); */
+  background: #4f02a4;
   text-decoration: none;
 }
 
 .dayCellSelectedSpan {
   color: var(--main-text-color);
   background: var(--rangepicker-cell-span);
+
 }
 
 .dayCellSelectedSpan:hover,
 .dayCellSelectedSpan:active {
   color: var(--main-text-color);
   background: var(--rangepicker-cell-span);
+  
 }

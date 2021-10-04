@@ -104,7 +104,7 @@ export default function MainSearch() {
                     checkoutDateLabel={t("hotel_page:checkout_label")}
                     checkinDate={checkinDate}
                     checkoutDate={checkoutDate}
-                    name="search_dates"
+                    name="search_dates" 
                     className={rangePickerClassName}
                     onDatesChange={handleDatesChange}
                     isVisible={rangePickerVisible}

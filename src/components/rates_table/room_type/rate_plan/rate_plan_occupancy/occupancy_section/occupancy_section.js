@@ -10,5 +10,5 @@ export default function OccupancySection({ additionalSpaces, type, icon }) {
       <img src={icon} alt={type} />
       {Boolean(additionalSpaces) && <div className={styles.occupancyCaption}>{captionText}</div>}
     </div>
-  );
+  ); 
 }

@@ -97,7 +97,7 @@ export default function SearchSection() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.stickyContainer}>
-        <div className={wrapperClasses.join(" ")}>
+        <div className={wrapperClasses.join(" ")}> 
           <MinPricePanel bestOffer={bestOffer} params={params} />
           <div className={styles.searchSection}>
             <DateSelect bookingParams={params} handleSearchChange={setParams} />

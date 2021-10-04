@@ -15,6 +15,6 @@ export default function BookButton({ total, currency, disabled, onClick }) {
         <span className={styles.buttonCaption}>{t("hotel_page:book_for")}</span>
         <Currency amount={total} currency={currency} />
       </>
-    </Button>
+    </Button> 
   );
 }

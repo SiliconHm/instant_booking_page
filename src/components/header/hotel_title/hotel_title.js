@@ -7,5 +7,5 @@ export default function HotelTitle({ title, hideTitle }) {
     return null;
   }
 
-  return <div className={styles.hotelTitle}>{title}</div>;
+  return <div className={styles.hotelTitle}>{title}</div>; 
 }

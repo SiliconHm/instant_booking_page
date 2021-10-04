@@ -1,8 +1,9 @@
 .buttonCaption {
   margin-right: 4px;
-  color: #4F02A4;
+  color: #fff;
 }
 
 .btn_color {
-  color: #4F02A4;
+  background-color: #000;
 }
+

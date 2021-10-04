@@ -8,15 +8,22 @@
 }
 
 .link {
-  padding: 4px
+  padding: 4px;
+  color: #000;
+}
+
+.link:hover {
+  color: #a593c8;
 }
 
 .link:global.nav-link.active {
   color: var(--button-color);
+  /* color: #000; */
   font-weight: bold;
 }
 
 .link:global.nav-link.active {
-  color: var(--link-color);
+  /* color: var(--link-color); */
+  color: #000;
   background-color: initial;
 }

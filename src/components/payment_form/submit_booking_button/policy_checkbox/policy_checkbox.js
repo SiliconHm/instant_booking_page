@@ -20,7 +20,7 @@ export default function PolicyCheckbox({ value, onChange }) {
             {t("payment_page:policy_agreement")}
             <PolicyInfo />
           </span>
-        }
+        } 
       />
     </div>
   );

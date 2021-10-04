@@ -18,7 +18,7 @@ export default function Button({
   }
 
   return (
-    <BootstrapButton
+    <BootstrapButton 
       variant={variant}
       className={buttonStyles.join(" ")}
       disabled={loading || disabled}

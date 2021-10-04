@@ -9,5 +9,5 @@ export default function BedOption({ title, count }) {
       <div className={styles.bedTitle}>{`${count} x ${title}`}</div>
       <CheckOutlined className={styles.bedIcon} />
     </div>
-  );
+  ); 
 }

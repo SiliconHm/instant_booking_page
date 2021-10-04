@@ -46,7 +46,7 @@ export default function PropertiesList(props) {
             onSelectProperty={onSelectProperty}
             onMouseOver={onPropertyMouseOver}
             onMouseOut={onPropertyMouseOut}
-          />
+          /> 
         );
       });
     }

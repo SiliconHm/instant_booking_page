@@ -4,13 +4,17 @@
 }
 
 .occupancyCaption {
-
+  /* color: #000; */
 }
 
 .iconActive {
   color: var(--icon-color);
+  /* color: #000; */
+
 }
 
 .iconInactive {
   color: var(--info-text-color);
+  /* color: #000; */
+
 }

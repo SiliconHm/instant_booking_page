@@ -58,7 +58,7 @@ export default function Navigation() {
       className={styles.navigation}
       onSelect={handleSelect}
     >
-      {navRoutes.map((route, index) => {
+      {navRoutes.map((route, index) => { 
         const isAfterActive = index > matchingRouteIndex;
         const isOnConfirmationPage = matchingRoute.eventKey === "confirmationPage";
         const disabled = isAfterActive || isOnConfirmationPage;

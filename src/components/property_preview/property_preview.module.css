@@ -82,7 +82,7 @@
   color: #939ea8;
   margin: 0;
   line-height: 1.5;
-}
+} 
 
 .seeMoreBtnWrapper {
   display: flex;
@@ -96,7 +96,11 @@
 .seeMoreBtnWrapper :global .btn {
   padding: 7px 23px;
   margin-top: 8px;
+  border-color: #fff;
+  color: #fff;
+  background-color: #00D100;
 }
+
 
 .seeMoreBtnWrapper :global .btn:focus,
 .seeMoreBtnWrapper :global .btn:active,

@@ -106,7 +106,7 @@ export default function RangePicker(props) {
       if (!hashedClosedDates) {
         return false;
       }
-
+ 
       const formattedDay = day.format(DATE_API_FORMAT);
 
       if (focusedInput === START_DATE_INPUT) {

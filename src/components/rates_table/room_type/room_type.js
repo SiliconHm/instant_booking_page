@@ -16,7 +16,7 @@ export default function RoomType(props) {
     ratesOccupancyPerRoom,
     adultsOccupancy,
     checkinDate,
-    disabled,
+    disabled, 
     childrenOccupancy,
     onRatesOccupancyChange,
   } = props;

@@ -170,7 +170,7 @@ export default function SearchPage() {
       />
       <div className={`${styles.wrapper}`}>
         <div className={`${styles.left}`}>
-          <PropertiesList
+          <PropertiesList 
             loading={isLoading}
             currency={searchParams.currency}
             properties={propertiesData}

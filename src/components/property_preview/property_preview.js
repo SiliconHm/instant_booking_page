@@ -54,7 +54,7 @@ export default function PropertyPreview({ currency, property, onClearSelectPrope
           <BestOffer amount={bestOffer} currency={currency} />
           <Button onClick={onBookNow}>{t("properties:book_now")}</Button>
         </div>
-      </div>
+      </div> 
 
       <p className={styles.description}>{description || t("properties:no_info")}</p>
     </div>

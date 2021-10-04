@@ -18,7 +18,7 @@ export default function SubmitBookingButton() {
     <>
       <PolicyCheckbox value={isPolicyAccepted} onChange={setIsPolicyAccepted} />
       <Button loading={isSubmitting} disabled={isSubmitDisabled} onClick={startSubmit}>
-        {t("payment_page:agree_and_book")}
+        {t("payment_page:agree_and_book")} 
       </Button>
     </>
   );

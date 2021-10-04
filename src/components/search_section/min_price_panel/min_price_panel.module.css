@@ -12,7 +12,8 @@
   padding-left: 24px;
   justify-content: center;
   align-items: flex-end;
-  background-color: var(--main-text-active-background);
+  /* background-color: var(--main-text-active-background); */
+  background-color: #4f02a4;
 }
 
 .minPriceContainer:hover {

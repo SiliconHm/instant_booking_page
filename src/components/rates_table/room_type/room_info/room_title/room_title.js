@@ -19,5 +19,5 @@ export default function RoomTitle({ room }) {
       </Button>
       <RoomDetailsModal room={room} show={isModalOpen} onHide={handleModalToggle} />
     </>
-  );
+  ); 
 }

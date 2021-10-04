@@ -14,7 +14,7 @@ export default function HotelInfoSection({ property }) {
 
   return (
     <SectionWrapper id={HOTEL_INFO_SECTION} theme="light">
-      <Col xs="12" lg="8">
+      <Col xs="12" lg="8"> 
         <div className={styles.hotelTitleSection}> 
           <SectionTitle>{title}</SectionTitle>
           <HotelLocation property={property} />
