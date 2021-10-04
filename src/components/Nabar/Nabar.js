@@ -7,13 +7,17 @@ import Modal from './Modal/modal'
 
 
 const Navbar = () => {
-    const [click, setClick] = useState(false);
+    const [click, setClick] = useState();
     const [navCol, setNavCol] = useState(false)
     const [showModel, setShowModel] = useState(false)
 
 
     const onClick = () => {
         setClick(!click)
+    }
+
+    const onClickHandle = () => {
+        setClick(false)
     }
     
     const goBack = () => {
@@ -34,12 +38,12 @@ const Navbar = () => {
     useEffect(() => {
         window.addEventListener('scroll', handleNavbar)
     })
-    // ${navCol ? `${styles.back}` : ''}
+    // ${navCol ? `${styles.back}` : ''} ${navCol ? 'bg-light fixed-top animated fadeIn' : ''}
     return (
         <>
-            <header className={`header_area animated fadeIn homenav`}>
-                <div className="main_menu">
-                    <nav className={`navbar navbar-expand-lg ${navCol ? 'bg-light fixed-top animated fadeIn' : ' '}`}  style={{height: '10%'}} >
+            <header className={`header_area animated fadeIn homenav ${navCol ? 'navbar_fixed' : ''}`} onClick={onClickHandle}>
+                <div className={`main_menu`}>
+                    <nav className={`navbar navbar-expand-lg navbar-light`}  style={{height: '10%'}} >
                         <div className={`container-fluid container-fluid-90 `}>
                             <a className={`navbar-brand logo_ha dark_logo ${navCol ? 'd-sm-block' : 'd-none'} ${styles.name_show}`} aria-label="logo" href="https://memberbutton.com/">
                                 <img src={mName} alt="logo" className="img-130x32 logo-ht"/>
@@ -77,12 +81,12 @@ const Navbar = () => {
                             
                             <div className="collapse navbar-collapse offset mt-1" id="navbarSupportedContent">
                                 <div className="nav navbar-nav menu_nav justify-content-end">
-                                    <div className='nav-item'>
+                                    <div className={`nav-item ${navCol ? 'd-none': ''}`}>
                                         <a className='nav-link p-2 mt-3' href='/'>
                                             <button className={`btn ${styles.btn_link} ${styles.btn_active}`}>Home</button>
                                         </a>
                                     </div>
-                                    <div className='nav-item'>
+                                    <div className={`nav-item ${navCol ? 'd-none': ''}`}>
                                         <a className='nav-link p-2 mt-3' href='https://app.memberbutton.com'>
                                             <button className={`btn ${styles.btn_link}`}> For Influencers</button>
                                         </a>                                    

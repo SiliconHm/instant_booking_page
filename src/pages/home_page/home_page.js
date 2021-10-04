@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import Footer from 'components/home_footer'
@@ -24,9 +24,10 @@ export default function HomePage() {
       </div>
     );
   }
+
   return (
-    <>
-      <Nabar />
+    <div >
+      <Nabar/>
       <div className='hero-banner magic-ball home'>
         <div className='main-banner'>
           <div>
@@ -38,6 +39,6 @@ export default function HomePage() {
       </div>
       <Banner/>
       <Footer/>
-    </>
+    </div>
   );
 }

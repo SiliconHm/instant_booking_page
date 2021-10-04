@@ -15,7 +15,7 @@
     font-family: 'Roboto', sans-serif; 
 }
 
-.btn_link {
+.btn_link { 
     color: #fff;
     font-size: 1.2rem;
 }
@@ -56,6 +56,12 @@
         background-color: #fff;
         height: 100%;
     }
+}
+
+.navbar_container {
+    width: 100%;
+    background-color: #fff;
+    margin:0%;
 }
 
 @media screen and (max-width: 480) {
