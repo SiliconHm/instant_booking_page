@@ -14,7 +14,7 @@
 .dayCellValid:hover {
   color: var(--main-text-color);
   /* background: var(--rangepicker-cell-span); */
-  background: #a593c8;
+  background: #a593c8; 
 }
 
 .dayCellMinStayRestricted {
@@ -68,12 +68,10 @@
 .dayCellSelectedSpan {
   color: var(--main-text-color);
   background: var(--rangepicker-cell-span);
-
 }
 
 .dayCellSelectedSpan:hover,
 .dayCellSelectedSpan:active {
   color: var(--main-text-color);
   background: var(--rangepicker-cell-span);
-  
 }

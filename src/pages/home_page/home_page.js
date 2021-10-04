@@ -24,9 +24,9 @@ export default function HomePage() {
       </div>
     );
   }
-
+ 
   return (
-    <div >
+    <div>
       <Nabar/>
       <div className='hero-banner magic-ball home'>
         <div className='main-banner'>

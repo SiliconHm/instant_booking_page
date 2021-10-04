@@ -26,7 +26,7 @@ export default function OccupancySettingsForm({ bookingParams, onClose, onChange
           maxValue={MAX_ADULTS_AMOUNT}
           name="adults"
           value={bookingParams.adults}
-          onChange={onChange}
+          onChange={onChange} 
         />
       </Cell>
       <Cell noLine noPadding>

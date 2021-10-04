@@ -5,7 +5,7 @@ import Bottom from "./Bottom/Bottom";
 
 const Footer = () => {
     return (
-      <footer className="main-panel card border footer-bg p-5" id="footer">
+      <footer className="main-panel card border footer-bg p-2" id="footer">
         <div className="container-fluid container-fluid-90 pb-3">
           <div className="row">
                 <Column heading='Influencers & Hosts'>

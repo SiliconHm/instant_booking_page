@@ -17,3 +17,4 @@ export default function Cell({ children, className, noLine, noPadding }) {
 
   return <div className={classNames.join(" ")}>{children}</div>;
 }
+ 

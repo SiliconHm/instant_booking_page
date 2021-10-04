@@ -86,7 +86,7 @@ export default function MainSearch() {
   }
 
   return (
-    <div className={styles.wrapper} onClick={handlePopup}>
+    <div className={styles.wrapper} onClick={handlePopup}> 
        <div className="align-items-center text-center text-md-left svmobsearch desk-search-form container">      
         <div className="row mt-3">
           <div className={`col-lg-xl offset-xl-1 col-lg-10 offset-lg-1 ${styles.margin_top} ${isOpen ? `${styles.margin_scroll}` : ''}`}>
@@ -95,7 +95,7 @@ export default function MainSearch() {
                 <input type="hidden" name="_token" value="XzBGMDRPhmnF8K7s0qShkxCskXtgW4tVoY50Lr9n"/>
                 <div className="row">  
                 {/* onClick={clickHandle} */}
-                  <PlacesAutocomplete clicked={setClick} clicks={click} label={t("hotel_page:location")}/>
+                <PlacesAutocomplete clicked={setClick} clicks={click} label={t("hotel_page:location")}/>
                   
                   <RangePicker
                     checkinDatePlaceholder={t("hotel_page:checkin_placeholder")}
@@ -111,9 +111,9 @@ export default function MainSearch() {
                     closeCallback={() => setRangePickerVisible(false)}
                     />
 
-                  <Dropdown
+                  <Dropdown 
                     show={isOpen}
-                    onToggle={handleToggleDropdown}
+                    onToggle={handleToggleDropdown} 
                     title={dropdownTitle}
                     className={styles.occupancyDropDown}
                     layout="vertical"
@@ -128,8 +128,8 @@ export default function MainSearch() {
                   </Dropdown>
 
 
-                  <div className='col-md-2 front-search mt-2 border-right-0 d-none d-sm-block'>
-                    <Button onClick={onSearch} className='btn vbtn-default btn-sm btn-block p-3 text-12'>
+                  <div className={`front-search mt-2 border-right-0 d-none d-sm-block ${styles.search_control}`}>
+                    <Button onClick={onSearch} className='btn vbtn-default btn-sm btn-block p-0 text-12'>
                       <i className='fas fa-search'></i>
                     </Button>
                   </div>

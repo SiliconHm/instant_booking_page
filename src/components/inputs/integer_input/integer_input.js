@@ -20,7 +20,7 @@ export default function IntegerInput(props) {
           className={styles.decreaseButton}
           disabled={isDecreaseDisabled}
           onClick={handleOccupancyDecrease}
-        >
+        > 
           <MinusOutlined className={styles.toggleIcon} />
         </Button>
         <div>{value}</div>

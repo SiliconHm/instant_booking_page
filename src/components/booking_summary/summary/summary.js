@@ -28,7 +28,7 @@ export default function Summary({ params, property, selectedRatesByRoom, total }
         <Guests params={params} />
         <PriceBreakdown selectedRatesByRoom={selectedRatesByRoom} currency={currency} />
         <TotalPrice totalPrice={total} currency={currency} />
-      </div>
+      </div> 
     </div>
   );
 }

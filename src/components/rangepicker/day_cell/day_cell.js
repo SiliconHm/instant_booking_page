@@ -19,7 +19,7 @@ const DEFAULT_MODIFIERS = new Set();
 const MIN_STAY_TO_SHOW = 2;
 
 export default function DayCell(props) {
-  const containerRef = useRef(); 
+  const containerRef = useRef();
   const {
     isOutsideDay,
     minStayLength,
@@ -64,7 +64,7 @@ export default function DayCell(props) {
         show={isTooltipShown}
         minStayLength={minStayLength}
         containerRef={containerRef}
-        />
+      />
     </td>
   );
 }

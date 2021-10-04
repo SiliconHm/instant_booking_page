@@ -17,13 +17,13 @@ const PlacesAutocomplete = ({clicked, label, clicks}) => {
             latt: geometry.location.lat(),
             long: geometry.location.lng()
         }))
-    }
+    } 
 
     const handler = () => {
         clicked(!clicks)
     }
 
-    // console.log(location)
+    // console.log(location) 
 
     return (
         <>

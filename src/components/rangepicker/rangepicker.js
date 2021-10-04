@@ -40,7 +40,7 @@ const getMinStayLength = (closedDates, checkinDate) => {
   return minStayLength;
 };
 
-export default function RangePicker(props) { 
+export default function RangePicker(props) {
   const { closedDates } = useContext(BookingDataContext);
   const {
     checkinDate,
@@ -48,7 +48,7 @@ export default function RangePicker(props) {
     name = "",
     isVisible = false,
     checkinDatePlaceholder,
-    checkinDateLabel, 
+    checkinDateLabel,
     checkoutDatePlaceholder,
     checkoutDateLabel,
     onDatesChange,
@@ -98,7 +98,7 @@ export default function RangePicker(props) {
 
       return isAfterClosed;
     },
-    [hashedClosedDates, formattedCheckinDate], 
+    [hashedClosedDates, formattedCheckinDate],
   );
 
   const getIsDayBlocked = useCallback(
@@ -106,7 +106,7 @@ export default function RangePicker(props) {
       if (!hashedClosedDates) {
         return false;
       }
- 
+
       const formattedDay = day.format(DATE_API_FORMAT);
 
       if (focusedInput === START_DATE_INPUT) {
@@ -198,7 +198,7 @@ export default function RangePicker(props) {
         <DayCell
           {...dayProps}
           isMinStayRestricted={isMinStayRestricted}
-          minStayLength={minStayLength} 
+          minStayLength={minStayLength}
         />
       );
     },
@@ -215,38 +215,35 @@ export default function RangePicker(props) {
   });
 
   return (
-    <div className='col-md-4'>
-      <div className={`row ${wrapperClassName}`} ref={inputRef}>
-
-        <div className={`${styles.labelContainer}`}>
-          <Label className={styles.label_name}>{checkinDateLabel}</Label> 
-          <Label className={styles.label_name}>{checkoutDateLabel}</Label>
-        </div>
-        <DateRangePicker
-          displayFormat={DATE_UI_FORMAT}
-          startDate={checkinDate}
-          endDate={checkoutDate}
-          anchorDirection="right"
-          startDatePlaceholderText={checkinDatePlaceholder}
-          endDatePlaceholderText={checkoutDatePlaceholder}
-          startDateId={`${name}_start_date`}
-          endDateId={`${name}_end_date`}
-          openDirection={openDirection}
-          numberOfMonths={numberOfMonths}
-          withFullScreenPortal={isMobile}
-          focusedInput={focusedInput}
-          minimumNights={minStayLength}
-          navPrev={<LeftOutlined className={styles.navPrev} />}
-          navNext={<RightOutlined className={styles.navNext} />}
-          hideKeyboardShortcutsPanel
-          renderCalendarDay={renderCalendarDay}
-          isDayBlocked={getIsDayBlocked}
-          renderCalendarInfo={renderCalendarInfo}
-          onFocusChange={handleFocusChange}
-          onDatesChange={onDatesChange}
-          onClose={closeCallback}
-        />
+    <div className={wrapperClassName} ref={inputRef}>
+      <div className={styles.labelContainer}>
+        <Label>{checkinDateLabel}</Label>
+        <Label>{checkoutDateLabel}</Label>
       </div>
+      <DateRangePicker
+        displayFormat={DATE_UI_FORMAT}
+        startDate={checkinDate}
+        endDate={checkoutDate}
+        anchorDirection="right"
+        startDatePlaceholderText={checkinDatePlaceholder}
+        endDatePlaceholderText={checkoutDatePlaceholder}
+        startDateId={`${name}_start_date`}
+        endDateId={`${name}_end_date`}
+        openDirection={openDirection}
+        numberOfMonths={numberOfMonths}
+        withFullScreenPortal={isMobile}
+        focusedInput={focusedInput} 
+        minimumNights={minStayLength}
+        navPrev={<LeftOutlined className={styles.navPrev} />}
+        navNext={<RightOutlined className={styles.navNext} />}
+        hideKeyboardShortcutsPanel
+        renderCalendarDay={renderCalendarDay}
+        isDayBlocked={getIsDayBlocked}
+        renderCalendarInfo={renderCalendarInfo}
+        onFocusChange={handleFocusChange}
+        onDatesChange={onDatesChange}
+        onClose={closeCallback}
+      />
     </div>
   );
 }

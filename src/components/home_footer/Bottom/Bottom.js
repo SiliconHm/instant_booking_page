@@ -8,12 +8,12 @@ const Bottom = () => {
         <div className="border-top p-0 mt-4 foot-content">
           <div className="container-fluid container-fluid-90 justify-content-between p-2 foot-padding">
             <div className="row">
-              <div className="col-lg-6 col-sm-6 mb-0 mt-4 text-10">
+              <div className="col-lg-6 col-sm-6 mb-0 mt-4 text-9">
               © 2021 Powered By <a href='https://memberbutton.com/' className={styles.text_color}>Memberbutton</a> By <a href='https://siliconhm.com/' className={styles.text_color}>Silicon Venture Co, Ltd</a>, A <a href='https://socialhub.center/' className={styles.text_color}> SocialHub.Center</a> Partner. All Rights Reserved - <a href='https://extranet.memberbutton.com/' className={styles.text_color}>Extranet</a> By Channex
               </div>
           
           
-              <div className="col-lg-6 col-sm-6 mb-0 mt-4 text-10 text-right">
+              <div className="col-lg-6 col-sm-6 mb-0 mt-4 text-9 text-right">
                 <div className="text-underline mb-0">
                     <Link to="#" aria-label="modalLanguge" data-toggle="modal" data-target="#languageModalCenter"> 
                         <i className="fas fa-globe text-dark"></i> 

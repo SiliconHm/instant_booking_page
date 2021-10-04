@@ -7,7 +7,7 @@ import Modal from './Modal/modal'
 
 
 const Navbar = () => {
-    const [click, setClick] = useState();
+    const [click, setClick] = useState(false);
     const [navCol, setNavCol] = useState(false)
     const [showModel, setShowModel] = useState(false)
 
@@ -17,7 +17,8 @@ const Navbar = () => {
     }
 
     const onClickHandle = () => {
-        setClick(false)
+        if(click)
+            setClick(false)
     }
     
     const goBack = () => {
@@ -33,7 +34,7 @@ const Navbar = () => {
             setNavCol(true);
         else
             setNavCol(false)
-    }
+    } 
 
     useEffect(() => {
         window.addEventListener('scroll', handleNavbar)
@@ -43,7 +44,7 @@ const Navbar = () => {
         <>
             <header className={`header_area animated fadeIn homenav ${navCol ? 'navbar_fixed' : ''}`} onClick={onClickHandle}>
                 <div className={`main_menu`}>
-                    <nav className={`navbar navbar-expand-lg navbar-light`}  style={{height: '10%'}} >
+                    <nav className={`navbar navbar-expand-lg navbar-light`} style={{height: '80px'}} >
                         <div className={`container-fluid container-fluid-90 `}>
                             <a className={`navbar-brand logo_ha dark_logo ${navCol ? 'd-sm-block' : 'd-none'} ${styles.name_show}`} aria-label="logo" href="https://memberbutton.com/">
                                 <img src={mName} alt="logo" className="img-130x32 logo-ht"/>
@@ -82,31 +83,31 @@ const Navbar = () => {
                             <div className="collapse navbar-collapse offset mt-1" id="navbarSupportedContent">
                                 <div className="nav navbar-nav menu_nav justify-content-end">
                                     <div className={`nav-item ${navCol ? 'd-none': ''}`}>
-                                        <a className='nav-link p-2 mt-3' href='/'>
+                                        <a className='nav-link p-4 mt-3' href='/'>
                                             <button className={`btn ${styles.btn_link} ${styles.btn_active}`}>Home</button>
                                         </a>
                                     </div>
                                     <div className={`nav-item ${navCol ? 'd-none': ''}`}>
-                                        <a className='nav-link p-2 mt-3' href='https://app.memberbutton.com'>
+                                        <a className='nav-link p-4 mt-3' href='https://app.memberbutton.com'>
                                             <button className={`btn ${styles.btn_link}`}> For Influencers</button>
                                         </a>                                    
                                     </div>
                                     <div className="nav-item">
-                                        <a className="nav-link pt-3 mt-2" href="https://extranet.memberbutton.com/sign-up" aria-label="property-create">
+                                        <a className="nav-link pt-4 mt-3" href="https://extranet.memberbutton.com/sign-up" aria-label="property-create">
                                             <button className="btn button vbtn-default text-10 p-0 pl-4 pr-4 br-50">
                                                 <p className="p-2 mb-0 text-white">  Add your Property</p>
                                             </button>
                                         </a>
                                     </div>
                                     
-                                    <div className="nav-item">
-                                        <a className="nav-link globe pt-4 mt-2" href='/' aria-label="modalLanguge" data-toggle="modal" data-target="#languageModalCenter"> 
+                                    {/* <div className="nav-item">
+                                        <a className="nav-link globe pt-4 mt-4" href='/' aria-label="modalLanguge" data-toggle="modal" data-target="#languageModalCenter"> 
                                             <i className="fas fa-globe text-18" style={navCol ? {color: '#4F02A4'} : {}}></i> 
                                         </a>
-                                    </div>
+                                    </div> */}
                                 
                                     <div className="nav-item">
-                                        <div className={`dropdown sv_user_login ${click ? 'show':''} pt-3 mt-2`} onClick={onClick}>
+                                        <div className={`dropdown sv_user_login ${click ? 'show':''} pt-4 mt-3`} onClick={onClick}>
                                             <button className="dropdown-toggle" type="button" data-toggle="dropdown">
                                                 <i className="fa fa-bars" aria-hidden={click}></i>
                                                 <img src="http://app.memberbutton.com/public/images/profile.jpg" className="head_avatar" alt=""/>
