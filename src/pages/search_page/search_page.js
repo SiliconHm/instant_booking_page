@@ -21,6 +21,7 @@ import { encodeMapParams } from "utils/map_params";
 import setUrlParams from "utils/set_url_params";
 
 import styles from "./search_page.module.css";
+import Bottom from "components/home_footer/Bottom/Bottom";
 
 const DEBOUNCE_MAP_TIME = 1000;
 
@@ -203,12 +204,15 @@ export default function SearchPage() {
           />
         </div>
       </div>
-      <FooterLinkContainer>
+      
+      <Bottom/>
+
+      {/* <FooterLinkContainer>
         <GetChannelAd />
       </FooterLinkContainer>
       <FooterLinkContainer>
         <PolicyLink /> 
-      </FooterLinkContainer>
+      </FooterLinkContainer> */}
     </div>
   );
 }

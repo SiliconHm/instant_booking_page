@@ -1,6 +1,7 @@
 .container {
   padding-top: 32px;
-  display: flex;
+  display: inline-flex;
+  flex-direction: row;
 }
 
 .text {

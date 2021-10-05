@@ -27,7 +27,7 @@ const PlacesAutocomplete = ({clicked, label, clicks}) => {
 
     return (
         <>
-        <div className="col-md-3 ml-2">
+        <div className={`col-md-3 ${styles.margins}`}>
         {label && <Label className={styles.label_name}>{label}</Label>}
             <AutoComplete className={`form-control m-0`} onPlaceSelected={onPlaceSelected} types={['(region)']} placeholder='Where you are going?' location={location} onClick={handler} />
         </div>

@@ -6,6 +6,7 @@ import SectionTitle from "components/section_title";
 
 import FooterLinkContainer from "./footer_link_container";
 import GetChannelAd from "./get_channel_ad";
+import Bottom from "components/home_footer/Bottom/Bottom";
 
 import styles from "./footer.module.css";
 
@@ -45,7 +46,7 @@ export default function Footer({ property = {} }) {
       <div className={styles.footer}>
         {formattedAddress && (
           <Link to="#/" type="location">
-            {formattedAddress}
+            {formattedAddress} 
           </Link>
         )}
         {email && (
@@ -59,12 +60,13 @@ export default function Footer({ property = {} }) {
           </Link>
         )}
       </div>
-      <FooterLinkContainer>
+        <Bottom/>
+      {/* <FooterLinkContainer>
         <GetChannelAd />
       </FooterLinkContainer>
       <FooterLinkContainer>
         <PolicyLink /> 
-      </FooterLinkContainer>
+      </FooterLinkContainer> */}
     </div>
   );
 }

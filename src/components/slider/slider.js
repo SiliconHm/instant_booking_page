@@ -10,10 +10,7 @@ import styles from './slider.module.css'
 const Slider = () => {
 
     return (
-
-    
       <Carousel fade>
-            
         <Carousel.Item interval={5000}>
           <img
             className="d-block w-100"

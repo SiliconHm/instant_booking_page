@@ -33,7 +33,6 @@ export default function HomePage() {
           <div>
             <Slider/>
             <MainSearch />
-            
           </div>
         </div>
       </div>

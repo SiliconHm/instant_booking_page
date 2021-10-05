@@ -14,7 +14,7 @@ export default function GetChannelAd() {
       <Link to="https://memberbutton.com" target="_blank">
         {t("footer:channex_member")} 
       </Link>
-      <span> | </span>
+      <span> | </span> 
       <Link to="https://socialhub.center/" target="_blank">
         {t("footer:channex_social")} 
       </Link>

@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Li from "./li";
 import styles from './../footer.module.css'
+import FooterLinkContainer from "components/footer/footer_link_container";
+import GetChannelAd from "components/footer/get_channel_ad";
+import PolicyLink from "components/policy_link";
 
 const Bottom = () => {
     return (
@@ -9,8 +12,9 @@ const Bottom = () => {
           <div className="container-fluid container-fluid-90 justify-content-between p-2 foot-padding">
             <div className="row">
               <div className="col-lg-6 col-sm-6 mb-0 mt-4 text-9">
-              © 2021 Powered By <a href='https://memberbutton.com/' className={styles.text_color}>Memberbutton</a> By <a href='https://siliconhm.com/' className={styles.text_color}>Silicon Venture Co, Ltd</a>, A <a href='https://socialhub.center/' className={styles.text_color}> SocialHub.Center</a> Partner. All Rights Reserved - <a href='https://extranet.memberbutton.com/' className={styles.text_color}>Extranet</a> By Channex
+              © 2021 Booking Engine By <a href='https://memberbutton.com/' className={styles.text_color}>Memberbutton</a> | <a href='https://socialhub.center/' className={styles.text_color}>SocialHub.Center Partner</a> | <a href='https://app.memberbutton.com/about' className={styles.text_color}>  Earn Commission For Promoting Us Click Here</a> | All Rights Reserved
               </div>
+
           
           
               <div className="col-lg-6 col-sm-6 mb-0 mt-4 text-9 text-right">

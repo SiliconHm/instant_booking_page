@@ -3,3 +3,12 @@
     font-weight: bold;
 } */
 
+.margins {
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 760px) {
+    .margins {
+        margin-left: -15px;
+    }
+}
