@@ -128,9 +128,9 @@ export default function MainSearch() {
                   </Dropdown>
 
 
-                  <div className={`front-search mt-2 border-right-0 d-none d-sm-block ${styles.search_control}`}>
+                  <div className={`front-search border-right-0 d-none d-sm-block ${styles.search_control}`}>
                     <Button onClick={onSearch} className='btn vbtn-default btn-sm btn-block p-0 text-12'>
-                      <i className='fas fa-search'></i>
+                      <i className='fas fa-search'></i>  
                     </Button>
                   </div>
 

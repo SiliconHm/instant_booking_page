@@ -4,13 +4,6 @@
   height: 100%;
 }
 
-.wrapper :global .input_control {
-  height: 100%;
-  border: 0;
-  border-radius: 28px 0 0 28px;
-  overflow: hidden;
-}
-
 .wrapper :global .DateRangePickerInput {
   height: 100%;
   border: 0;
@@ -61,7 +54,7 @@
   height: 100%;
   border: none;
   border-radius: 0px;
-  padding-right: 16px;
+  padding-right: 5%;
 }
 
 .occupancyDropDown :global .btn-primary:not(:disabled):not(.disabled):focus {
@@ -104,7 +97,8 @@
 }
 
 .search_control {
-  margin-left: 7%;
+  margin-left: 14%;
+  margin-top: 1.2%;
 }
 
 
@@ -234,6 +228,18 @@
 @media (max-width: 1190px) {
   .search_control {
     margin-left: 0%;
+    margin-right: 0%;
+  }
+
+  .occupancyDropDown {
+    margin-right: 0%;
+  }
+
+  .occupancyDropDown :global .dropdown-toggle {
+    height: 100%;
+    border: none;
+    border-radius: 0px;
+    padding-right: 20%;
   }
   
 }
