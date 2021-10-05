@@ -67,7 +67,7 @@ export default function HotelPage() {
   return (
     <div>
       <Header property={propertyData} />
-      {isPhotosPresent && <PhotoGallery photos={propertyData.photos} />}
+      {isPhotosPresent && <PhotoGallery photos={propertyData.photos} />} 
 
       <div className={styles.floatingSearchContainer}>
         <SearchSection property={propertyData} />

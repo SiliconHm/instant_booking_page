@@ -31,7 +31,7 @@ export default function Header({ property = {} }) {
         <HotelLogo logo={logo} title={title} hideLogo={hideLogo} />
         <HotelTitle title={title} hideTitle={hideTitle} />
       </div>
-      <div className={styles.selectSection}>
+      <div className={styles.selectSection}> 
         {isCurrencySelectShown && <CurrencySelect />}
         <LocaleSelect />
       </div>
