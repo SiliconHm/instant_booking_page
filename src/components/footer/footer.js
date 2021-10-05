@@ -1,11 +1,11 @@
 import React from "react";
 
 import Link from "components/link";
-import PolicyLink from "components/policy_link";
+// import PolicyLink from "components/policy_link";
 import SectionTitle from "components/section_title";
 
-import FooterLinkContainer from "./footer_link_container";
-import GetChannelAd from "./get_channel_ad";
+// import FooterLinkContainer from "./footer_link_container";
+// import GetChannelAd from "./get_channel_ad";
 import Bottom from "components/home_footer/Bottom/Bottom";
 
 import styles from "./footer.module.css";

@@ -6,9 +6,9 @@ import HeaderSearch from "components/header_search";
 import PropertiesList from "components/properties_list";
 import PropertiesSearchMap from "components/properties_search_map";
 import PropertyPreview from "components/property_preview";
-import FooterLinkContainer from "components/footer/footer_link_container";
-import GetChannelAd from "components/footer/get_channel_ad";
-import PolicyLink from "components/policy_link";
+// import FooterLinkContainer from "components/footer/footer_link_container";
+// import GetChannelAd from "components/footer/get_channel_ad";
+// import PolicyLink from "components/policy_link";
 
 import { AppDataContext, SearchActionsContext, SearchDataContext } from "containers/data_context";
 

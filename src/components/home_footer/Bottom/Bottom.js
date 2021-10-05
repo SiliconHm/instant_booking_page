@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Li from "./li";
 import styles from './../footer.module.css'
-import FooterLinkContainer from "components/footer/footer_link_container";
-import GetChannelAd from "components/footer/get_channel_ad";
-import PolicyLink from "components/policy_link";
+// import FooterLinkContainer from "components/footer/footer_link_container";
+// import GetChannelAd from "components/footer/get_channel_ad";
+// import PolicyLink from "components/policy_link";
 
 const Bottom = () => {
     return (
