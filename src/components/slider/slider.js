@@ -37,7 +37,7 @@ const Slider = () => {
 
           <Carousel.Caption>
           <div className={`sv_home_subsec text-center`}>
-                                  <h2 className={`banner-title ${styles.banner_margin_bott}`}>Popular Places to stay</h2>
+                                  <h2 className={`banner-title ${styles.banner_margin_bott}`}>Popular places to stay</h2>
                                   <span className="banner-title">by the people for the people</span>
                               </div>
           </Carousel.Caption>
@@ -53,7 +53,7 @@ const Slider = () => {
           <Carousel.Caption>
           <div className={`sv_home_subsec text-center`}>
                                   <h2 className={`banner-title ${styles.banner_margin_bott}`}>Online lodging marketplace</h2>
-                                  <span className="banner-title">recommended by your friends</span>
+                                  <span className="banner-title">recommended by friends</span>
                               </div>
           </Carousel.Caption>
         </Carousel.Item>
@@ -67,8 +67,8 @@ const Slider = () => {
 
           <Carousel.Caption>
           <div className={`sv_home_subsec text-center size`}>
-                                  <h2 className={`banner-title ${styles.banner_margin_bott}`}>Pre-selected top accomodations </h2>
-                                  <span className="banner-title">with lowest rates available online</span>
+                                  <h2 className={`banner-title ${styles.banner_margin_bott}`}>Pre-selected top accommodation </h2>
+                                  <span className="banner-title">with lowest rates available</span>
                               </div>
           </Carousel.Caption>
         </Carousel.Item>
