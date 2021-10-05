@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useRouteMatch } from "react-router-dom";
+import { useRouteMatch } from "react-router-dom";
 import Li from "./li";
 import CurrencySelect from "components/inputs/currency_select";
 import LocaleSelect from "components/inputs/locale_select";
