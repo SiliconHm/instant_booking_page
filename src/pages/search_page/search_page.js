@@ -169,7 +169,7 @@ export default function SearchPage() {
         handleChangeOccupancy={handleChangeOccupancy}
       />
       <div className={`${styles.wrapper}`}>
-        <div className={`${styles.left}`}>
+        <div className={`${styles.left}`}> 
           <PropertiesList 
             loading={isLoading}
             currency={searchParams.currency}

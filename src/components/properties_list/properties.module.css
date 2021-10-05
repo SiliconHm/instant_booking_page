@@ -161,3 +161,15 @@
   font-size: 26px;
   color: #232331;
 }
+
+@media screen and (max-width:960px) {
+  .overlay {
+    position: absolute;
+    opacity: 0;
+    background-color: #a593c8;
+  }
+
+  .previewBtnWrapper {
+    display: none;
+  }
+}

@@ -62,7 +62,7 @@ export default function PropertiesItem(props) {
           <Button className={styles.previewButton}>{t("properties:preview")}</Button>
         </div>
       </div>
-
+ 
       <div>
         <div className={styles.imageWrapper}>{photo}</div>
 

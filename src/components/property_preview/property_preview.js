@@ -47,7 +47,7 @@ export default function PropertyPreview({ currency, property, onClearSelectPrope
       </div>
       <div className={styles.header}>
         <div className={styles.headerInner}>
-          <p className={styles.title}>{title}</p>
+          <p className={styles.title}>{title}</p> 
           <p className={styles.address}>{address}</p>
         </div>
         <div className={styles.seeMoreBtnWrapper}>

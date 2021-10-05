@@ -24,7 +24,7 @@ export default function PropertiesList(props) {
     [`${styles.listGrid}`]: isPropertiesPresent && properties.length > 0,
   });
 
-  const renderContent = () => {
+  const renderContent = () => { 
     if (!isPropertiesPresent) {
       return (
         <div className={styles.spinner}>
@@ -42,7 +42,7 @@ export default function PropertiesList(props) {
             key={item.id}
             property={item}
             currency={currency}
-            isHighlighted={isHighlighted}
+            isHighlighted={isHighlighted} 
             onSelectProperty={onSelectProperty}
             onMouseOver={onPropertyMouseOver}
             onMouseOut={onPropertyMouseOut}

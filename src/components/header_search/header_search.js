@@ -43,6 +43,10 @@ export default function HeaderSearch({
 
   const [show, setShow] = useState(false);
 
+  const onClick = () => {
+    setShow(!show)
+  }
+
   return (
     <div className={styles.wrapper}>
       <p className={styles.title}>{t("properties:header")}</p>
@@ -77,24 +81,23 @@ export default function HeaderSearch({
           </Dropdown>
         </div>
 
-      <button onClick={() => setShow(true)} className={styles.buttonStyle}>
+      <button onClick={onClick} className={styles.buttonStyle}>
         <i className='fas fa-search'></i>
       </button>
 
       <Modal
         show={show}
-        onHide={() => setShow(false)}
+        onHide={onClick}
         dialogClassName="modal-90w"
-        aria-labelledby="example-custom-modal-styling-title"
+        aria-labelledby="search"
       >
         <Modal.Header closeButton>
-          <Modal.Title id="example-custom-modal-styling-title">
-            Custom Modal Styling
+          <Modal.Title >
+          <p className={`${styles.title} mt-3`}>{t("global:search")}</p>
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body> 
           <p>
-          <p className={`${styles.title} mt-3`}>{t("global:search")}</p>
           <RangePicker
             checkinDatePlaceholder={t("hotel_page:checkin_placeholder")}
             checkoutDatePlaceholder={t("hotel_page:checkout_placeholder")}

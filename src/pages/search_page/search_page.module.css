@@ -9,7 +9,7 @@
   height: 100%;
   max-width: 1400px;
 }
-
+ 
 .right {
   width: 100%;
   position: relative;
@@ -18,5 +18,10 @@
 @media (max-width: 960px){
   .right {
     display: none;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
   }
 }
