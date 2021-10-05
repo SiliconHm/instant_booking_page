@@ -15,7 +15,7 @@ booking system for their websites with a free<br/> influencer marketing program<
                             <a href="https://app.memberbutton.com/become-influencer-host">
                                 <button className="p-3 rounded-4 border-0 font-weight-500 mt-5">
                                     Learn More
-                                </button> 
+                                </button>  
                             </a>
                     </div> 
                 </div>
