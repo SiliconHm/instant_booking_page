@@ -11,9 +11,18 @@ export default function GetChannelAd() {
   return (
     <div className={styles.container}>
       <span className={styles.text}>{t("footer:get_free_channel")}</span>
-      <Link to="https://search.memberbutton.com" target="_blank">
-        {t("footer:channex_io")}
+      <Link to="https://memberbutton.com" target="_blank">
+        {t("footer:channex_member")} 
       </Link>
+      <span> | </span>
+      <Link to="https://socialhub.center/" target="_blank">
+        {t("footer:channex_social")} 
+      </Link>
+      <span> | </span>
+      <Link to="https://app.memberbutton.com/about" target="_blank">
+        {t("footer:channex_about")}
+      </Link>   
+      <span className={styles.text}> | {t("footer:channex_rights")}</span>
     </div>
-  );
+  ); 
 }

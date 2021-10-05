@@ -77,7 +77,7 @@ export default function HotelPage() {
         <HotelAdditionalInfoSection property={propertyData} />
       </div>
       <MapSection property={propertyData} />
-      <Footer property={propertyData} />
+      <Footer property={propertyData} /> 
     </div>
   );
 }

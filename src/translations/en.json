@@ -231,8 +231,11 @@
     "terms_and_conditions": "Terms and Conditions",
     "privacy_policy": "Privacy Policy",
     "copyright_info": "Copyright Info",
-    "get_free_channel": "Powered by",
-    "channex_io": "Memberbutton By SocialHub.Center"
+    "get_free_channel": "© 2021 Booking Engine By",
+    "channex_member": "Memberbutton ",
+    "channex_social": " SocialHub.Center ",
+    "channex_about": " Earn Commission For Promoting Us Click Here ",
+    "channex_rights": " All Rights Reserved."
   },
   "facility_categories": {
     "view" : "View",

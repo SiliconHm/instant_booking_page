@@ -8,7 +8,7 @@ export default function PolicyLink() {
 
   return (
     <Link to="https://channex.io/policy#Policy" target="_blank">
-      {t("footer:privacy_policy")}
+      {t("footer:privacy_policy")} 
     </Link>
   );
 }

@@ -63,7 +63,7 @@ export default function Footer({ property = {} }) {
         <GetChannelAd />
       </FooterLinkContainer>
       <FooterLinkContainer>
-        <PolicyLink />
+        <PolicyLink /> 
       </FooterLinkContainer>
     </div>
   );
