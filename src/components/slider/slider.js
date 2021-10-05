@@ -22,7 +22,7 @@ const Slider = () => {
           />
           <Carousel.Caption>
             <div className={`sv_home_subsec text-center`}>
-              <h2 className={`banner-title ${styles.banner_margin_bott}`}>Book exclusive room rates at places </h2>
+              <h2 className={`banner-title ${styles.banner_margin_bott}`}>Book exclusive room rates </h2>
               <span className="banner-title">powered by word of mouth</span>
               </div>
           </Carousel.Caption>
@@ -37,7 +37,7 @@ const Slider = () => {
 
           <Carousel.Caption>
           <div className={`sv_home_subsec text-center`}>
-                                  <h2 className={`banner-title ${styles.banner_margin_bott}`}>Popular vacation rentals promoted</h2>
+                                  <h2 className={`banner-title ${styles.banner_margin_bott}`}>Popular Places to stay</h2>
                                   <span className="banner-title">by the people for the people</span>
                               </div>
           </Carousel.Caption>
@@ -52,8 +52,8 @@ const Slider = () => {
 
           <Carousel.Caption>
           <div className={`sv_home_subsec text-center`}>
-                                  <h2 className={`banner-title ${styles.banner_margin_bott}`}>Online hotels and lodging marketplace</h2>
-                                  <span className="banner-title">recommended by referrals</span>
+                                  <h2 className={`banner-title ${styles.banner_margin_bott}`}>Online lodging marketplace</h2>
+                                  <span className="banner-title">recommended by your friends</span>
                               </div>
           </Carousel.Caption>
         </Carousel.Item>
@@ -67,8 +67,8 @@ const Slider = () => {
 
           <Carousel.Caption>
           <div className={`sv_home_subsec text-center size`}>
-                                  <h2 className={`banner-title ${styles.banner_margin_bott}`}>Pre- selected accomodations and amazing </h2>
-                                  <span className="banner-title">deals for member guests</span>
+                                  <h2 className={`banner-title ${styles.banner_margin_bott}`}>Pre-selected top accomodations </h2>
+                                  <span className="banner-title">with lowest rates available online</span>
                               </div>
           </Carousel.Caption>
         </Carousel.Item>
