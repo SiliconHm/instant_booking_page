@@ -67,7 +67,7 @@ const Slider = () => {
 
           <Carousel.Caption>
           <div className={`sv_home_subsec text-center size`}>
-                                  <h2 className={`banner-title ${styles.banner_margin_bott}`}>Pre-selected top accommodation </h2>
+                                  <h2 className={`banner-title ${styles.banner_margin_bott}`}>Pre-selected accommodation </h2>
                                   <span className="banner-title">with lowest rates available</span>
                               </div>
           </Carousel.Caption>
