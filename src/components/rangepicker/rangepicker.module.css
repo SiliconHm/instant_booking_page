@@ -77,3 +77,10 @@
 .navNext {
   right: 32px;
 }
+
+@media screen and (max-width: 770px) {
+  .label_name {
+    float: left;
+    font-weight: bold;
+}
+}

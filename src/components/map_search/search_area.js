@@ -20,12 +20,12 @@ const PlacesAutocomplete = ({clicked, label, clicks}) => {
     } 
 
     const handler = () => {
-        clicked(!clicks)
+        clicked(!clicks) 
     }
 
     // console.log(location) 
 
-    return (
+    return ( 
         <>
         <div className={`col-md-3 ${styles.margins}`}>
         {label && <Label className={styles.label_name}>{label}</Label>}

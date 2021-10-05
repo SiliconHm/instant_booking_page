@@ -104,7 +104,7 @@ export default function SearchSection() {
             <OccupancySetting bookingParams={params} handleSearchChange={setParams} />
             <SummaryComponent
               selectedRatesByRoom={selectedRatesByRoom}
-              bookingParams={params}
+              bookingParams={params} 
               isDatesSelected={isDatesSelected}
               isRateSelected={isRateSelected}
               totalPrice={totalPrice}

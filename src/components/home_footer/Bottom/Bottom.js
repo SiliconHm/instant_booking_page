@@ -29,10 +29,8 @@ const Bottom = () => {
           <div className="container-fluid container-fluid-90 justify-content-between p-2 foot-padding">
             <div className="row">
               <div className="col-lg-6 col-sm-6 mb-0 mt-4 text-9">
-              © 2021 Booking Engine By <a href='https://memberbutton.com/' className={styles.text_color}>Memberbutton</a> | <a href='https://socialhub.center/' className={styles.text_color}>SocialHub.Center Partner</a> | <a href='https://app.memberbutton.com/about' className={styles.text_color}>  Earn Commission For Promoting Us Click Here</a> | All Rights Reserved
+                © 2021 Booking Engine By <a href='https://memberbutton.com/' className={styles.text_color}>Memberbutton</a> | <a href='https://socialhub.center/' className={styles.text_color}>SocialHub.Center Partner</a> | <a href='https://app.memberbutton.com/about' className={styles.text_color}>  Earn Commission For Promoting Us Click Here</a> | All Rights Reserved
               </div>
-
-          
           
               <div className="col-lg-6 col-sm-6 mb-0 mt-4 text-9 text-right">
                 <div className="text-underline mb-0">

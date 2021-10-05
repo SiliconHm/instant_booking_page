@@ -2538,6 +2538,16 @@ ul.tophd li {
     .main-section {
         margin-left: 0px !important;
     }
+
+    .main_formbg {
+        background: #fff;
+        border-radius: 50px;
+        border: 1px solid;
+        border-color: #C5C5C5;
+        width: 100%;
+        padding: 0.3rem;
+        box-shadow: rgb(0 0 0 / 15%) 0px 16px 32px, rgb(0 0 0 / 10%) 0px 3px 8px !important;
+    }
 }
 
 .form-control {

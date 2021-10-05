@@ -1,14 +1,21 @@
-/* .label_name {
-    color: black;
-    font-weight: bold;
-} */
 
 .margins {
     margin-left: 10px;
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 770px) {
     .margins {
-        margin-left: -15px;
+        margin-right: 5%;
     }
-}
+
+    .label_name {
+        font-weight: bold;
+    }
+} 
+
+@media screen and (max-width: 400px) {
+    .margins {
+        margin-left: -1%;
+        margin-right: 0%;
+    }
+} 

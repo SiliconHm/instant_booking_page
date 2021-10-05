@@ -24,7 +24,7 @@ export default function Dropdown({ className, layout, children, title, show, onT
  
   return (
     <div className={[containerClass, className].join(" ")}>
-      {label && <Label>{label}</Label>}
+      {label && <Label className={styles.label_name}>{label}</Label>} 
       <BootstrapDropdown className={styles.dropdown} show={show} onToggle={handleVisibilityToggle}>
         <BootstrapDropdown.Toggle className={styles.dropdownToggle}>
           {title}

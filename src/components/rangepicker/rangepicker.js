@@ -217,11 +217,11 @@ export default function RangePicker(props) {
   return (
     <div className={wrapperClassName} ref={inputRef}>
       <div className={styles.labelContainer}>
-        <Label>{checkinDateLabel}</Label>
-        <Label>{checkoutDateLabel}</Label>
+        <Label className={styles.label_name}>{checkinDateLabel}</Label>
+        <Label className={styles.label_name}>{checkoutDateLabel}</Label> 
       </div>
       <DateRangePicker
-        displayFormat={DATE_UI_FORMAT}
+        displayFormat={DATE_UI_FORMAT} 
         startDate={checkinDate}
         endDate={checkoutDate}
         anchorDirection="right"

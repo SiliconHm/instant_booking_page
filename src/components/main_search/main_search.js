@@ -92,7 +92,7 @@ export default function MainSearch() {
           <div className={`col-lg-xl offset-xl-1 col-lg-10 offset-lg-1 ${styles.margin_top} ${isOpen ? `${styles.margin_scroll}` : ''}`}>
             <div className="main_formbg item animated zoomIn mob-form-bg" >
               <div id="front-search-form" method="post" action="http://memberbutton.com/search" autoComplete='off'>
-                <input type="hidden" name="_token" value="XzBGMDRPhmnF8K7s0qShkxCskXtgW4tVoY50Lr9n"/>
+                {/* <input type="hidden" name="_token" value="XzBGMDRPhmnF8K7s0qShkxCskXtgW4tVoY50Lr9n"/> */}
                 <div className="row">  
                 {/* onClick={clickHandle} */}
                 <PlacesAutocomplete clicked={setClick} clicks={click} label={t("hotel_page:location")}/>
@@ -134,7 +134,7 @@ export default function MainSearch() {
                     </Button>
                   </div>
 
-                  <div className='col-12 d-block d-sm-none front-search mt-2'>
+                  <div className='col-12 d-block d-sm-none front-search mt-2 mb-2'>
                     <Button onClick={onSearch} className='btn vbtn-default btn-block p-3 text-12'>
                       <i className='fas fa-search'></i>
                        {t("main_page:search_btn")}
