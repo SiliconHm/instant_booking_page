@@ -36,19 +36,19 @@ export default function SearchPage() {
   const { loadPropertiesList } = useContext(SearchActionsContext);
   const { properties } = useContext(SearchDataContext);
   let { data: propertiesData, isLoading } = properties;
-  const [continent, setContinent] = useState();
+  const [cont, setCont] = useState();
 
-  if(continent && propertiesData) {
+  if(cont && propertiesData) {
     propertiesData = propertiesData.filter(function(value) {
       for (let i = 0; i < Countries.length; i++) {
             const element = Countries[i];
-            if(toLower(element.continent) === continent && element.country === countries[value.country].name){
+            if(toLower(element.continent) === cont && element.country === countries[value.country].name){
               return value
             } 
           }
           return 0;
     })
-    console.log(continent)
+    console.log(cont)
   }
 
 
@@ -56,8 +56,7 @@ export default function SearchPage() {
     _.debounce((requestParams) => {
       const { mapCoordinates, ...restParams } = requestParams;
       const {continent} = get_url_params()
-      setContinent(continent)
-      
+      setCont(continent)
       const filter = { ...mapCoordinates };
 
       const formattedDates = {
