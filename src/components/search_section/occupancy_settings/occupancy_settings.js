@@ -33,9 +33,9 @@ export default function OccupancySettings({ bookingParams, handleSearchChange })
   }, [isOpen]);
 
   return (
-    <Dropdown
+    <Dropdown 
       show={isOpen}
-      onToggle={handleToggle}
+      onToggle={handleToggle} 
       title={dropdownTitle} 
       label={t("hotel_page:guests")}
       layout="vertical"

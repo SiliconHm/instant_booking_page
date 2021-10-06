@@ -67,8 +67,6 @@
 }
 .occupancyDropDown :global .btn-primary.dropdown-toggle:hover {
   width: 195px;
-  background-color: #a593c8; 
-  border-radius: 20px;
 }
 
 .occupancyDropDown :global .show > .btn-primary.dropdown-toggle {
