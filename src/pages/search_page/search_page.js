@@ -38,20 +38,6 @@ export default function SearchPage() {
   let { data: propertiesData, isLoading } = properties;
   const [continent, setContinent] = useState();
 
-  // if(propertiesData) {
-  //   for (let index = 0; index < propertiesData.length; index++) {
-  //     const element = propertiesData[index];
-  //     console.log(countries[element.country].name)
-  //   }
-  // }
-
-  // for (let index = 0; index < Countries.length; index++) {
-  //   const element = Countries[index];
-  //   if(toLower(element.continent) === 'asia')
-  //     console.log(element.country)
-  // }
-  
-
   if(continent && propertiesData) {
     propertiesData = propertiesData.filter(function(value) {
       for (let i = 0; i < Countries.length; i++) {
@@ -62,19 +48,9 @@ export default function SearchPage() {
           }
           return 0;
     })
-
-    // propertiesData.map(property => {
-    //   console.log(property)
-    //   for (let i = 0; i < Countries.length; i++) {
-    //     const element = Countries[i];
-    //     if(toLower(element.continent) === continent && element.country === countries[property.country].name){
-    //       return property 
-    //     }
-    //   }
-    // })
-
-    // console.log(propertiesData)
+    console.log(continent)
   }
+
 
   const onSearch = useCallback(
     _.debounce((requestParams) => {
