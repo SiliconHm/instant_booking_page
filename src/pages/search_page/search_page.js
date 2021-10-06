@@ -53,13 +53,14 @@ export default function SearchPage() {
   
 
   if(continent && propertiesData) {
-    propertiesData = propertiesData.filter((value) => {
+    propertiesData = propertiesData.filter(function(value) {
       for (let i = 0; i < Countries.length; i++) {
             const element = Countries[i];
             if(toLower(element.continent) === continent && element.country === countries[value.country].name){
               return value
-            }
+            } 
           }
+          return 0;
     })
 
     // propertiesData.map(property => {
