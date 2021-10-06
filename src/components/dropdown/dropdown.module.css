@@ -85,23 +85,9 @@
   font-weight: bold;
 }
 
-@media screen and (max-width: 770px) {
-  .label_name {
-      margin-left: -5rem;
-      font-weight: bold;
-  }
-}
-
 @media screen and (max-width: 575px) {
   .dropdownMenu {
     max-width: 100%;
   }
 
-}
-
-@media screen and (max-width: 400px) {
-  .label_name {
-    margin-left: -6rem;
-    font-weight: bold;
-}
 }

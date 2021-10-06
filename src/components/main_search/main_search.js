@@ -17,16 +17,30 @@ import setUrlParams from "utils/set_url_params";
 
 import styles from "./main_search.module.css"; 
 import PlacesAutocomplete from "components/map_search/search_area";
+import GetContinent from "utils/get_continent";
+import { toLower } from "lodash";
 
 export default function MainSearch() {
   const { t } = useTranslation();
   const history = useHistory();
+  const [continent, setContinent] = useState()
   const [click, setClick] = useState(false)
   const [isOpen, setIsOpen] = useState(false);
   const [checkinDate, setCheckinDate] = useState(null);
   const [checkoutDate, setCheckoutDate] = useState(null);
   const [rangePickerVisible, setRangePickerVisible] = useState(false);
   const [occupancyParams, setOccupancyParams] = useState(DEFAULT_OCCUPANCY_PARAMS);
+
+  GetContinent()
+        .then(data => {
+            setContinent(toLower(data.continent_name))
+        })
+  const dt = new Date()
+  const today = `${dt.getFullYear()}-${dt.getMonth()+1}-${dt.getDate()}`
+  
+  const dt2 = new Date(new Date().getTime() + 24*60*60*1000)
+  const tomorrow = `${dt2.getFullYear()}-${dt2.getMonth()+1}-${dt2.getDate()}`
+
 
   const handleDatesChange = useCallback(({ startDate, endDate }) => {
     setCheckinDate(startDate);
@@ -60,7 +74,7 @@ export default function MainSearch() {
         checkinDate: dateFormatter.toApi(checkinDate),
         checkoutDate: dateFormatter.toApi(checkoutDate),
       };
-
+      
       const params = { ...formattedDates, ...occupancyParams};
 
       // console.log('params: ', params)
@@ -156,6 +170,18 @@ export default function MainSearch() {
 
                                 <div>
                                   <li tabindex="-1" id="bigsearch-query-detached-query-suggestion-0" data-index="0" data-testid="option-0" className={styles.modal_7}>
+                                    <a className={styles.modal_8} href={`/search?checkinDate=${today}&checkoutDate=${tomorrow}&adults=1&children=0&continent=${continent}`}>
+                                      <div aria-hidden="true">
+                                        <video autoplay="" crossorigin="anonymous" playsinline="" poster="https://a0.muscache.com/pictures/04c0a34f-9880-48b7-a69c-49011f602a35.jpg" preload="auto" width="28" height="28" __idm_id__="85739521">
+                                          <source src="https://a0.muscache.com/videos/vopt/13/e1/13e14ffc-822c-5e84-aa58-d6a6527dc218/13e14ffc822c5e84aa58d6a6527dc218.mp4?impolicy=low_quality" type="video/mp4"/>
+                                          </video>
+                                      </div>
+                                      <div className={styles.modal_9}>
+                                        <div className={`${styles.modal_10}`}>
+                                          Near Me
+                                        </div>
+                                      </div> 
+                                      </a>
                                     <a className={styles.modal_8} href='https://app.memberbutton.com'>
                                       <div aria-hidden="true">
                                         <video autoplay="" crossorigin="anonymous" playsinline="" poster="https://a0.muscache.com/pictures/04c0a34f-9880-48b7-a69c-49011f602a35.jpg" preload="auto" width="28" height="28" __idm_id__="85739521">

@@ -1,6 +1,6 @@
-import React, { useCallback, useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState} from "react";
 import { Redirect, useHistory } from "react-router-dom";
-import _ from "lodash";
+import _, { toLower } from "lodash";
 
 import HeaderSearch from "components/header_search";
 import PropertiesList from "components/properties_list";
@@ -16,9 +16,14 @@ import dateFormatter from "utils/date_formatter";
 import getBookingParamsFromUrl from "utils/get_booking_params_from_url";
 import { encodeMapParams } from "utils/map_params";
 import setUrlParams from "utils/set_url_params";
+import get_url_params from "utils/get_url_params";
 
 import styles from "./search_page.module.css";
 import Bottom from "components/home_footer/Bottom/Bottom";
+import {countries} from 'country-data';
+import Countries from "constants/countries";
+
+// import countryList from 'react-select-country-list'
 
 const DEBOUNCE_MAP_TIME = 1000;
 
@@ -30,15 +35,51 @@ export default function SearchPage() {
   const history = useHistory();
   const { loadPropertiesList } = useContext(SearchActionsContext);
   const { properties } = useContext(SearchDataContext);
-  const { data: propertiesData, isLoading } = properties;
+  let { data: propertiesData, isLoading } = properties;
+  const [continent, setContinent] = useState();
 
-  // console.log('properties: ', properties)
+  // if(propertiesData) {
+  //   for (let index = 0; index < propertiesData.length; index++) {
+  //     const element = propertiesData[index];
+  //     console.log(countries[element.country].name)
+  //   }
+  // }
+
+  // for (let index = 0; index < Countries.length; index++) {
+  //   const element = Countries[index];
+  //   if(toLower(element.continent) === 'asia')
+  //     console.log(element.country)
+  // }
   
+
+  if(continent && propertiesData) {
+    propertiesData = propertiesData.filter((value) => {
+      for (let i = 0; i < Countries.length; i++) {
+            const element = Countries[i];
+            if(toLower(element.continent) === continent && element.country === countries[value.country].name){
+              return value
+            }
+          }
+    })
+
+    // propertiesData.map(property => {
+    //   console.log(property)
+    //   for (let i = 0; i < Countries.length; i++) {
+    //     const element = Countries[i];
+    //     if(toLower(element.continent) === continent && element.country === countries[property.country].name){
+    //       return property 
+    //     }
+    //   }
+    // })
+
+    // console.log(propertiesData)
+  }
+
   const onSearch = useCallback(
     _.debounce((requestParams) => {
       const { mapCoordinates, ...restParams } = requestParams;
-      
-      // console.log('request: ', requestParams) 
+      const {continent} = get_url_params()
+      setContinent(continent)
       
       const filter = { ...mapCoordinates };
 
@@ -60,7 +101,7 @@ export default function SearchPage() {
       
       const parsedParams = getBookingParamsFromUrl();
       const activeCurrency = parsedParams.currency || DEFAULT_CURRENCY;
-      
+    
       const newSearchParams = { ...parsedParams, currency: activeCurrency };
       
       setSearchParams(newSearchParams);
@@ -100,6 +141,7 @@ export default function SearchPage() {
       };
 
       setSearchParams(newSearchParams);
+    
 
       if (startDate && endDate) {
         const formattedDates = {
@@ -131,7 +173,6 @@ export default function SearchPage() {
   const handleCurrencyChange = useCallback(
     (currency) => {
       const newSearchParams = { ...searchParams, currency };
-
       setUrlParams({ currency }, history);
       setSearchParams(newSearchParams);
       onSearch(newSearchParams);

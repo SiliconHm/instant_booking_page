@@ -5,12 +5,10 @@ import styles from './search.module.css'
 
 const PlacesAutocomplete = ({clicked, label, clicks}) => {
     const [location, setLocation] = useState({address: '', latt: '', long: ''})
-
-    // const [click, setClick] = useState(true)
-
+        
     const onPlaceSelected = (place) => {
         const { formatted_address, geometry} = place
-
+        
         setLocation(prev => ({
             ...prev,
             address: formatted_address,
@@ -22,8 +20,6 @@ const PlacesAutocomplete = ({clicked, label, clicks}) => {
     const handler = () => {
         clicked(!clicks) 
     }
-
-    // console.log(location) 
 
     return ( 
         <>

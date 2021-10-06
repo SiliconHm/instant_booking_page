@@ -9,13 +9,15 @@ const formatApiResponse = async (payload) => {
   const parsedPayload = await payload.json();
   const convertedPayload = caseConverter.convertToCamelCase(parsedPayload);
 
+  // console.log(convertedPayload.data)
+  
   return convertedPayload;
 };
 
 const handleApiResponse = async (payload) => {
   if (!payload?.ok) {
     throw payload;
-  }
+  } 
 
   const formattedPayload = await formatApiResponse(payload);
   const { data, errors } = formattedPayload;
@@ -68,7 +70,7 @@ const request = async (method, apiUrl, path, payload, queryParams) => {
 
   try {
     const response = await fetch(url, requestOptions);
-
+    // console.log(response)
     return handleApiResponse(response);
   } catch (error) {
     return handleApiError(error);
