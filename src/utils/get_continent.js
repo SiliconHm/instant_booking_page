@@ -2,9 +2,10 @@ import publicIP from 'react-native-public-ip';
 
 const GetContinent = async () => {
     // const [region, setRegion] = useState({})
-    const key = process.env.REACT_ACCESS_KEY;
+    // const key = process.env.REACT_APP_ACCESS_KEY;
+    // console.log('key: ', key)
     const publicIpAddress = await publicIP();
-    const url = `http://api.ipstack.com/${publicIpAddress}?access_key=${key}`
+    const url = `http://api.ipstack.com/${publicIpAddress}?access_key=40dfac267f618003e5700ee90f912365 `
     return fetch(url, {
             method: 'GET'
         })
