@@ -35,6 +35,8 @@ export default function MainSearch() {
         .then(data => {
             setContinent(toLower(data.continent_name))
         })
+
+  console.log(continent)
   const dt = new Date()
   const today = `${dt.getFullYear()}-${dt.getMonth()+1}-${dt.getDate()}`
   
