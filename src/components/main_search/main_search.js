@@ -117,7 +117,7 @@ export default function MainSearch() {
                     title={dropdownTitle}
                     className={styles.occupancyDropDown}
                     layout="vertical"
-                    label={t("hotel_page:adults_label")}
+                    label={t("hotel_page:guests")}  
                     >
 
                     <OccupancySettingsForm

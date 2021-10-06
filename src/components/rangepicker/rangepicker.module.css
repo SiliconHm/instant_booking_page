@@ -80,7 +80,16 @@
 
 @media screen and (max-width: 770px) {
   .label_name {
-    float: left;
+    margin-left: -8%;
+    margin-right: 8%;
+    font-weight: bold;
+}
+}
+
+@media screen and (max-width: 500px) {
+  .label_name {
+    margin-left: -12%;
+    margin-right: 10%;
     font-weight: bold;
 }
 }

@@ -216,7 +216,7 @@ export default function RangePicker(props) {
 
   return (
     <div className={wrapperClassName} ref={inputRef}>
-      <div className={styles.labelContainer}>
+      <div className={styles.labelContainer}> 
         <Label className={styles.label_name}>{checkinDateLabel}</Label>
         <Label className={styles.label_name}>{checkoutDateLabel}</Label> 
       </div>

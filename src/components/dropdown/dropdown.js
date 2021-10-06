@@ -10,7 +10,7 @@ const VERTICAL_ORIENTATION = "vertical";
 export default function Dropdown({ className, layout, children, title, show, onToggle, label }) {
   const containerClass =
     layout === VERTICAL_ORIENTATION ? styles.containerVertical : styles.containerHorizontal;
-
+  
   const handleVisibilityToggle = useCallback(
     (newVisibilityState, event, meta) => {
       if (meta.source === "select") {
@@ -23,7 +23,7 @@ export default function Dropdown({ className, layout, children, title, show, onT
   );
  
   return (
-    <div className={[containerClass, className].join(" ")}>
+    <div className={[containerClass, className].join(" ")}> 
       {label && <Label className={styles.label_name}>{label}</Label>} 
       <BootstrapDropdown className={styles.dropdown} show={show} onToggle={handleVisibilityToggle}>
         <BootstrapDropdown.Toggle className={styles.dropdownToggle}>
@@ -31,6 +31,6 @@ export default function Dropdown({ className, layout, children, title, show, onT
         </BootstrapDropdown.Toggle>
         <BootstrapDropdown.Menu className={styles.dropdownMenu}>{children}</BootstrapDropdown.Menu>
       </BootstrapDropdown>
-    </div>
+    </div> 
   );
 }

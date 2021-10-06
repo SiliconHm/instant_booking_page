@@ -9,6 +9,7 @@
     }
 
     .label_name {
+        float: left;
         font-weight: bold;
     }
 } 

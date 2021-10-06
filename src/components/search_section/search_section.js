@@ -106,7 +106,7 @@ export default function SearchSection() {
               selectedRatesByRoom={selectedRatesByRoom}
               bookingParams={params} 
               isDatesSelected={isDatesSelected}
-              isRateSelected={isRateSelected}
+              isRateSelected={isRateSelected} 
               totalPrice={totalPrice}
               missingSpaces={missingSpaces}
               currency={currency}

@@ -29,11 +29,16 @@
 
 .dropdownToggle:hover,
 .dropdownToggle:focus {
-  background-color: white;
+  background-color: #fff;
   color: var(--main-text-color);
+  /* color:#000; */
   outline: none;
   box-shadow: none;
 }
+
+/* .dropdownToggle:hover {
+  color: #4F02A4;
+} */
 
 .dropdown:global>.btn-primary.dropdown-toggle,
 .dropdownToggle:global.btn-primary:not(:disabled):not(.disabled):focus,
@@ -76,8 +81,13 @@
   border-color: #00aff5;
 }
 
+.label_name {
+  font-weight: bold;
+}
+
 @media screen and (max-width: 770px) {
   .label_name {
+      margin-left: -5rem;
       font-weight: bold;
   }
 }
@@ -86,4 +96,12 @@
   .dropdownMenu {
     max-width: 100%;
   }
+
+}
+
+@media screen and (max-width: 400px) {
+  .label_name {
+    margin-left: -6rem;
+    font-weight: bold;
+}
 }

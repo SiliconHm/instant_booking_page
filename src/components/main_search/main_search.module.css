@@ -48,7 +48,7 @@
 
 .occupancyDropDown :global .dropdown {
   height: 100%;
-  margin-top: -15px;
+  margin-top: 0px;
 }
 
 .occupancyDropDown :global .dropdown-toggle {
@@ -64,6 +64,11 @@
 
 .occupancyDropDown :global .btn-primary.dropdown-toggle {
   width: 195px;
+}
+.occupancyDropDown :global .btn-primary.dropdown-toggle:hover {
+  width: 195px;
+  background-color: #a593c8; 
+  border-radius: 20px;
 }
 
 .occupancyDropDown :global .show > .btn-primary.dropdown-toggle {
@@ -185,14 +190,14 @@
   flex-direction: column !important;
   justify-content: center !important;
 }
-/* 
+
 .modal_10 {
   overflow: clip !important;
   overflow-x: clip !important;
   overflow-y: clip !important;
 }
 .modal_10 {
-  -webkit-text-fill-color: transparent !important;
+  /* -webkit-text-fill-color: transparent !important; */
   background: linear-gradient(90deg, rgb(111, 1, 156) 0%, rgb(198, 1, 126) 135.12%) text !important;
 }
 .modal_10 {
@@ -206,12 +211,12 @@
   display: -webkit-box !important;
   -webkit-line-clamp: 6 !important;
   -webkit-box-orient: vertical !important;
-} */
-
-.modal_10 {
+}
+ 
+/* .modal_10 { */
   /* overflow:auto; */
   /* -webkit-text-fill-color: transparent !important; */
-  background: linear-gradient(90deg, rgb(111, 1, 156) 0%, rgb(198, 1, 126) 135.12%) text !important;
+  /* background: linear-gradient(90deg, rgb(111, 1, 156) 0%, rgb(198, 1, 126) 135.12%) text !important;
   font-size: 18px !important;
   line-height: 20px !important;
   font-weight: 800 !important;
@@ -222,7 +227,7 @@
   display: -webkit-box !important;
   -webkit-line-clamp: 6 !important;
   -webkit-box-orient: vertical !important;
-}
+} */
 
 @media (max-width: 1200px) {
   .search_control {
