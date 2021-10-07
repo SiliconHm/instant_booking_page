@@ -47,9 +47,8 @@ export default function SearchPage() {
             if(toLower(element.continent) === cont && element.country === countries[value.country].name){
               return value
             }
-            else 
-              return 0;
           }
+          return 0;
     })
   }
 
