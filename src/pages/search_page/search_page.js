@@ -48,7 +48,7 @@ export default function SearchPage() {
           }
           return 0;
     })
-    // console.log(cont)
+    console.log(propertiesData)
   }
 
 
