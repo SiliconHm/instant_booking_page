@@ -9,7 +9,7 @@ const formatApiResponse = async (payload) => {
   const parsedPayload = await payload.json();
   const convertedPayload = caseConverter.convertToCamelCase(parsedPayload);
 
-  // console.log(convertedPayload.data)
+  console.log('Payload: ',convertedPayload.data)
   
   return convertedPayload;
 };
@@ -70,7 +70,10 @@ const request = async (method, apiUrl, path, payload, queryParams) => {
 
   try {
     const response = await fetch(url, requestOptions);
-    // console.log(response)
+    
+    // console.log('Response: ',response)
+    
+    
     return handleApiResponse(response);
   } catch (error) {
     return handleApiError(error);

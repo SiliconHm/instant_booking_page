@@ -38,25 +38,29 @@ export default function SearchPage() {
   let { data: propertiesData, isLoading } = properties;
   const [cont, setCont] = useState();
 
+  console.log('Properties: ', propertiesData)
   if(cont && propertiesData) {
+    // console.log(cont)
     propertiesData = propertiesData.filter(function(value) {
       for (let i = 0; i < Countries.length; i++) {
             const element = Countries[i];
             if(toLower(element.continent) === cont && element.country === countries[value.country].name){
               return value
-            } 
+            }
+            else 
+              return 0;
           }
-          return 0;
     })
-    console.log(propertiesData)
   }
 
 
   const onSearch = useCallback(
     _.debounce((requestParams) => {
       const { mapCoordinates, ...restParams } = requestParams;
+
       const {continent} = get_url_params()
       setCont(continent)
+      
       const filter = { ...mapCoordinates };
 
       const formattedDates = {

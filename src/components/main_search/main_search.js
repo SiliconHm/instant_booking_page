@@ -50,10 +50,10 @@ export default function MainSearch() {
   // console.log(coun)
 
   
-  const dt = new Date()
+  const dt = new Date(new Date().getTime() + 48*60*60*1000)
   const today = `${dt.getFullYear()}-${dt.getMonth()+1}-${dt.getDate()}`
   
-  const dt2 = new Date(new Date().getTime() + 24*60*60*1000)
+  const dt2 = new Date(new Date().getTime() + 72*60*60*1000)
   const tomorrow = `${dt2.getFullYear()}-${dt2.getMonth()+1}-${dt2.getDate()}`
   
   // let i
@@ -74,7 +74,7 @@ export default function MainSearch() {
     Continent = toLower(continent)
   }
 
-  // console.log(Continent)
+  console.log(Continent)
   // setContinent(continentt)
   
   const handleDatesChange = useCallback(({ startDate, endDate }) => {
@@ -204,7 +204,7 @@ export default function MainSearch() {
                                 <li className={styles.modal_5}>
                                   <span className={styles.modal_6}>Deals for Influencers</span>
                                 </li>
-
+                                {/* ${Continent} */}
                                 <div>
                                   <li tabindex="-1" id="bigsearch-query-detached-query-suggestion-0" data-index="0" data-testid="option-0" className={styles.modal_7}>
                                     <a className={styles.modal_8} href={`/search?checkinDate=${today}&checkoutDate=${tomorrow}&adults=1&children=0&continent=${Continent}`}>
