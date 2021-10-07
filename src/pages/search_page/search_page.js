@@ -38,7 +38,8 @@ export default function SearchPage() {
   let { data: propertiesData, isLoading } = properties;
   const [cont, setCont] = useState();
 
-  console.log('Properties: ', propertiesData)
+  // console.log('Properties: ', propertiesData)
+  // console.log(searchParams.coo)
   if(cont && propertiesData) {
     // console.log(cont)
     propertiesData = propertiesData.filter(function(value) {

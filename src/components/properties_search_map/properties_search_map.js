@@ -5,9 +5,20 @@ import Marker from "./marker";
 
 const BOOTSTRAP_URL_KEYS = { key: process.env.REACT_APP_GOOGLE_MAP_KEY };
 const DEFAULT_ZOOM = 1;
-const DEFAULT_CENTER = { lat: 51.496644, lng: -0.147614 };
+// const DEFAULT_CENTER = { lat: 51.496644, lng: -0.147614 };
+
+let latt, long
+
+const successfull = (position) => {
+  const {latitude, longitude} = position.coords;
+  latt = latitude
+  long = longitude
+}
+navigator.geolocation.getCurrentPosition(successfull, console.log)
+
 
 // console.log(DEFAULT_CENTER)
+const DEFAULT_CENTER = { lat: latt, lng: long };
 
 const MAP_SIZE = {
   width: "100%",

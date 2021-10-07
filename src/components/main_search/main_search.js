@@ -74,7 +74,7 @@ export default function MainSearch() {
     Continent = toLower(continent)
   }
 
-  console.log(Continent)
+  // console.log(Continent)
   // setContinent(continentt)
   
   const handleDatesChange = useCallback(({ startDate, endDate }) => {
@@ -105,7 +105,6 @@ export default function MainSearch() {
   const dropdownTitle = getDropdownTitle();
 
   const onSearch = () => {
-    // setContinent(Countries[i].continent)
     if (checkinDate && checkoutDate) {
       const formattedDates = {
         checkinDate: dateFormatter.toApi(checkinDate),
@@ -114,7 +113,6 @@ export default function MainSearch() {
       
       const params = { ...formattedDates, ...occupancyParams};
       
-      // console.log('params: ', params)
 
       setUrlParams(params, history);
       const searchPagePath = buildPath(history.location.search, routes.searchPage);

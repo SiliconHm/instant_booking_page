@@ -9,7 +9,7 @@ const formatApiResponse = async (payload) => {
   const parsedPayload = await payload.json();
   const convertedPayload = caseConverter.convertToCamelCase(parsedPayload);
 
-  console.log('Payload: ',convertedPayload.data)
+  // console.log('Payload: ',convertedPayload.data)
   
   return convertedPayload;
 };

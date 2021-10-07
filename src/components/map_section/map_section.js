@@ -9,7 +9,7 @@ import styles from "./map_section.module.css";
 
 export default function MapSection({ property }) {
   const { location } = property;
-
+  // console.log(location)
   return ( 
     <SectionWrapper theme="dark" padded={false}>
       <Col xs="12">
