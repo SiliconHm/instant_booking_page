@@ -1,19 +1,16 @@
-import publicIP from 'react-native-public-ip';
+// Geocode.setApiKey( process.env.REACT_APP_GOOGLE_MAP_KEY );
+const get_continent = async () =>  {
 
-const GetContinent = async () => {
-    // const [region, setRegion] = useState({})
-    // const key = process.env.REACT_APP_ACCESS_KEY;
-    // console.log('key: ', key)
-    const publicIpAddress = await publicIP();
-    const url = `http://api.ipstack.com/${publicIpAddress}?access_key=40dfac267f618003e5700ee90f912365 `
-    return fetch(url, {
-            method: 'GET'
-        })
-        .then(res => {
-            return res.json();
-        }) 
-        .catch(err => console.log(err))
+    const successfull = (position) => {
+        const {latitude, longitude} = position.coords;
+        lat = latitude
+        long = longitude
+    }
+    console.log(lat, long)
+    navigator.geolocation.getCurrentPosition(successfull, console.log)
+    
+    fetch(`https://api.opencagedata.com/geocode/v1/json?q=${lat}+${long}&key=04563085cbbc4905a4b3e91d25171b9a`)
+        .then(res => res.json())	
 }
 
-
-export default GetContinent;
+export default get_continent;

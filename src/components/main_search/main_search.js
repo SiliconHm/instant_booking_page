@@ -17,60 +17,95 @@ import setUrlParams from "utils/set_url_params";
 
 import styles from "./main_search.module.css"; 
 import PlacesAutocomplete from "components/map_search/search_area";
-import GetContinent from "utils/get_continent";
+import Countries from "constants/countries";
 import { toLower } from "lodash";
+
+// import Map from "utils/get_continent";
+// import get_continent from "utils/get_continent";
 
 export default function MainSearch() {
   const { t } = useTranslation();
   const history = useHistory();
-  const [continent, setContinent] = useState()
+  // const [Continent, setContinent] = useState()
+  const [coun, setCoun] = useState()
   const [click, setClick] = useState(false)
   const [isOpen, setIsOpen] = useState(false);
   const [checkinDate, setCheckinDate] = useState(null);
   const [checkoutDate, setCheckoutDate] = useState(null);
   const [rangePickerVisible, setRangePickerVisible] = useState(false);
   const [occupancyParams, setOccupancyParams] = useState(DEFAULT_OCCUPANCY_PARAMS);
-
-  GetContinent()
+  
+  const successfull = (position) => {
+    const {latitude, longitude} = position.coords;
+    
+    fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=04563085cbbc4905a4b3e91d25171b9a`)
+        .then(res => res.json())
         .then(data => {
-            setContinent(toLower(data.continent_name))
+          setCoun(data.results[0].components.country)
         })
+  }
+  
+  navigator.geolocation.getCurrentPosition(successfull, console.log)
 
-  console.log(continent)
+  // console.log(coun)
+
+  
   const dt = new Date()
   const today = `${dt.getFullYear()}-${dt.getMonth()+1}-${dt.getDate()}`
   
   const dt2 = new Date(new Date().getTime() + 24*60*60*1000)
   const tomorrow = `${dt2.getFullYear()}-${dt2.getMonth()+1}-${dt2.getDate()}`
+  
+  // let i
+  // let isFound = true
+  // for(i = 0; i < Countries.length; i++) {
+  //   let element = Countries[i]
+  //   if(element.country === coun && isFound) {
+  //     console.log(element.continent)
+  //     setContinent(Countries[i].continent)
+  //     isFound = true;
+  //   }
+  // }
 
+  const contin = Countries.find(data => data.country === coun)
+  let Continent
+  if(contin) {
+    const {continent} = contin
+    Continent = toLower(continent)
+  }
 
+  // console.log(Continent)
+  // setContinent(continentt)
+  
   const handleDatesChange = useCallback(({ startDate, endDate }) => {
+
     setCheckinDate(startDate);
     setCheckoutDate(endDate);
   }, []);
-
+  
   const handleToggleDropdown = useCallback(() => {
     setIsOpen(!isOpen);
   }, [isOpen]);
-
+  
   const handleChangeOccupancy = useCallback(
     (value, name) => {
       const params = { ...occupancyParams, [name]: value };
       setOccupancyParams(params);
     },
     [occupancyParams],
-  );
-
-  const getDropdownTitle = useCallback(() => {
-    const title = `${occupancyParams.adults} ${t("hotel_page:adults")} ·
+    );
+    
+    const getDropdownTitle = useCallback(() => {
+      const title = `${occupancyParams.adults} ${t("hotel_page:adults")} ·
     ${occupancyParams.children} ${t("hotel_page:children")}`;
 
     return title;
   }, [t, occupancyParams]);
-
+  
   const dropdownTitle = getDropdownTitle();
 
   const onSearch = () => {
+    // setContinent(Countries[i].continent)
     if (checkinDate && checkoutDate) {
       const formattedDates = {
         checkinDate: dateFormatter.toApi(checkinDate),
@@ -78,7 +113,7 @@ export default function MainSearch() {
       };
       
       const params = { ...formattedDates, ...occupancyParams};
-
+      
       // console.log('params: ', params)
 
       setUrlParams(params, history);
@@ -111,8 +146,8 @@ export default function MainSearch() {
                 {/* <input type="hidden" name="_token" value="XzBGMDRPhmnF8K7s0qShkxCskXtgW4tVoY50Lr9n"/> */}
                 <div className="row">  
                 {/* onClick={clickHandle} */}
+                {/* <Map/> */}
                 <PlacesAutocomplete clicked={setClick} clicks={click} label={t("hotel_page:location")}/>
-                  
                   <RangePicker
                     checkinDatePlaceholder={t("hotel_page:checkin_placeholder")}
                     checkoutDatePlaceholder={t("hotel_page:checkout_placeholder")}
@@ -172,7 +207,7 @@ export default function MainSearch() {
 
                                 <div>
                                   <li tabindex="-1" id="bigsearch-query-detached-query-suggestion-0" data-index="0" data-testid="option-0" className={styles.modal_7}>
-                                    <a className={styles.modal_8} href={`/search?checkinDate=${today}&checkoutDate=${tomorrow}&adults=1&children=0&continent=${continent}`}>
+                                    <a className={styles.modal_8} href={`/search?checkinDate=${today}&checkoutDate=${tomorrow}&adults=1&children=0&continent=${Continent}`}>
                                       <div aria-hidden="true">
                                         <video autoplay="" crossorigin="anonymous" playsinline="" poster="https://a0.muscache.com/pictures/04c0a34f-9880-48b7-a69c-49011f602a35.jpg" preload="auto" width="28" height="28" __idm_id__="85739521">
                                           <source src="https://a0.muscache.com/videos/vopt/13/e1/13e14ffc-822c-5e84-aa58-d6a6527dc218/13e14ffc822c5e84aa58d6a6527dc218.mp4?impolicy=low_quality" type="video/mp4"/>
