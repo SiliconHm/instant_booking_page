@@ -22,6 +22,11 @@ import styles from "./search_page.module.css";
 import Bottom from "components/home_footer/Bottom/Bottom";
 import {countries} from 'country-data';
 import Countries from "constants/countries";
+// import Geocode from "react-geocode";
+// import Autocomplete from 'react-google-autocomplete';
+// import { GoogleMapsAPI } from '../client-config';
+// Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAP_KEY);
+// Geocode.enableDebug();
 
 // import countryList from 'react-select-country-list'
 
@@ -37,9 +42,9 @@ export default function SearchPage() {
   const { properties } = useContext(SearchDataContext);
   let { data: propertiesData, isLoading } = properties;
   const [cont, setCont] = useState();
-
-  // console.log('Properties: ', propertiesData)
-  // console.log(searchParams.coo)
+  // const [bounds, setBounds] = useState()
+  // const [mrgBounds, setMrgBounds] = useState({latitude: {lte: '', gte: ''}, longitude: {lte:'', gte:''}})
+ 
   if(cont && propertiesData) {
     // console.log(cont)
     propertiesData = propertiesData.filter(function(value) {
@@ -53,6 +58,33 @@ export default function SearchPage() {
     })
   }
 
+  // const successfull = (position) => {
+  //   const {latitude, longitude} = position.coords;
+
+  //   Geocode.fromLatLng( latitude , longitude).then(
+	// 		response => {
+	// 			const address = response.results[0].geometry.bounds;
+  //       setBounds(address)
+	// 		},
+	// 		error => {
+	// 			console.error( error );
+	// 		}
+	// 	);
+
+  //   if(bounds)
+  //     setMrgBounds(prev => ({
+  //       ...prev,
+  //       latitude: {lte: bounds.northeast.lat, gte: bounds.northeast.lng},
+  //       longitude: {lte: bounds.southwest.lat, gte: bounds.southwest.lng}
+  //     }))
+  
+  // console.log(mrgBounds)
+
+  // }
+  
+  // useEffect(() => {
+  //   navigator.geolocation.getCurrentPosition(successfull)
+  // })
 
   const onSearch = useCallback(
     _.debounce((requestParams) => {
@@ -62,7 +94,7 @@ export default function SearchPage() {
       setCont(continent)
       
       const filter = { ...mapCoordinates };
-
+      
       const formattedDates = {
         checkinDate: dateFormatter.toApi(restParams.checkinDate),
         checkoutDate: dateFormatter.toApi(restParams.checkoutDate),
@@ -78,8 +110,9 @@ export default function SearchPage() {
       if (searchParams) {
         return;
       }
-      
+
       const parsedParams = getBookingParamsFromUrl();
+      // console.log(parsedParams)
       const activeCurrency = parsedParams.currency || DEFAULT_CURRENCY;
     
       const newSearchParams = { ...parsedParams, currency: activeCurrency };
@@ -93,15 +126,18 @@ export default function SearchPage() {
   const handleCoordinatesChange = (marginBounds) => {
 
     // console.log('margin: ', marginBounds)
+    // // console.log(bounds)
+    // console.log(searchParams.mapCoordinates)
     
     const isSameLocation = _.isEqual(marginBounds, searchParams.mapCoordinates);
+
     const newSearchParams = { ...searchParams, mapCoordinates: marginBounds };
     const mapCoordinates = encodeMapParams(marginBounds);
-
+    // console.log(newSearchParams)
     if (isSameLocation) {
       return;
     }
-
+    // console.log('change')
     setSearchParams(newSearchParams);
     setUrlParams({ mapCoordinates }, history);
 

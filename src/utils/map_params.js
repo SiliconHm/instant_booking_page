@@ -29,6 +29,7 @@ export const decodeMapParams = (mapParams = "") => {
 };
 
 export const encodeMapParams = (mapParams) => {
+
   if (!mapParams?.latitude || !mapParams?.longitude) {
     return null;
   }

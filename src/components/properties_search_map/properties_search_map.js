@@ -5,20 +5,20 @@ import Marker from "./marker";
 
 const BOOTSTRAP_URL_KEYS = { key: process.env.REACT_APP_GOOGLE_MAP_KEY };
 const DEFAULT_ZOOM = 1;
-// const DEFAULT_CENTER = { lat: 51.496644, lng: -0.147614 };
+const DEFAULT_CENTER = { lat: 51.496644, lng: -0.147614 };
 
-let latt, long
+// let latt, long
 
-const successfull = (position) => {
-  const {latitude, longitude} = position.coords;
-  latt = latitude
-  long = longitude
-}
-navigator.geolocation.getCurrentPosition(successfull, console.log)
+// const successfull = (position) => {
+//   const {latitude, longitude} = position.coords;
+//   latt = latitude
+//   long = longitude
+// }
+// navigator.geolocation.getCurrentPosition(successfull, console.log)
 
 
 // console.log(DEFAULT_CENTER)
-const DEFAULT_CENTER = { lat: latt, lng: long };
+// const DEFAULT_CENTER = { lat: latt, lng: long };
 
 const MAP_SIZE = {
   width: "100%",
@@ -38,6 +38,7 @@ const getMapBounds = (maps, points) => {
 };
 
 const getPropertiesBounds = (maps, properties) => {
+  
   const points = properties.map(({ latitude, longitude }) => {
     return [Number(latitude), Number(longitude)];
   });
@@ -45,7 +46,16 @@ const getPropertiesBounds = (maps, properties) => {
   return getMapBounds(maps, points);
 };
 
+// northeast: {lat: 34.04800000000001, lng: 100.61975}
+// southwest: {lat: 34.047875, lng: 100.619625}
+
 const getDefaultBounds = (maps, defaultBounds) => {
+  // console.log('default: ', defaultBounds)
+  // console.log('defaultBounds.latitude.lte : ', defaultBounds.latitude.lte)
+  // console.log('defaultBounds.longitude.lte : ', defaultBounds.longitude.lte)
+  // console.log('defaultBounds.latitude.gte : ', defaultBounds.latitude.gte)
+  // console.log('defaultBounds.longitude.gte : ', defaultBounds.longitude.gte)
+
   const formattedBounds = {
     ne: {
       lat: defaultBounds.latitude.lte,
@@ -64,6 +74,24 @@ const getDefaultBounds = (maps, defaultBounds) => {
       lng: defaultBounds.longitude.gte,
     },
   };
+  // const formattedBounds = {
+  //   ne: {
+  //     lat: defaultBounds.latitude.lte,
+  //     lng: defaultBounds.longitude.lte,
+  //   },
+  //   nw: {
+  //     lat: defaultBounds.latitude.gte,
+  //     lng: defaultBounds.longitude.lte,
+  //   },
+  //   se: {
+  //     lat: defaultBounds.latitude.lte,
+  //     lng: defaultBounds.longitude.gte,
+  //   },
+  //   sw: {
+  //     lat: defaultBounds.latitude.gte,
+  //     lng: defaultBounds.longitude.gte,
+  //   },
+  // };
 
   const points = Object.values(formattedBounds).map(({ lat, lng }) => {
     return [lat, lng];
@@ -82,7 +110,8 @@ export default function PropertiesSearchMap({
   onMarkerMouseOut,
 }) {
   const [mapInstance, setMapInstance] = useState(null);
-
+  // console.log(properties)
+  // console.log('default bounds: ', defaultBounds)
   const onGoogleApiLoaded = useCallback(
     (newMapInstance) => {
 
@@ -139,16 +168,17 @@ export default function PropertiesSearchMap({
     if (!mapInstance) {
       return;
     }
-    
-
-
 
     const formattedCoordinates = {
       latitude: {
         lte: bounds.ne.lat,
+        // lte: 33.6848393,
         gte: bounds.sw.lat,
+        // gte: 33.6848393,
       },
       longitude: {
+        // lte: 73.0487146,
+        // gte: 73.0469899,
         lte: bounds.ne.lng,
         gte: bounds.sw.lng,
       },

@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import classNames from "classnames";
@@ -20,62 +20,82 @@ import PlacesAutocomplete from "components/map_search/search_area";
 import Countries from "constants/countries";
 import { toLower } from "lodash";
 
-// import Map from "utils/get_continent";
-// import get_continent from "utils/get_continent";
+// // import { withGoogleMap, GoogleMap, withScriptjs, InfoWindow, Marker } from "react-google-maps";
+// import Geocode from "react-geocode";
+// // import Autocomplete from 'react-google-autocomplete';
+// // import { GoogleMapsAPI } from '../client-config';
+// Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAP_KEY);
+// Geocode.enableDebug();
+
 
 export default function MainSearch() {
   const { t } = useTranslation();
   const history = useHistory();
   // const [Continent, setContinent] = useState()
-  const [coun, setCoun] = useState()
+  // const [coun, setCoun] = useState('')
   const [click, setClick] = useState(false)
   const [isOpen, setIsOpen] = useState(false);
   const [checkinDate, setCheckinDate] = useState(null);
   const [checkoutDate, setCheckoutDate] = useState(null);
   const [rangePickerVisible, setRangePickerVisible] = useState(false);
   const [occupancyParams, setOccupancyParams] = useState(DEFAULT_OCCUPANCY_PARAMS);
-  
-  const successfull = (position) => {
-    const {latitude, longitude} = position.coords;
-    
-    fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=04563085cbbc4905a4b3e91d25171b9a`)
-        .then(res => res.json())
-        .then(data => {
-          setCoun(data.results[0].components.country)
-        })
+  // const [mrgBounds, setMrgBounds] = useState({latitude: {lte: '', gte: ''}, longitude: {lte:'', gte:''}})
+  const [mapCord, setMapCord] = useState('')
+
+  const [country, setCountry] = useState("xyz")
+
+  useEffect(()=>{
+    const func=async(p)=>{
+      const {latitude, longitude} = p.coords;
+      const x  = await reverseGeocode(latitude, longitude)
+      setCountry(x)    
+      
+    }
+    navigator.geolocation.getCurrentPosition(func)
+  },[country])
+
+
+  const reverseGeocode = async (lat, lng) => {
+    const Data =  await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&sensor=false&key=${process.env.REACT_APP_GOOGLE_MAP_KEY}`)
+    const res = await Data.json() 
+    const addressArray = res.results[0].address_components
+
+    let state;
+
+      for( let i = 0; i < addressArray.length; i++ ) {
+        if ( addressArray[ i ].types[0] === 'country' ) {
+          state = addressArray[ i ].long_name;
+          return state;
+        }
+      }
+
   }
-  
-  navigator.geolocation.getCurrentPosition(successfull, console.log)
 
-  // console.log(coun)
-
-  
   const dt = new Date(new Date().getTime() + 48*60*60*1000)
   const today = `${dt.getFullYear()}-${dt.getMonth()+1}-${dt.getDate()}`
   
   const dt2 = new Date(new Date().getTime() + 72*60*60*1000)
   const tomorrow = `${dt2.getFullYear()}-${dt2.getMonth()+1}-${dt2.getDate()}`
-  
-  // let i
-  // let isFound = true
-  // for(i = 0; i < Countries.length; i++) {
-  //   let element = Countries[i]
-  //   if(element.country === coun && isFound) {
-  //     console.log(element.continent)
-  //     setContinent(Countries[i].continent)
-  //     isFound = true;
-  //   }
-  // }
 
-  const contin = Countries.find(data => data.country === coun)
-  let Continent
-  if(contin) {
-    const {continent} = contin
-    Continent = toLower(continent)
+  let contin
+  for (let index = 0; index < Countries.length; index++) {
+    const element = Countries[index];
+    if(element.country === country) {
+      // console.log(element)
+      contin = toLower(element.continent)
+      break;
+    }  
   }
+  useEffect(() => {
+    if(contin) {
+      if(contin === 'asia')
+        setMapCord('68.49533937542401%2C-26.511615409508302%2C141.04002568843708%2C7.446275688437055')
+  
+      else if(contin === 'europe')
+        setMapCord('75.0657849248914%2C-6.255809745073449%2C74.84606400095521%2C-58.747685999044776')
+    }
 
-  // console.log(Continent)
-  // setContinent(continentt)
+  }, [contin])
   
   const handleDatesChange = useCallback(({ startDate, endDate }) => {
 
@@ -133,6 +153,8 @@ export default function MainSearch() {
     if(click)
       setClick(false)
   }
+
+
 
   return (
     <div className={styles.wrapper} onClick={handlePopup}> 
@@ -202,10 +224,11 @@ export default function MainSearch() {
                                 <li className={styles.modal_5}>
                                   <span className={styles.modal_6}>Deals for Influencers</span>
                                 </li>
-                                {/* ${Continent} */}
+                                {/* ${Continent} //   lat: 33.6848393, lng: 73.0487146}
+// southwest: {lat: 33.6839399, lng: 73.0469899*/}
                                 <div>
                                   <li tabindex="-1" id="bigsearch-query-detached-query-suggestion-0" data-index="0" data-testid="option-0" className={styles.modal_7}>
-                                    <a className={styles.modal_8} href={`/search?checkinDate=${today}&checkoutDate=${tomorrow}&adults=1&children=0&continent=${Continent}`}>
+                                    <a className={styles.modal_8} href={`/search?checkinDate=${today}&checkoutDate=${tomorrow}&adults=1&children=0&continent=${contin}&mapCoordinates=${mapCord}`}>
                                       <div aria-hidden="true">
                                         <video autoplay="" crossorigin="anonymous" playsinline="" poster="https://a0.muscache.com/pictures/04c0a34f-9880-48b7-a69c-49011f602a35.jpg" preload="auto" width="28" height="28" __idm_id__="85739521">
                                           <source src="https://a0.muscache.com/videos/vopt/13/e1/13e14ffc-822c-5e84-aa58-d6a6527dc218/13e14ffc822c5e84aa58d6a6527dc218.mp4?impolicy=low_quality" type="video/mp4"/>
