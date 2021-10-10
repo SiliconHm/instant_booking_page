@@ -17,8 +17,8 @@ import setUrlParams from "utils/set_url_params";
 
 import styles from "./main_search.module.css"; 
 import PlacesAutocomplete from "components/map_search/search_area";
-import Countries from "constants/countries";
-import { toLower } from "lodash";
+// import Countries from "constants/countries";
+// import { toLower } from "lodash";
 
 // // import { withGoogleMap, GoogleMap, withScriptjs, InfoWindow, Marker } from "react-google-maps";
 // import Geocode from "react-geocode";
@@ -41,11 +41,10 @@ export default function MainSearch() {
   const [occupancyParams, setOccupancyParams] = useState(DEFAULT_OCCUPANCY_PARAMS);
   const [location, setLocation] = useState({address: '', latitude: 0, longitude: 0})
 
-  // const [mrgBounds, setMrgBounds] = useState({latitude: {lte: '', gte: ''}, longitude: {lte:'', gte:''}})
   const [mapCoordinate, setMapCoordinates] = useState({lte1: '', lte2: '', gte1: '', gte2: ''})
   
-  const [mapCord, setMapCord] = useState('')
-  const [country, setCountry] = useState('')
+  // const [mapCord, setMapCord] = useState('')
+  // const [country, setCountry] = useState('')
 
   useEffect(()=>{
     const func = async (p) => {
@@ -62,7 +61,7 @@ export default function MainSearch() {
       else  
         loc  = await reverseGeocode(latitude, longitude)
       
-      setCountry(loc.state)    
+      // setCountry(loc.state)    
       
       // setMrgBounds(prev => ({
       //     ...prev,
@@ -94,8 +93,7 @@ export default function MainSearch() {
         break;
       }
     }
-    console.log(res)
-    console.log(address)
+
     let state;
 
       for( let i = 0; i < addressArray.length; i++ ) {
@@ -108,30 +106,30 @@ export default function MainSearch() {
 
   }
 
-  const dt = new Date(new Date().getTime() + 48*60*60*1000)
-  const today = `${dt.getFullYear()}-${dt.getMonth()+1}-${dt.getDate()}`
+  // const dt = new Date(new Date().getTime() + 48*60*60*1000)
+  // const today = `${dt.getFullYear()}-${dt.getMonth()+1}-${dt.getDate()}`
   
-  const dt2 = new Date(new Date().getTime() + 72*60*60*1000)
-  const tomorrow = `${dt2.getFullYear()}-${dt2.getMonth()+1}-${dt2.getDate()}`
+  // const dt2 = new Date(new Date().getTime() + 72*60*60*1000)
+  // const tomorrow = `${dt2.getFullYear()}-${dt2.getMonth()+1}-${dt2.getDate()}`
 
-  let contin
-  for (let index = 0; index < Countries.length; index++) {
-    const element = Countries[index];
-    if(element.country === country) {
-      contin = toLower(element.continent)
-      break;
-    }  
-  }
-  useEffect(() => {
-    if(contin) {
-      if(contin === 'asia')
-        setMapCord('68.49533937542401%2C-26.511615409508302%2C141.04002568843708%2C7.446275688437055')
+  // let contin
+  // for (let index = 0; index < Countries.length; index++) {
+  //   const element = Countries[index];
+  //   if(element.country === country) {
+  //     contin = toLower(element.continent)
+  //     break;
+  //   }  
+  // }
+  // useEffect(() => {
+  //   if(contin) {
+  //     if(contin === 'asia')
+  //       setMapCord('68.49533937542401%2C-26.511615409508302%2C141.04002568843708%2C7.446275688437055')
   
-      else if(contin === 'europe')
-        setMapCord('75.0657849248914%2C-6.255809745073449%2C74.84606400095521%2C-58.747685999044776')
-    }
+  //     else if(contin === 'europe')
+  //       setMapCord('75.0657849248914%2C-6.255809745073449%2C74.84606400095521%2C-58.747685999044776')
+  //   }
 
-  }, [contin])
+  // }, [contin])
   
   const handleDatesChange = useCallback(({ startDate, endDate }) => {
 
@@ -272,7 +270,7 @@ export default function MainSearch() {
 // southwest: {lat: 33.6839399, lng: 73.0469899     ${mrgBounds.latitude.lte}%2C${mrgBounds.longitude.lte}%2C${mrgBounds.latitude.gte}%2C${mrgBounds.latitude.gte}*/}
                                 <div>
                                   <li tabIndex="-1" id="bigsearch-query-detached-query-suggestion-0" data-index="0" data-testid="option-0" className={styles.modal_7}>
-                                    <a className={styles.modal_8} href={`/search?checkinDate=${today}&checkoutDate=${tomorrow}&adults=1&children=0&continent=${contin}&mapCoordinates=${mapCord}`}>
+                                    {/* <a className={styles.modal_8} href={`/search?checkinDate=${today}&checkoutDate=${tomorrow}&adults=1&children=0&continent=${contin}&mapCoordinates=${mapCord}`}>
                                       <div aria-hidden="true">
                                         <video autoPlay="" crossOrigin="anonymous" playsInline="" poster="https://a0.muscache.com/pictures/04c0a34f-9880-48b7-a69c-49011f602a35.jpg" preload="auto" width="28" height="28" __idm_id__="85739521">
                                           <source src="https://a0.muscache.com/videos/vopt/13/e1/13e14ffc-822c-5e84-aa58-d6a6527dc218/13e14ffc822c5e84aa58d6a6527dc218.mp4?impolicy=low_quality" type="video/mp4"/>
@@ -283,7 +281,7 @@ export default function MainSearch() {
                                           Near Me
                                         </div>
                                       </div> 
-                                      </a>
+                                      </a> */}
                                     <a className={styles.modal_8} href='https://app.memberbutton.com'>
                                       <div aria-hidden="true">
                                         <video autoPlay="" crossOrigin="anonymous" playsInline="" poster="https://a0.muscache.com/pictures/04c0a34f-9880-48b7-a69c-49011f602a35.jpg" preload="auto" width="28" height="28" __idm_id__="85739521">
