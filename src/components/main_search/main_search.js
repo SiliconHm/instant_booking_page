@@ -77,8 +77,6 @@ export default function MainSearch() {
         gte1: loc.address.northeast.lng,
         gte2: loc.address.southwest.lng
       }))
-      // console.log('mrb: ', mrgBounds)
-      // console.log('mapC: ', mapCoordinate)
     }
     navigator.geolocation.getCurrentPosition(func)
   },[location])
@@ -88,11 +86,8 @@ export default function MainSearch() {
     const Data =  await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&sensor=false&key=${process.env.REACT_APP_GOOGLE_MAP_KEY}`)
     const res = await Data.json() 
     const addressArray = res.results[0].address_components
-    const address = res.results[addressArray.length-1].geometry.bounds;
-    // console.log(address)
-    // return address
+    const address = res.results[res.results.length-1].geometry.bounds;
 
-    // console.log(res)
     let state;
 
       for( let i = 0; i < addressArray.length; i++ ) {

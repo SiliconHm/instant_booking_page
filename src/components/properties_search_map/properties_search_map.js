@@ -4,21 +4,8 @@ import GoogleMapReact from "google-map-react";
 import Marker from "./marker";
 
 const BOOTSTRAP_URL_KEYS = { key: process.env.REACT_APP_GOOGLE_MAP_KEY };
-const DEFAULT_ZOOM = 1;
+const DEFAULT_ZOOM = -200;
 const DEFAULT_CENTER = { lat: 51.496644, lng: -0.147614 };
-
-// let latt, long
-
-// const successfull = (position) => {
-//   const {latitude, longitude} = position.coords;
-//   latt = latitude
-//   long = longitude
-// }
-// navigator.geolocation.getCurrentPosition(successfull, console.log)
-
-
-// console.log(DEFAULT_CENTER)
-// const DEFAULT_CENTER = { lat: latt, lng: long };
 
 const MAP_SIZE = {
   width: "100%",
@@ -46,15 +33,8 @@ const getPropertiesBounds = (maps, properties) => {
   return getMapBounds(maps, points);
 };
 
-// northeast: {lat: 34.04800000000001, lng: 100.61975}
-// southwest: {lat: 34.047875, lng: 100.619625}
 
 const getDefaultBounds = (maps, defaultBounds) => {
-  // console.log('default: ', defaultBounds)
-  // console.log('defaultBounds.latitude.lte : ', defaultBounds.latitude.lte)
-  // console.log('defaultBounds.longitude.lte : ', defaultBounds.longitude.lte)
-  // console.log('defaultBounds.latitude.gte : ', defaultBounds.latitude.gte)
-  // console.log('defaultBounds.longitude.gte : ', defaultBounds.longitude.gte)
 
   const formattedBounds = {
     ne: {
@@ -74,24 +54,6 @@ const getDefaultBounds = (maps, defaultBounds) => {
       lng: defaultBounds.longitude.gte,
     },
   };
-  // const formattedBounds = {
-  //   ne: {
-  //     lat: defaultBounds.latitude.lte,
-  //     lng: defaultBounds.longitude.lte,
-  //   },
-  //   nw: {
-  //     lat: defaultBounds.latitude.gte,
-  //     lng: defaultBounds.longitude.lte,
-  //   },
-  //   se: {
-  //     lat: defaultBounds.latitude.lte,
-  //     lng: defaultBounds.longitude.gte,
-  //   },
-  //   sw: {
-  //     lat: defaultBounds.latitude.gte,
-  //     lng: defaultBounds.longitude.gte,
-  //   },
-  // };
 
   const points = Object.values(formattedBounds).map(({ lat, lng }) => {
     return [lat, lng];
