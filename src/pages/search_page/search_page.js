@@ -111,8 +111,7 @@ export default function SearchPage() {
       if (searchParams) {
         return;
       }
-      // const { mapCoordinates } = get_url_params()
-      // console.log(get_url_params())
+
       const parsedParams = getBookingParamsFromUrl();
     
       // console.log('parsed: ', parsedParams)

@@ -94,10 +94,6 @@ export default function PropertiesSearchMap({
     if (!mapInstance || !properties || defaultBounds) {
       return;
     }
-    
-    // console.log(mapInstance)
-    // console.log(properties)
-    // console.log(defaultBounds)
 
 
     const bounds = getPropertiesBounds(mapInstance.maps, properties);

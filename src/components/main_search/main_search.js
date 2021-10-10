@@ -86,20 +86,19 @@ export default function MainSearch() {
     const Data =  await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&sensor=false&key=${process.env.REACT_APP_GOOGLE_MAP_KEY}`)
     const res = await Data.json() 
     const addressArray = res.results[0].address_components
-    const address = res.results[res.results.length-1].geometry.bounds;
+    const address = res.results[res.results.length-2].geometry.bounds;
 
     let state;
 
       for( let i = 0; i < addressArray.length; i++ ) {
         if ( addressArray[ i ].types[0] === 'country' ) {
           state = addressArray[ i ].long_name;
+
           return {state, address};
         }
       }
 
   }
-  
-
 
   const dt = new Date(new Date().getTime() + 48*60*60*1000)
   const today = `${dt.getFullYear()}-${dt.getMonth()+1}-${dt.getDate()}`
@@ -111,7 +110,6 @@ export default function MainSearch() {
   for (let index = 0; index < Countries.length; index++) {
     const element = Countries[index];
     if(element.country === country) {
-      // console.log(element)
       contin = toLower(element.continent)
       break;
     }  
