@@ -42,7 +42,7 @@ export default function MainSearch() {
   // const [mrgBounds, setMrgBounds] = useState({latitude: {lte: '', gte: ''}, longitude: {lte:'', gte:''}})
   const [mapCord, setMapCord] = useState('')
 
-  const [country, setCountry] = useState("xyz")
+  const [country, setCountry] = useState('')
 
   useEffect(()=>{
     const func=async(p)=>{
@@ -59,7 +59,7 @@ export default function MainSearch() {
     const Data =  await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&sensor=false&key=${process.env.REACT_APP_GOOGLE_MAP_KEY}`)
     const res = await Data.json() 
     const addressArray = res.results[0].address_components
-
+    console.log(res)
     let state;
 
       for( let i = 0; i < addressArray.length; i++ ) {

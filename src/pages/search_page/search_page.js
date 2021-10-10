@@ -1,6 +1,6 @@
 import React, { useCallback, useContext, useEffect, useState} from "react";
 import { Redirect, useHistory } from "react-router-dom";
-import _, { toLower } from "lodash";
+import _ from "lodash";
 
 import HeaderSearch from "components/header_search";
 import PropertiesList from "components/properties_list";
@@ -16,12 +16,12 @@ import dateFormatter from "utils/date_formatter";
 import getBookingParamsFromUrl from "utils/get_booking_params_from_url";
 import { encodeMapParams } from "utils/map_params";
 import setUrlParams from "utils/set_url_params";
-import get_url_params from "utils/get_url_params";
+// import get_url_params from "utils/get_url_params";
 
 import styles from "./search_page.module.css";
 import Bottom from "components/home_footer/Bottom/Bottom";
-import {countries} from 'country-data';
-import Countries from "constants/countries";
+// import {countries} from 'country-data';
+// import Countries from "constants/countries";
 // import Geocode from "react-geocode";
 // import Autocomplete from 'react-google-autocomplete';
 // import { GoogleMapsAPI } from '../client-config';
@@ -40,23 +40,23 @@ export default function SearchPage() {
   const history = useHistory();
   const { loadPropertiesList } = useContext(SearchActionsContext);
   const { properties } = useContext(SearchDataContext);
-  let { data: propertiesData, isLoading } = properties;
-  const [cont, setCont] = useState();
+  const { data: propertiesData, isLoading } = properties;
+  // const [cont, setCont] = useState();
   // const [bounds, setBounds] = useState()
   // const [mrgBounds, setMrgBounds] = useState({latitude: {lte: '', gte: ''}, longitude: {lte:'', gte:''}})
  
-  if(cont && propertiesData) {
-    // console.log(cont)
-    propertiesData = propertiesData.filter(function(value) {
-      for (let i = 0; i < Countries.length; i++) {
-            const element = Countries[i];
-            if(toLower(element.continent) === cont && element.country === countries[value.country].name){
-              return value
-            }
-          }
-          return 0;
-    })
-  }
+  // if(cont && propertiesData) {
+  //   // console.log(cont)
+  //   propertiesData = propertiesData.filter(function(value) {
+  //     for (let i = 0; i < Countries.length; i++) {
+  //           const element = Countries[i];
+  //           if(toLower(element.continent) === cont && element.country === countries[value.country].name){
+  //             return value
+  //           }
+  //         }
+  //         return 0;
+  //   })
+  // }
 
   // const successfull = (position) => {
   //   const {latitude, longitude} = position.coords;
@@ -90,8 +90,8 @@ export default function SearchPage() {
     _.debounce((requestParams) => {
       const { mapCoordinates, ...restParams } = requestParams;
 
-      const {continent} = get_url_params()
-      setCont(continent)
+      // const {continent} = get_url_params()
+      // setCont(continent)
       
       const filter = { ...mapCoordinates };
       

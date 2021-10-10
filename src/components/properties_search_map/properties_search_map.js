@@ -172,13 +172,9 @@ export default function PropertiesSearchMap({
     const formattedCoordinates = {
       latitude: {
         lte: bounds.ne.lat,
-        // lte: 33.6848393,
         gte: bounds.sw.lat,
-        // gte: 33.6848393,
       },
       longitude: {
-        // lte: 73.0487146,
-        // gte: 73.0469899,
         lte: bounds.ne.lng,
         gte: bounds.sw.lng,
       },
