@@ -20,6 +20,7 @@ import setUrlParams from "utils/set_url_params";
 
 import styles from "./search_page.module.css";
 import Bottom from "components/home_footer/Bottom/Bottom";
+// import get_url_params from "utils/get_url_params";
 // import {countries} from 'country-data';
 // import Countries from "constants/countries";
 // import Geocode from "react-geocode";
@@ -72,11 +73,11 @@ export default function SearchPage() {
 	// 	);
 
   //   if(bounds)
-  //     setMrgBounds(prev => ({
-  //       ...prev,
-  //       latitude: {lte: bounds.northeast.lat, gte: bounds.northeast.lng},
-  //       longitude: {lte: bounds.southwest.lat, gte: bounds.southwest.lng}
-  //     }))
+      // setMrgBounds(prev => ({
+      //   ...prev,
+      //   latitude: {lte: bounds.northeast.lat, gte: bounds.northeast.lng},
+      //   longitude: {lte: bounds.southwest.lat, gte: bounds.southwest.lng}
+      // }))
   
   // console.log(mrgBounds)
 
@@ -110,13 +111,15 @@ export default function SearchPage() {
       if (searchParams) {
         return;
       }
-
+      // const { mapCoordinates } = get_url_params()
+      // console.log(get_url_params())
       const parsedParams = getBookingParamsFromUrl();
-      // console.log(parsedParams)
+    
+      // console.log('parsed: ', parsedParams)
       const activeCurrency = parsedParams.currency || DEFAULT_CURRENCY;
     
-      const newSearchParams = { ...parsedParams, currency: activeCurrency };
-      
+      const newSearchParams = { ...parsedParams, currency: activeCurrency,  }; ////// set coordinates
+      // console.log('new: ', newSearchParams)
       setSearchParams(newSearchParams);
       onSearch(newSearchParams);
     },

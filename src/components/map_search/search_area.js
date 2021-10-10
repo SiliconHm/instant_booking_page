@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import AutoComplete from 'react-google-autocomplete'
 import Label from "components/label/label";
 import styles from './search.module.css'
 
-const PlacesAutocomplete = ({clicked, label, clicks}) => {
-    const [location, setLocation] = useState({address: '', latt: '', long: ''})
+const PlacesAutocomplete = ({clicked, label, clicks, setLocation}) => {
+    // const [location, setLocation] = useState({address: '', latt: '', long: ''})
         
     const onPlaceSelected = (place) => {
         const { formatted_address, geometry} = place
@@ -12,20 +12,21 @@ const PlacesAutocomplete = ({clicked, label, clicks}) => {
         setLocation(prev => ({
             ...prev,
             address: formatted_address,
-            latt: geometry.location.lat(),
-            long: geometry.location.lng()
+            latitude: geometry.location.lat(),
+            longitude: geometry.location.lng()
         }))
     } 
 
     const handler = () => {
         clicked(!clicks) 
     }
+    // console.log(location)
 
     return ( 
         <>
         <div className={`col-md-3 ${styles.margins}`}>
         {label && <Label className={styles.label_name}>{label}</Label>}
-            <AutoComplete className={`form-control m-0`} onPlaceSelected={onPlaceSelected} types={['(region)']} placeholder='Where you are going?' location={location} onClick={handler} />
+            <AutoComplete className={`form-control m-0`} onPlaceSelected={onPlaceSelected} types={['(region)']} placeholder='Where you are going?' onClick={handler} />
         </div>
         </>
     )

@@ -39,37 +39,72 @@ export default function MainSearch() {
   const [checkoutDate, setCheckoutDate] = useState(null);
   const [rangePickerVisible, setRangePickerVisible] = useState(false);
   const [occupancyParams, setOccupancyParams] = useState(DEFAULT_OCCUPANCY_PARAMS);
-  // const [mrgBounds, setMrgBounds] = useState({latitude: {lte: '', gte: ''}, longitude: {lte:'', gte:''}})
-  const [mapCord, setMapCord] = useState('')
+  const [location, setLocation] = useState({address: '', latitude: 0, longitude: 0})
 
+  // const [mrgBounds, setMrgBounds] = useState({latitude: {lte: '', gte: ''}, longitude: {lte:'', gte:''}})
+  const [mapCoordinate, setMapCoordinates] = useState({lte1: '', lte2: '', gte1: '', gte2: ''})
+  
+  const [mapCord, setMapCord] = useState('')
   const [country, setCountry] = useState('')
 
   useEffect(()=>{
-    const func=async(p)=>{
+    const func = async (p) => {
       const {latitude, longitude} = p.coords;
-      const x  = await reverseGeocode(latitude, longitude)
-      setCountry(x)    
+      // setPosition({latitude, longitude})
+      // console.log('position: ', position)
+      // console.log(latitude, longitude)
+      let loc
+      if(location.latitude !== 0 && location.longitude !== 0) {
+        loc  = await reverseGeocode(location.latitude, location.longitude)
+        // console.log('coordinates change: ', location)
+        // console.log('loc: ', loc)
+      }
+      else  
+        loc  = await reverseGeocode(latitude, longitude)
       
+      setCountry(loc.state)    
+      
+      // setMrgBounds(prev => ({
+      //     ...prev,
+      //     latitude: {lte: loc.address.northeast.lat, gte: loc.address.northeast.lng},
+      //     longitude: {lte: loc.address.southwest.lat, gte: loc.address.southwest.lng}
+      //   }))
+      
+      setMapCoordinates(prev => ({
+        ...prev,
+        lte1: loc.address.northeast.lat,
+        lte2: loc.address.southwest.lat,
+        gte1: loc.address.northeast.lng,
+        gte2: loc.address.southwest.lng
+      }))
+      // console.log('mrb: ', mrgBounds)
+      // console.log('mapC: ', mapCoordinate)
     }
     navigator.geolocation.getCurrentPosition(func)
-  },[country])
-
-
-  const reverseGeocode = async (lat, lng) => {
-    const Data =  await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&sensor=false&key=${process.env.REACT_APP_GOOGLE_MAP_KEY}`)
+  },[location])
+  
+  const reverseGeocode = async (latitude, longitude) => {
+    
+    const Data =  await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&sensor=false&key=${process.env.REACT_APP_GOOGLE_MAP_KEY}`)
     const res = await Data.json() 
     const addressArray = res.results[0].address_components
-    console.log(res)
+    const address = res.results[addressArray.length-1].geometry.bounds;
+    // console.log(address)
+    // return address
+
+    // console.log(res)
     let state;
 
       for( let i = 0; i < addressArray.length; i++ ) {
         if ( addressArray[ i ].types[0] === 'country' ) {
           state = addressArray[ i ].long_name;
-          return state;
+          return {state, address};
         }
       }
 
   }
+  
+
 
   const dt = new Date(new Date().getTime() + 48*60*60*1000)
   const today = `${dt.getFullYear()}-${dt.getMonth()+1}-${dt.getDate()}`
@@ -130,11 +165,19 @@ export default function MainSearch() {
         checkinDate: dateFormatter.toApi(checkinDate),
         checkoutDate: dateFormatter.toApi(checkoutDate),
       };
+
+
       
-      const params = { ...formattedDates, ...occupancyParams};
-      
+      const mapC = `${mapCoordinate.lte1},${mapCoordinate.lte2},${mapCoordinate.gte1},${mapCoordinate.gte2}`
+
+      // console.log(formattedDates, occupancyParams)
+
+      const params = { ...formattedDates, ...occupancyParams, mapCoordinates: mapC};
+      // console.log('params: ', params)
 
       setUrlParams(params, history);
+      // console.log('routes: ', routes.searchPage)
+      // console.log('history: ', history.location.search)
       const searchPagePath = buildPath(history.location.search, routes.searchPage);
       
       // console.log('main search: ', searchPagePath)
@@ -167,7 +210,7 @@ export default function MainSearch() {
                 <div className="row">  
                 {/* onClick={clickHandle} */}
                 {/* <Map/> */}
-                <PlacesAutocomplete clicked={setClick} clicks={click} label={t("hotel_page:location")}/>
+                <PlacesAutocomplete clicked={setClick} clicks={click} setLocation={setLocation} label={t("hotel_page:location")}/>
                   <RangePicker
                     checkinDatePlaceholder={t("hotel_page:checkin_placeholder")}
                     checkoutDatePlaceholder={t("hotel_page:checkout_placeholder")}
@@ -225,12 +268,12 @@ export default function MainSearch() {
                                   <span className={styles.modal_6}>Deals for Influencers</span>
                                 </li>
                                 {/* ${Continent} //   lat: 33.6848393, lng: 73.0487146}
-// southwest: {lat: 33.6839399, lng: 73.0469899*/}
+// southwest: {lat: 33.6839399, lng: 73.0469899     ${mrgBounds.latitude.lte}%2C${mrgBounds.longitude.lte}%2C${mrgBounds.latitude.gte}%2C${mrgBounds.latitude.gte}*/}
                                 <div>
-                                  <li tabindex="-1" id="bigsearch-query-detached-query-suggestion-0" data-index="0" data-testid="option-0" className={styles.modal_7}>
+                                  <li tabIndex="-1" id="bigsearch-query-detached-query-suggestion-0" data-index="0" data-testid="option-0" className={styles.modal_7}>
                                     <a className={styles.modal_8} href={`/search?checkinDate=${today}&checkoutDate=${tomorrow}&adults=1&children=0&continent=${contin}&mapCoordinates=${mapCord}`}>
                                       <div aria-hidden="true">
-                                        <video autoplay="" crossorigin="anonymous" playsinline="" poster="https://a0.muscache.com/pictures/04c0a34f-9880-48b7-a69c-49011f602a35.jpg" preload="auto" width="28" height="28" __idm_id__="85739521">
+                                        <video autoPlay="" crossOrigin="anonymous" playsInline="" poster="https://a0.muscache.com/pictures/04c0a34f-9880-48b7-a69c-49011f602a35.jpg" preload="auto" width="28" height="28" __idm_id__="85739521">
                                           <source src="https://a0.muscache.com/videos/vopt/13/e1/13e14ffc-822c-5e84-aa58-d6a6527dc218/13e14ffc822c5e84aa58d6a6527dc218.mp4?impolicy=low_quality" type="video/mp4"/>
                                           </video>
                                       </div>
@@ -242,7 +285,7 @@ export default function MainSearch() {
                                       </a>
                                     <a className={styles.modal_8} href='https://app.memberbutton.com'>
                                       <div aria-hidden="true">
-                                        <video autoplay="" crossorigin="anonymous" playsinline="" poster="https://a0.muscache.com/pictures/04c0a34f-9880-48b7-a69c-49011f602a35.jpg" preload="auto" width="28" height="28" __idm_id__="85739521">
+                                        <video autoPlay="" crossOrigin="anonymous" playsInline="" poster="https://a0.muscache.com/pictures/04c0a34f-9880-48b7-a69c-49011f602a35.jpg" preload="auto" width="28" height="28" __idm_id__="85739521">
                                           <source src="https://a0.muscache.com/videos/vopt/13/e1/13e14ffc-822c-5e84-aa58-d6a6527dc218/13e14ffc822c5e84aa58d6a6527dc218.mp4?impolicy=low_quality" type="video/mp4"/>
                                           </video>
                                       </div>

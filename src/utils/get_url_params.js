@@ -4,7 +4,7 @@ export default () => {
 
   return searchParams.reduce((acc, param) => {
     const [name, value = true] = param.split("=");
-
+ 
     return { ...acc, [name]: value };
   }, {});
 };
