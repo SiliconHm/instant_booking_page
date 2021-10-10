@@ -86,8 +86,16 @@ export default function MainSearch() {
     const Data =  await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&sensor=false&key=${process.env.REACT_APP_GOOGLE_MAP_KEY}`)
     const res = await Data.json() 
     const addressArray = res.results[0].address_components
-    const address = res.results[res.results.length-2].geometry.bounds;
-
+    const array = res.results;
+    let address;
+    for(let i = 0; i < array.length; i++) {
+      if(array[i].types[0] === 'country') {
+        address = array[i].geometry.bounds;
+        break;
+      }
+    }
+    console.log(res)
+    console.log(address)
     let state;
 
       for( let i = 0; i < addressArray.length; i++ ) {
