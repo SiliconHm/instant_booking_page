@@ -4,7 +4,7 @@ import GoogleMapReact from "google-map-react";
 import Marker from "./marker";
 
 const BOOTSTRAP_URL_KEYS = { key: process.env.REACT_APP_GOOGLE_MAP_KEY };
-const DEFAULT_ZOOM = -200;
+const DEFAULT_ZOOM = 1;
 const DEFAULT_CENTER = { lat: 51.496644, lng: -0.147614 };
 
 const MAP_SIZE = {
