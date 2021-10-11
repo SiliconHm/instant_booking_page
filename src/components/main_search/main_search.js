@@ -15,7 +15,7 @@ import buildPath from "utils/build_path";
 import dateFormatter from "utils/date_formatter";
 import setUrlParams from "utils/set_url_params";
 
-import styles from "./main_search.module.css"; 
+import styles from "./main_search.module.css";  
 import PlacesAutocomplete from "components/map_search/search_area";
 // import Countries from "constants/countries";
 // import { toLower } from "lodash";

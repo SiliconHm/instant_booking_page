@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { Link, useHistory } from "react-router-dom";
@@ -12,13 +12,23 @@ import BestOffer from "./best_offer";
 
 import EmptyIcon from "static/empty-property.svg";
 import styles from "./properties.module.css";
+import yellow from "utils/Lists/yellow_list";
 
 export default function PropertiesItem(props) {
   const { property, currency, isHighlighted, onSelectProperty, onMouseOver, onMouseOut } = props;
   const { t } = useTranslation();
   const history = useHistory();
+  const [show, setShow] = useState(true)
 
   const { description, photos, title, id, bestOffer } = property;
+  
+  useEffect(() => {
+    for (let index  = 0; index < yellow.length; index++) {
+      if(id === yellow[index])
+        setShow(false) 
+    }
+
+  }, [id])
 
   const handleMouseOver = () => {
     onMouseOver(property);
@@ -32,7 +42,7 @@ export default function PropertiesItem(props) {
     onSelectProperty(property);
   };
 
-  const selectRoomPath = buildPath(history.location.search, routes.hotelPage, { channelId: id });
+  const selectRoomPath = show ? buildPath(history.location.search, routes.hotelPage, { channelId: id }) : '#';
 
   const photo = useMemo(() => {
     if (photos?.length > 0) {
@@ -74,8 +84,8 @@ export default function PropertiesItem(props) {
 
       <div className={styles.footer}>
         <BestOffer amount={bestOffer} currency={currency} />
-        <Link to={selectRoomPath} className={styles.seeMoreLink}>
-          {t("properties:book_now")}
+        <Link to={selectRoomPath} className={styles.seeMoreLink} style={show ? {} : { pointerEvents: 'none' }}>
+          {show ? t("properties:book_now") : 'coming soon...'}
         </Link>
       </div>
     </div>

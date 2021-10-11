@@ -16,6 +16,7 @@ import dateFormatter from "utils/date_formatter";
 import getBookingParamsFromUrl from "utils/get_booking_params_from_url";
 import { encodeMapParams } from "utils/map_params";
 import setUrlParams from "utils/set_url_params";
+import block from "utils/Lists/block_list";
 // import get_url_params from "utils/get_url_params";
 
 import styles from "./search_page.module.css";
@@ -41,23 +42,28 @@ export default function SearchPage() {
   const history = useHistory();
   const { loadPropertiesList } = useContext(SearchActionsContext);
   const { properties } = useContext(SearchDataContext);
-  const { data: propertiesData, isLoading } = properties;
+  let { data: propertiesData, isLoading } = properties;
+
   // const [cont, setCont] = useState();
   // const [bounds, setBounds] = useState()
   // const [mrgBounds, setMrgBounds] = useState({latitude: {lte: '', gte: ''}, longitude: {lte:'', gte:''}})
  
-  // if(cont && propertiesData) {
-  //   // console.log(cont)
-  //   propertiesData = propertiesData.filter(function(value) {
-  //     for (let i = 0; i < Countries.length; i++) {
-  //           const element = Countries[i];
-  //           if(toLower(element.continent) === cont && element.country === countries[value.country].name){
-  //             return value
-  //           }
-  //         }
-  //         return 0;
-  //   })
-  // }
+  if(block && propertiesData) {
+    // console.log(cont)
+    propertiesData = propertiesData.filter(function(value) {
+      let isFound = false;
+      for (let i = 0; i < block.length; i++) {
+            if(block[i] === value.id){
+              isFound = true;
+              break;
+            }
+      }
+        if(isFound)
+          return 0;
+        else
+          return value
+    })
+  }
 
   // const successfull = (position) => {
   //   const {latitude, longitude} = position.coords;

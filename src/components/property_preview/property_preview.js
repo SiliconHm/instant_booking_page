@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from "react";
+import React, { useCallback, useMemo, useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -12,11 +12,21 @@ import buildPath from "utils/build_path";
 import EmptyIcon from "static/empty-property.svg";
 import BackIcon from "static/icons-arrowright.svg";
 import styles from "./property_preview.module.css";
+import yellow from "utils/Lists/yellow_list";
 
 export default function PropertyPreview({ currency, property, onClearSelectProperty }) {
   const { t } = useTranslation();
   const history = useHistory();
+  const [show, setShow] = useState(true)
   const { photos, title, description, address, id, bestOffer } = property;
+
+  useEffect(() => {
+    for (let index  = 0; index < yellow.length; index++) {
+      if(id === yellow[index])
+        setShow(false) 
+    }
+
+  }, [id])
 
   const onBookNow = useCallback(() => {
     const redirectPath = buildPath(history.location.search, routes.hotelPage, { channelId: id });
@@ -52,7 +62,8 @@ export default function PropertyPreview({ currency, property, onClearSelectPrope
         </div>
         <div className={styles.seeMoreBtnWrapper}>
           <BestOffer amount={bestOffer} currency={currency} />
-          <Button onClick={onBookNow}>{t("properties:book_now")}</Button>
+          {show && <Button onClick={onBookNow}>{t("properties:book_now")}</Button> }
+          {!show && <Button disabled> coming soon...</Button>}
         </div>
       </div> 
 
