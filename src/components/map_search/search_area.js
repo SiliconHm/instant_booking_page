@@ -26,7 +26,7 @@ const PlacesAutocomplete = ({clicked, label, clicks, setLocation}) => {
         <>
         <div className={`col-md-3 ${styles.margins}`}>
         {label && <Label className={styles.label_name}>{label}</Label>}
-            <AutoComplete apiKey={process.env.REACT_APP_GOOGLE_MAP_KEY} className={`form-control m-0`} onPlaceSelected={onPlaceSelected} types={['(region)']} placeholder='Where you are going?' onClick={handler} />
+            <AutoComplete apiKey={process.env.REACT_APP_GOOGLE_MAP_KEY} className={`form-control m-0`} onPlaceSelected={onPlaceSelected} types={['(region)']} placeholder='Enter destination...' onClick={handler} />
         </div>
         </>
     )

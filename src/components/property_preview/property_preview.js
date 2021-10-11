@@ -45,7 +45,7 @@ export default function PropertyPreview({ currency, property, onClearSelectPrope
           <p className={styles.closeLabel}>{t("properties:back_to_map")}</p>
         </div>
       </div>
-      <div className={styles.header}>
+      <div className={styles.header}> 
         <div className={styles.headerInner}>
           <p className={styles.title}>{title}</p> 
           <p className={styles.address}>{address}</p>
