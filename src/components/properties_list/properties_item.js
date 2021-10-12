@@ -85,7 +85,7 @@ export default function PropertiesItem(props) {
       <div className={styles.footer}>
         <BestOffer amount={bestOffer} currency={currency} />
         <Link to={selectRoomPath} className={styles.seeMoreLink} style={show ? {} : { pointerEvents: 'none' }}>
-          {show ? t("properties:book_now") : 'coming soon...'}
+          {show ? t("properties:book_now") : 'Coming Soon...'}
         </Link>
       </div>
     </div>

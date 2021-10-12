@@ -63,7 +63,7 @@ export default function PropertyPreview({ currency, property, onClearSelectPrope
         <div className={styles.seeMoreBtnWrapper}>
           <BestOffer amount={bestOffer} currency={currency} />
           {show && <Button onClick={onBookNow}>{t("properties:book_now")}</Button> }
-          {!show && <Button disabled> coming soon...</Button>}
+          {!show && <Button disabled> Coming Soon...</Button>}
         </div>
       </div> 
 
