@@ -60,10 +60,11 @@ export function CustomerInfo() {
           Component={Input}
         />
       </FieldRow>
-      <FieldRow>
+      <FieldRow>       
+        {/* t(`${TRANSLATION_PATH}:special_request`) */}
         <FormalField
           name="customer.specialRequest"
-          label={t(`${TRANSLATION_PATH}:special_request`)}
+          label={'ADD SPECIAL REQUESTS + PROPERTY CUSTOMER NUMBER (IF ANY) EXAMPLE: 123-456-789'}
           rows={3}
           Component={TextArea}
         />
