@@ -32,7 +32,7 @@ export const getSchema = () =>
 
 export function CustomerInfo() {
   const { t } = useTranslation();
-  let clickid = '18182-38784885-5t90t905'
+  let clickid = 'Not Commissionable'
   return (
     <Panel title={t(`${TRANSLATION_PATH}:title`)}>
       <FieldRow>
