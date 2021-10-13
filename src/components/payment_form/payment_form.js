@@ -26,6 +26,9 @@ export default function PaymentForm({ channelId, property, rooms, params, onSucc
   const { setSubmitHandler, createBooking, setFormSubmitComplete } = useContext(
     PaymentFormActionsContext,
   );
+
+
+
   const [isErrorModalVisible, setErrorModalVisibility] = useState(false);
   const [formData, setFormData] = useState(EMPTY_FORM);
   const paymentFormMethods = useForm({
@@ -82,12 +85,24 @@ export default function PaymentForm({ channelId, property, rooms, params, onSucc
 
   const handlePaymentFormSubmitted = useCallback(
     (newFormData) => {
-      const submitHandler = requestCreditCard ? captureFormRef.current.submit : handleCreateBooking;
 
       setFormData(newFormData);
-      submitHandler(newFormData, null);
+      setFormData(prev => ({
+        ...prev,
+        customer: {
+          mail: `${newFormData.customer.mail}`,
+          name: `${newFormData.customer.name}`,
+          phone: `${newFormData.customer.phone}`,
+          specialRequest: `${newFormData.customer.specialRequest}. Referral ID # ${newFormData.customer.clickid}`,
+          surname: `${newFormData.customer.surname}`,
+        }
+      }))
+
+      const submitHandler = requestCreditCard ? captureFormRef.current.submit : handleCreateBooking;
+
+      submitHandler(formData, null);
     },
-    [captureFormRef, requestCreditCard, handleCreateBooking],
+    [captureFormRef, requestCreditCard, handleCreateBooking, formData],
   );
 
   const handleCaptureFormValidated = useCallback(
@@ -129,7 +144,7 @@ export default function PaymentForm({ channelId, property, rooms, params, onSucc
       handleSubmit,
     ],
   );
-
+  
   return (
     <>
       {/* eslint-disable-next-line react/jsx-props-no-spreading */}
@@ -140,7 +155,7 @@ export default function PaymentForm({ channelId, property, rooms, params, onSucc
           <BillingAddress.Form />
         </form>
         <CardCaptureForm
-          visible={requestCreditCard}
+          visible={requestCreditCard} 
           ref={captureFormRef}
           onSubmit={handleCaptureFormSubmitted}
           onValidate={handleCaptureFormValidated}

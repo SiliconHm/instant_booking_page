@@ -26,12 +26,13 @@ export const getSchema = () =>
       .matches(phoneRegExp, errors.phone())
       .max(MAX_PHONE_LENGTH, errors.phone())
       .required(errors.required()),
-    specialRequest: yup.string(),
+    specialRequest: yup.string().required(errors.required()),
+    clickid: yup.string(),
   });
 
 export function CustomerInfo() {
   const { t } = useTranslation();
-
+  let clickid = '123456789'
   return (
     <Panel title={t(`${TRANSLATION_PATH}:title`)}>
       <FieldRow>
@@ -43,11 +44,11 @@ export function CustomerInfo() {
         <FormalField
           name="customer.surname"
           label={t(`${TRANSLATION_PATH}:last_name`)}
-          Component={Input}
+          Component={Input} 
         />
       </FieldRow>
       <FieldRow>
-        <FormalField
+        <FormalField 
           name="customer.mail"
           label={t(`${TRANSLATION_PATH}:email`)}
           Component={Input}
@@ -66,7 +67,17 @@ export function CustomerInfo() {
           rows={3}
           Component={TextArea}
         />
+        <FormalField
+          name="customer.clickid"
+          label={'clickId'}
+          Component={Input}
+          clickid={clickid}
+          defaultValue={clickid}
+        />
       </FieldRow>
+      {/* <FieldRow> */}
+        {/* <input name='customer.clickid' type='hidden' Component={Input} value={clickid}/> */}
+      {/* </FieldRow> */}
     </Panel>
   );
 }

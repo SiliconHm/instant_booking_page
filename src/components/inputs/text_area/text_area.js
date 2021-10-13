@@ -10,6 +10,8 @@ function TextArea(props, ref) {
   const { value = "", label, rows, placeholder, text, meta = {}, onChange } = props;
   const { valid = {} } = meta;
 
+  // console.log(onChange)
+
   return (
     <FieldWrapper>
       <Form.Group>
@@ -18,7 +20,7 @@ function TextArea(props, ref) {
             <Label>{label}</Label>
           </Form.Label>
         )}
-        <Form.Control
+        <Form.Control 
           className={styles.textArea}
           as="textarea"
           ref={ref}

@@ -32,12 +32,12 @@ export default function PaymentPage() {
   const { ratesOccupancyPerRoom, checkinDate, checkoutDate } = params;
   const isReqiredDataPresent = ratesOccupancyPerRoom && checkinDate && checkoutDate;
 
+  // console.log(init)
   const onSuccess = (bookingParams) => {
     const { uniqueId: bookingId } = bookingParams;
     const routeParams = { channelId, bookingId };
     const { search } = history.location;
     const confirmationPagePath = buildPath(search, routes.confirmationPage, routeParams);
-
     history.push(confirmationPagePath);
   };
 

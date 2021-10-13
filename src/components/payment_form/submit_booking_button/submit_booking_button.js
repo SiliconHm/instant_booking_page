@@ -13,7 +13,8 @@ export default function SubmitBookingButton() {
   const { startSubmit } = useContext(PaymentFormActionsContext);
   const { isSubmitting } = useContext(PaymentFormDataContext);
   const isSubmitDisabled = !isPolicyAccepted || isSubmitting;
-
+  // console.log(PaymentFormActionsContext)
+  // console.log(PaymentFormDataContext)
   return (
     <>
       <PolicyCheckbox value={isPolicyAccepted} onChange={setIsPolicyAccepted} />
