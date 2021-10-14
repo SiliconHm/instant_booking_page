@@ -23,14 +23,13 @@ import ThankPanel from "./thank_panel";
 
 export default function ConfirmationPage() {
   const [total, setTotal] = useState(0);
-  // const [selectedRatesByRoom, setSelectedRatesByRoom] = useState({});
-
 
   const { value } = useContext(PaymentFormDataContext);
   const { channelId, property, params, roomsInfo } = useContext(BookingDataContext);
   const { data: roomsData } = roomsInfo;
   const { ratesOccupancyPerRoom } = params;
-  
+  // console.log('params: ', params)
+  // console.log('currency: ', currency)
   const bookingActions = useContext(BookingActionsContext);
 
   const { init } = useContext(AppActionsContext);
@@ -69,14 +68,17 @@ export default function ConfirmationPage() {
 
   const { checkinDate, checkoutDate} = params;
   let checkIn,checkOut
+  var options = {
+        year: "numeric",
+        month: "short",
+        day: "numeric" };
   if(checkinDate) {
-    var options = {
-					year: "numeric",
-					month: "short",
-					day: "numeric" };
     checkIn = new Date(checkinDate).toLocaleDateString("en-US", options)
     checkOut = new Date(checkoutDate).toLocaleDateString("en-US", options)
   }
+
+  const time = new Date()
+  const date = `${new Date().toLocaleDateString('en-US', options)} ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}` 
 
 
   return (
@@ -88,7 +90,7 @@ export default function ConfirmationPage() {
         </Col>
         <Col xs="12">
           <ThankPanel bookingId={bookingId} email={email} />
-          <Booking booking='1011' checkIn={checkIn} checkOut={checkOut} total={total} status='Confirm'/>
+          <Booking booking={date} checkIn={checkIn} checkOut={checkOut} total={total} status='Confirm' currency={params.currency}/>
           <NewBookinLink channelId={channelId} />
         </Col>
       </SectionWrapper>

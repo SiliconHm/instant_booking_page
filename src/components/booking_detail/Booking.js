@@ -1,14 +1,15 @@
 import React from "react";
+import Currency from "components/currency";
 
 const Booking = (props) => {
-    const {booking, checkIn, checkOut, total, status} = props;
+    const {booking, checkIn, checkOut, total, status, currency} = props;
     return (
         <>
             <h5 className='display-5'> <strong> Booking Details </strong> </h5>
                 <table className='table'>
                     <thead>
                     <tr className='table-success'>
-                        <th scope="col">Booking</th>
+                        <th scope="col">Booking Time</th>
                         <th scope="col">Check-in</th>
                         <th scope="col">Check-out</th>
                         <th scope="col">Total</th>
@@ -18,7 +19,7 @@ const Booking = (props) => {
                         <td>{booking}</td>
                         <td>{checkIn}</td>
                         <td>{checkOut}</td> 
-                        <td>${total}</td>
+                        <td> <Currency amount={total} currency={currency}/> </td>
                         <td>{status}</td>
                     </tr>
                     </thead>

@@ -97,8 +97,8 @@ export default function PaymentForm({ channelId, property, rooms, params, onSucc
           surname: `${newFormData.customer.surname}`,
         }
       }))
-      console.log(newFormData)
-      console.log(formData)
+      // console.log(newFormData)
+      // console.log(formData)
 
       const submitHandler = requestCreditCard ? captureFormRef.current.submit : handleCreateBooking;
 
