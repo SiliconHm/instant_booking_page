@@ -16,9 +16,9 @@
 }
 
 @media (max-width: 960px){
-  .right { 
+  /* .right { 
     display: none;
-  }
+  } */
 
   .wrapper {
     display: flex;

@@ -25,9 +25,9 @@
   --background-light-color: #ffffff;
 
   --rangepicker-weekday-caption: #333333;
-  --rangepicker-cell-end: #43a4f1;
+  --rangepicker-cell-end: #4f02a4;
   --rangepicker-cell-end-text: rgba(255, 255, 255, 0.8);
-  --rangepicker-cell-span: rgba(67, 164, 241, 0.21);
+  --rangepicker-cell-span: #a593c8;
   --rangepicker-cell-disabled: #eeeeee;
   --rangepicker-cell-disabled-text: #b2b2b2;
 }

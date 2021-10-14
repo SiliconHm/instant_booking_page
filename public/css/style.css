@@ -1453,9 +1453,9 @@ color:#000;
         display:none !important;
     }
     
-.modal-backdrop{
-    background:rgba(255,255,255,0.1) !important;
-}
+    .modal-backdrop{
+        background:rgba(255,255,255,0.1) !important;
+    }
     .user-login-bg{
         display:none;
     }

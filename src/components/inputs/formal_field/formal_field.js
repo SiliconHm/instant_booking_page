@@ -17,7 +17,7 @@ export default function FormalField(props) {
       setClickId(true)
     else
       setClickId(false)
-  }, [clickid, defaultValue])
+  }, [clickid, defaultValue]) 
 
   return (
     <div className={styles.container} style={isClickId ? {display:'none'} : {}}>

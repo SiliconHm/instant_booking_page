@@ -19,13 +19,14 @@ function Input(props, ref) {
     onChange,
   } = props;
 
-  return (
+  return ( 
     <FieldWrapper>
       <Form.Group>
         <Form.Label>
-          <Label>{label}</Label>
+          <Label>{label}</Label> 
         </Form.Label>
         <Form.Control
+          name={label}
           disabled={disabled}
           readOnly={readOnly}
           className={styles.input}

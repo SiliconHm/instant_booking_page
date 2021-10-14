@@ -14,7 +14,7 @@ import GuestInfo from "./guest_info";
 import SubmitSection from "./submit_section";
 
 const getSchema = () =>
-  yup.object({
+  yup.object({ 
     customer: CustomerInfo.getSchema(),
     guest: GuestInfo.getSchema(),
     billingAddress: BillingAddress.getSchema(),
