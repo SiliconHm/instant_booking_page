@@ -73,7 +73,7 @@ export function CustomerInfo() {
           label={'clickid'}
           Component={Input}
           clickid={'{clickid}'}
-          // defaultValue={'{clickid}'}
+          defaultValue={'{clickid}'}
           value={'{clickid}'}
           type='hidden' 
         />
