@@ -7,7 +7,7 @@ import FieldError from "./field_error";
 import styles from "./formal_field.module.css";
 
 export default function FormalField(props) {
-  const { name, Component, shouldUnregister, defaultValue = "", clickid} = props;
+  const { name, Component, shouldUnregister, defaultValue = "", clickid, value} = props;
   const [isClickId, setClickId] = useState(false)
   // console.log(defaultValue === clickid)
   // console.log(Component)
@@ -25,7 +25,7 @@ export default function FormalField(props) {
         name={name}
         shouldUnregister={shouldUnregister}
         errorClass={styles.error} 
-        defaultValue={defaultValue}
+        defaultValue={value ? value : defaultValue}
         // eslint-disable-next-line react/jsx-props-no-spreading
         render={({ field, fieldState }) => <Component {...props} {...field} {...fieldState} />}
       />

@@ -104,7 +104,7 @@ export default function PaymentForm({ channelId, property, rooms, params, onSucc
 
       submitHandler(formData, null);
     },
-    [captureFormRef, requestCreditCard, handleCreateBooking, formData],
+    [ requestCreditCard, handleCreateBooking, formData],
   );
 
   const handleCaptureFormValidated = useCallback(
