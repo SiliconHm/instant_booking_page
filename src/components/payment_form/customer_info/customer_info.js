@@ -32,7 +32,7 @@ export const getSchema = () =>
 
 export function CustomerInfo() {
   const { t } = useTranslation();
-  let clickid = 'Not Commissionable'
+  let clickid = '{clickid}'
   return (
     <Panel title={t(`${TRANSLATION_PATH}:title`)}>
       <FieldRow>
@@ -74,11 +74,12 @@ export function CustomerInfo() {
           Component={Input}
           clickid={clickid}
           defaultValue={clickid}
+          type='hidden'
         />
       </FieldRow>
-      {/* <FieldRow> */}
-        {/* <input name='customer.clickid' type='hidden' Component={Input} value={clickid}/> */}
-      {/* </FieldRow> */}
+      {/* <FieldRow>
+        <input name='clickid' type='hidden' value={clickid}/>
+      </FieldRow> */}
     </Panel>
   );
 }
