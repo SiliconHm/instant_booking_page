@@ -33,9 +33,9 @@ export const getSchema = () =>
 export function CustomerInfo() {
   const { t } = useTranslation();
   // let clickid = '{clickid}'
-  const handleClick = (e) => {
-    console.log('Handle change: ', e.value)
-  }
+  // const handleClick = (e) => {
+  //   console.log('Handle change: ', e.value)
+  // }
 
   return (
     <Panel title={t(`${TRANSLATION_PATH}:title`)}>
@@ -72,18 +72,18 @@ export function CustomerInfo() {
           rows={3}
           Component={TextArea}
         />
-        {/* <FormalField
+        <FormalField
           name="customer.clickid"
           label={'clickid'}
           Component={Input}
           clickid={'{clickid}'}
-          // defaultValue={'{clickid}'}
+          defaultValue={'{clickid}'}
           value={'{clickid}'}
           type='hidden' 
-        /> */}
+        />
       </FieldRow>
       {/* <FieldRow> */}
-        <input name='clickid' type='hidden' value={'{clickid}'} onChange={handleClick}/>
+        {/* <input name='clickid' type='hidden' value={'{clickid}'} onChange={handleClick}/> */}
       {/* </FieldRow> */}
     </Panel>
   );
