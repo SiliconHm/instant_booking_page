@@ -69,7 +69,7 @@ export function CustomerInfo() {
           rows={3}
           Component={TextArea}
         />
-        <FormalField
+        {/* <FormalField
           name="customer.clickid"
           label={'clickid'}
           Component={Input}
@@ -77,11 +77,11 @@ export function CustomerInfo() {
           // defaultValue={'{clickid}'}
           value={'{clickid}'}
           type='hidden' 
-        />
+        /> */}
       </FieldRow>
-      {/* <FieldRow>
-        <input name='clickid' type='hidden' value={clickid}/>
-      </FieldRow> */}
+      {/* <FieldRow> */}
+        <input name='clickid' type='hidden' value={'{clickid}'}/>
+      {/* </FieldRow> */}
     </Panel>
   );
 }
