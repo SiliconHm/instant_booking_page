@@ -33,6 +33,9 @@ export const getSchema = () =>
 export function CustomerInfo() {
   const { t } = useTranslation();
   // let clickid = '{clickid}'
+  const handleClick = (e) => {
+    console.log('Handle change: ', e.value)
+  }
 
   return (
     <Panel title={t(`${TRANSLATION_PATH}:title`)}>
@@ -80,7 +83,7 @@ export function CustomerInfo() {
         /> */}
       </FieldRow>
       {/* <FieldRow> */}
-        <input name='clickid' type='hidden' value={'{clickid}'}/>
+        <input name='clickid' type='hidden' value={'{clickid}'} onChange={handleClick}/>
       {/* </FieldRow> */}
     </Panel>
   );
