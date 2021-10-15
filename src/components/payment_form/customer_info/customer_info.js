@@ -33,6 +33,7 @@ export const getSchema = () =>
 export function CustomerInfo() {
   const { t } = useTranslation();
   // let clickid = '{clickid}'
+
   return (
     <Panel title={t(`${TRANSLATION_PATH}:title`)}>
       <FieldRow>
@@ -73,7 +74,7 @@ export function CustomerInfo() {
           label={'clickid'}
           Component={Input}
           clickid={'{clickid}'}
-          defaultValue={'{clickid}'}
+          // defaultValue={'{clickid}'}
           value={'{clickid}'}
           type='hidden' 
         />
