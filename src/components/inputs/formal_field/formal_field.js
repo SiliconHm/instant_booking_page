@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Controller } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 
@@ -7,7 +7,7 @@ import FieldError from "./field_error";
 import styles from "./formal_field.module.css";
 
 export default function FormalField(props) {
-  const { name, Component, shouldUnregister, defaultValue = "", clickid, value} = props;
+  const { name, Component, shouldUnregister, defaultValue = "", value} = props;
   // const [isClickId, setClickId] = useState(false)
   // console.log(defaultValue === clickid)
   // console.log(Component)
