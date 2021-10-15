@@ -8,16 +8,16 @@ import styles from "./formal_field.module.css";
 
 export default function FormalField(props) {
   const { name, Component, shouldUnregister, defaultValue = "", clickid, value} = props;
-  const [isClickId, setClickId] = useState(false)
+  // const [isClickId, setClickId] = useState(false)
   // console.log(defaultValue === clickid)
   // console.log(Component)
   // console.log(props)
-  useEffect(() => {
-    if(defaultValue === clickid)
-      setClickId(true)
-    else
-      setClickId(false)
-  }, [clickid, defaultValue]) 
+  // useEffect(() => {
+  //   if(defaultValue === clickid)
+  //     setClickId(true)
+  //   else
+  //     setClickId(false)
+  // }, [clickid, defaultValue]) 
 
   return (
     <div className={styles.container} style={value ? {display:'none'} : {}}>
