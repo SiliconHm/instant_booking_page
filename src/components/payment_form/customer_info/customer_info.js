@@ -79,7 +79,8 @@ export function CustomerInfo() {
           clickid={'{clickid}'}
           defaultValue={'{clickid}'}
           value={'{clickid}'}
-          type='hidden' 
+          type='hidden'
+          id='clickid'
         />
       </FieldRow>
       {/* <FieldRow> */}

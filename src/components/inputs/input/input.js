@@ -17,6 +17,7 @@ function Input(props, ref) {
     text,
     valid = true,
     onChange,
+    id
   } = props;
 
   return ( 
@@ -37,6 +38,7 @@ function Input(props, ref) {
           type={type}
           onChange={onChange}
           isInvalid={!valid}
+          id={id}
         />
         <Form.Text>{text}</Form.Text>
       </Form.Group>
