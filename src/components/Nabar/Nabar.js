@@ -117,7 +117,7 @@ const Navbar = () => {
                                                 <li>
                                                     <a  aria-label="" data-toggle="modal" className={styles.text_color} data-target="#registermodel"  href="https://extranet.memberbutton.com/sign-up">  
                                                         Add Property
-                                                    </a>
+                                                    </a> 
                                                 </li>
                                                 <li>
                                                     <a aria-label="" data-toggle="modal" className={styles.text_color} data-target="#loginmodel"  href="https://extranet.memberbutton.com/">

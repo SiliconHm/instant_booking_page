@@ -4,7 +4,6 @@ import Label from "components/label/label";
 import styles from './search.module.css'
 
 const PlacesAutocomplete = ({clicked, label, clicks, setLocation}) => {
-    // const [location, setLocation] = useState({address: '', latt: '', long: ''})
         
     const onPlaceSelected = (place) => {
         const { formatted_address, geometry} = place
@@ -20,8 +19,7 @@ const PlacesAutocomplete = ({clicked, label, clicks, setLocation}) => {
     const handler = () => {
         clicked(!clicks) 
     }
-    // console.log(location)
-
+ 
     return ( 
         <>
         <div className={`col-md-3 ${styles.margins}`}>

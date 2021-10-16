@@ -191,7 +191,7 @@ export default function MainSearch() {
     [`${styles.rangePicker__error}`]: rangePickerVisible,
   });
 
-  const handlePopup = () => {
+  const handlePopup = () => { 
     if(click)
       setClick(false)
   }
@@ -215,7 +215,7 @@ export default function MainSearch() {
                     checkoutDatePlaceholder={t("hotel_page:checkout_placeholder")}
                     checkinDateLabel={t("hotel_page:checkin_label")}
                     checkoutDateLabel={t("hotel_page:checkout_label")}
-                    checkinDate={checkinDate}
+                    checkinDate={checkinDate} 
                     checkoutDate={checkoutDate}
                     name="search_dates" 
                     className={rangePickerClassName}
@@ -224,7 +224,7 @@ export default function MainSearch() {
                     closeCallback={() => setRangePickerVisible(false)}
                     />
 
-                  <Dropdown 
+                  <Dropdown  
                     show={isOpen}
                     onToggle={handleToggleDropdown} 
                     title={dropdownTitle}
