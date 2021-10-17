@@ -1,6 +1,6 @@
 import React from "react";
 import { Spinner } from "react-bootstrap";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 
 import PropertiesItem from "./properties_item";
@@ -17,13 +17,13 @@ export default function PropertiesList(props) {
     onPropertyMouseOver,
     onPropertyMouseOut,
   } = props;
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const isPropertiesPresent = properties && !loading;
 
   const listClassName = classNames(styles.list, {
     [`${styles.listGrid}`]: isPropertiesPresent && properties.length > 0,
   });
-
+ 
   const renderContent = () => { 
     if (!isPropertiesPresent) {
       return (
@@ -53,7 +53,19 @@ export default function PropertiesList(props) {
 
     return (
       <div className={styles.emptyWrapper}>
-        <p className={styles.empty}>{t("properties:no_search_results")}</p>
+        <p className={styles.empty}>
+          {/* {t("properties:no_search_results")} */}
+ 
+          <h4 className="text-16 font-weight-500">
+              Zoom-Out Map To See More
+            <br/>
+              Find properties by:
+          </h4>
+          <ul className={styles.search_no_res_list}>
+            <li>1. Zoom out on the map</li>
+            <li>2. Change your filters or dates</li>
+            <li>3. Search for a specific city, address</li></ul>
+        </p>
       </div>
     );
   };

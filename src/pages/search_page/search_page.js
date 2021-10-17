@@ -15,7 +15,7 @@ import { DEFAULT_CURRENCY } from "constants/defaults";
 import dateFormatter from "utils/date_formatter";
 import getBookingParamsFromUrl from "utils/get_booking_params_from_url";
 import { encodeMapParams } from "utils/map_params";
-import setUrlParams from "utils/set_url_params";
+import setUrlParams from "utils/set_url_params"; 
 import block from "utils/Lists/block_list";
 // import get_url_params from "utils/get_url_params";
 

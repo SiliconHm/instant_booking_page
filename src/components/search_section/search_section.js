@@ -76,7 +76,7 @@ export default function SearchSection() {
 
           availableSpaces += amount * occupancy.adults;
         });
-      });
+      }); 
 
       const missingAdults = adults - availableSpaces;
 
