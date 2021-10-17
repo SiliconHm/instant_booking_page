@@ -246,6 +246,8 @@ export default function HeaderSearch({
               onChange={handleChangeOccupancy}
               />
           </Dropdown>
+          <CurrencySelectControlled value={searchParams.currency} onChange={handleCurrencyChange}/>
+          <LocaleSelect />
       </div>
       }
     </div>
