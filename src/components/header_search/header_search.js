@@ -142,7 +142,7 @@ export default function HeaderSearch({
   const clickHandle = () => {
     setShow(!show)
   }
-
+//  apiKey={process.env.REACT_APP_GOOGLE_MAP_KEY} 
   return (
     <>
     <div className={styles.wrapper}>
@@ -150,7 +150,7 @@ export default function HeaderSearch({
       <div className={styles.form_wrapper}>
         <div className={`${styles.search_form} animated zoomIn`} >
             <div id="front-search-form" method="post" action="http://memberbutton.com/search" autoComplete='off'>
-              <AutoComplete apiKey={process.env.REACT_APP_GOOGLE_MAP_KEY} className={`form-control m-0`} types={['(region)']} placeholder='Enter destination...' onPlaceSelected={onPlaceSelected}/>
+              <AutoComplete className={`form-control m-0`} types={['(region)']} placeholder='Enter destination...' onPlaceSelected={onPlaceSelected}/>
             </div>
             <div className={`front-search border-right-0 d-sm-block `}>
               <Button className='btn vbtn-default btn-sm btn-block p-0 text-12' onClick={handleCoordinates}>
